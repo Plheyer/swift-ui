@@ -1,0 +1,6 @@
+framework module Connect4Rules {
+  umbrella header "Connect4Rules.h"
+  export *
+
+  module * { export * }
+}

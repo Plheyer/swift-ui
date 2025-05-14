@@ -1,0 +1,6 @@
+framework module Connect4Persistance {
+  umbrella header "Connect4Persistance.h"
+  export *
+
+  module * { export * }
+}

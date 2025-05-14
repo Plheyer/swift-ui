@@ -1,0 +1,286 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "Connect4Players",
+    "printedName": "Connect4Players",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Connect4Core",
+        "printedName": "Connect4Core",
+        "declKind": "Import",
+        "moduleName": "Connect4Players"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FinnishHimPlayer",
+        "printedName": "FinnishHimPlayer",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "chooseMove",
+            "printedName": "chooseMove(in:with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Connect4Core.Move?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Move",
+                    "printedName": "Connect4Core.Move",
+                    "usr": "s:12Connect4Core4MoveV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Rules",
+                "printedName": "any Connect4Core.Rules",
+                "usr": "s:12Connect4Core5RulesP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15Connect4Players16FinnishHimPlayerC10chooseMove2in4with0A4Core0G0VSgAG5BoardV_AG5Rules_ptF",
+            "mangledName": "$s15Connect4Players16FinnishHimPlayerC10chooseMove2in4with0A4Core0G0VSgAG5BoardV_AG5Rules_ptF",
+            "moduleName": "Connect4Players",
+            "overriding": true,
+            "declAttributes": [
+              "Override",
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(withName:andId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Connect4Players.FinnishHimPlayer?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FinnishHimPlayer",
+                    "printedName": "Connect4Players.FinnishHimPlayer",
+                    "usr": "s:15Connect4Players16FinnishHimPlayerC"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Owner",
+                "printedName": "Connect4Core.Owner",
+                "usr": "s:12Connect4Core5OwnerO"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15Connect4Players16FinnishHimPlayerC8withName5andIdACSgSS_0A4Core5OwnerOtcfc",
+            "mangledName": "$s15Connect4Players16FinnishHimPlayerC8withName5andIdACSgSS_0A4Core5OwnerOtcfc",
+            "moduleName": "Connect4Players",
+            "overriding": true,
+            "implicit": true,
+            "declAttributes": [
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:15Connect4Players16FinnishHimPlayerC",
+        "mangledName": "$s15Connect4Players16FinnishHimPlayerC",
+        "moduleName": "Connect4Players",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "superclassUsr": "s:12Connect4Core8AIPlayerC",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Connect4Core.AIPlayer",
+          "Connect4Core.Player"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Connect4Core",
+        "printedName": "Connect4Core",
+        "declKind": "Import",
+        "moduleName": "Connect4Players"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SimpleNegaMaxPlayer",
+        "printedName": "SimpleNegaMaxPlayer",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "chooseMove",
+            "printedName": "chooseMove(in:with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Connect4Core.Move?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Move",
+                    "printedName": "Connect4Core.Move",
+                    "usr": "s:12Connect4Core4MoveV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Rules",
+                "printedName": "any Connect4Core.Rules",
+                "usr": "s:12Connect4Core5RulesP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15Connect4Players19SimpleNegaMaxPlayerC10chooseMove2in4with0A4Core0H0VSgAG5BoardV_AG5Rules_ptF",
+            "mangledName": "$s15Connect4Players19SimpleNegaMaxPlayerC10chooseMove2in4with0A4Core0H0VSgAG5BoardV_AG5Rules_ptF",
+            "moduleName": "Connect4Players",
+            "overriding": true,
+            "declAttributes": [
+              "AccessControl",
+              "Override",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(withName:andId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Connect4Players.SimpleNegaMaxPlayer?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SimpleNegaMaxPlayer",
+                    "printedName": "Connect4Players.SimpleNegaMaxPlayer",
+                    "usr": "s:15Connect4Players19SimpleNegaMaxPlayerC"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Owner",
+                "printedName": "Connect4Core.Owner",
+                "usr": "s:12Connect4Core5OwnerO"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15Connect4Players19SimpleNegaMaxPlayerC8withName5andIdACSgSS_0A4Core5OwnerOtcfc",
+            "mangledName": "$s15Connect4Players19SimpleNegaMaxPlayerC8withName5andIdACSgSS_0A4Core5OwnerOtcfc",
+            "moduleName": "Connect4Players",
+            "overriding": true,
+            "implicit": true,
+            "declAttributes": [
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:15Connect4Players19SimpleNegaMaxPlayerC",
+        "mangledName": "$s15Connect4Players19SimpleNegaMaxPlayerC",
+        "moduleName": "Connect4Players",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "superclassUsr": "s:12Connect4Core8AIPlayerC",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Connect4Core.AIPlayer",
+          "Connect4Core.Player"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Players\/Connect4Players\/SimpleNegaMaxPlayer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 86,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Players\/Connect4Players\/SimpleNegaMaxPlayer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 111,
+      "length": 1,
+      "value": "0"
+    }
+  ]
+}

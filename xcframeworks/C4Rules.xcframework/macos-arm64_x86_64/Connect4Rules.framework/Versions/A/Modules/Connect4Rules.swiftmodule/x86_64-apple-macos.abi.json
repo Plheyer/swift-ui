@@ -1,0 +1,1821 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "Connect4Rules",
+    "printedName": "Connect4Rules",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Connect4Core",
+        "printedName": "Connect4Core",
+        "declKind": "Import",
+        "moduleName": "Connect4Rules"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PopOutRules",
+        "printedName": "PopOutRules",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "playMoveFunc",
+            "printedName": "playMoveFunc",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((inout Connect4Core.Board, Connect4Core.Move) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?))?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(inout Connect4Core.Board, Connect4Core.Move) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "BoardResult",
+                            "printedName": "Connect4Core.BoardResult",
+                            "usr": "s:12Connect4Core11BoardResultO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.Int?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.Int?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Connect4Core.Board, Connect4Core.Move)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Board",
+                            "printedName": "Connect4Core.Board",
+                            "usr": "s:12Connect4Core5BoardV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Move",
+                            "printedName": "Connect4Core.Move",
+                            "usr": "s:12Connect4Core4MoveV"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13Connect4Rules06PopOutB0V12playMoveFunc0A4Core11BoardResultO6result_SiSg3rowAI6columntAE0I0Vz_AE0F0VtcSgvp",
+            "mangledName": "$s13Connect4Rules06PopOutB0V12playMoveFunc0A4Core11BoardResultO6result_SiSg3rowAI6columntAE0I0Vz_AE0F0VtcSgvp",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((inout Connect4Core.Board, Connect4Core.Move) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?))?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(inout Connect4Core.Board, Connect4Core.Move) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Tuple",
+                            "printedName": "(result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "BoardResult",
+                                "printedName": "Connect4Core.BoardResult",
+                                "usr": "s:12Connect4Core11BoardResultO"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "Swift.Int?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Int",
+                                    "printedName": "Swift.Int",
+                                    "usr": "s:Si"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "Swift.Int?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Int",
+                                    "printedName": "Swift.Int",
+                                    "usr": "s:Si"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              }
+                            ]
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Tuple",
+                            "printedName": "(Connect4Core.Board, Connect4Core.Move)",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Board",
+                                "printedName": "Connect4Core.Board",
+                                "usr": "s:12Connect4Core5BoardV"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Move",
+                                "printedName": "Connect4Core.Move",
+                                "usr": "s:12Connect4Core4MoveV"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13Connect4Rules06PopOutB0V12playMoveFunc0A4Core11BoardResultO6result_SiSg3rowAI6columntAE0I0Vz_AE0F0VtcSgvg",
+                "mangledName": "$s13Connect4Rules06PopOutB0V12playMoveFunc0A4Core11BoardResultO6result_SiSg3rowAI6columntAE0I0Vz_AE0F0VtcSgvg",
+                "moduleName": "Connect4Rules",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13Connect4Rules06PopOutB0V4nameSSvp",
+            "mangledName": "$s13Connect4Rules06PopOutB0V4nameSSvp",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13Connect4Rules06PopOutB0V4nameSSvg",
+                "mangledName": "$s13Connect4Rules06PopOutB0V4nameSSvg",
+                "moduleName": "Connect4Rules",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nbPiecesToAlign",
+            "printedName": "nbPiecesToAlign",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13Connect4Rules06PopOutB0V15nbPiecesToAlignSivp",
+            "mangledName": "$s13Connect4Rules06PopOutB0V15nbPiecesToAlignSivp",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13Connect4Rules06PopOutB0V15nbPiecesToAlignSivg",
+                "mangledName": "$s13Connect4Rules06PopOutB0V15nbPiecesToAlignSivg",
+                "moduleName": "Connect4Rules",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nbRows",
+            "printedName": "nbRows",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13Connect4Rules06PopOutB0V6nbRowsSivp",
+            "mangledName": "$s13Connect4Rules06PopOutB0V6nbRowsSivp",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13Connect4Rules06PopOutB0V6nbRowsSivg",
+                "mangledName": "$s13Connect4Rules06PopOutB0V6nbRowsSivg",
+                "moduleName": "Connect4Rules",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nbColumns",
+            "printedName": "nbColumns",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13Connect4Rules06PopOutB0V9nbColumnsSivp",
+            "mangledName": "$s13Connect4Rules06PopOutB0V9nbColumnsSivp",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13Connect4Rules06PopOutB0V9nbColumnsSivg",
+                "mangledName": "$s13Connect4Rules06PopOutB0V9nbColumnsSivg",
+                "moduleName": "Connect4Rules",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "historic",
+            "printedName": "historic",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Connect4Core.Move]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Move",
+                    "printedName": "Connect4Core.Move",
+                    "usr": "s:12Connect4Core4MoveV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13Connect4Rules06PopOutB0V8historicSay0A4Core4MoveVGvp",
+            "mangledName": "$s13Connect4Rules06PopOutB0V8historicSay0A4Core4MoveVGvp",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Connect4Core.Move]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Move",
+                        "printedName": "Connect4Core.Move",
+                        "usr": "s:12Connect4Core4MoveV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13Connect4Rules06PopOutB0V8historicSay0A4Core4MoveVGvg",
+                "mangledName": "$s13Connect4Rules06PopOutB0V8historicSay0A4Core4MoveVGvg",
+                "moduleName": "Connect4Rules",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(nbRows:nbColumns:nbPiecesToAlign:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Connect4Rules.PopOutRules?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PopOutRules",
+                    "printedName": "Connect4Rules.PopOutRules",
+                    "usr": "s:13Connect4Rules06PopOutB0V"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13Connect4Rules06PopOutB0V6nbRows0E7Columns0E13PiecesToAlignACSgSi_S2itcfc",
+            "mangledName": "$s13Connect4Rules06PopOutB0V6nbRows0E7Columns0E13PiecesToAlignACSgSi_S2itcfc",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(withNbRows:andNbColumns:andNbPiecesToAlign:andHistoric:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Connect4Rules.PopOutRules?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PopOutRules",
+                    "printedName": "Connect4Rules.PopOutRules",
+                    "usr": "s:13Connect4Rules06PopOutB0V"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Connect4Core.Move]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Move",
+                    "printedName": "Connect4Core.Move",
+                    "usr": "s:12Connect4Core4MoveV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13Connect4Rules06PopOutB0V10withNbRows03andF7Columns0hF13PiecesToAlign0H8HistoricACSgSi_S2iSay0A4Core4MoveVGtcfc",
+            "mangledName": "$s13Connect4Rules06PopOutB0V10withNbRows03andF7Columns0hF13PiecesToAlign0H8HistoricACSgSi_S2iSay0A4Core4MoveVGtcfc",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "createBoard",
+            "printedName": "createBoard()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules06PopOutB0V11createBoard0A4Core0F0VyF",
+            "mangledName": "$s13Connect4Rules06PopOutB0V11createBoard0A4Core0F0VyF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "checkBoard",
+            "printedName": "checkBoard(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules06PopOutB0V10checkBoardyy0A4Core0F0VKF",
+            "mangledName": "$s13Connect4Rules06PopOutB0V10checkBoardyy0A4Core0F0VKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getNextPlayer",
+            "printedName": "getNextPlayer(withBoard:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Owner",
+                "printedName": "Connect4Core.Owner",
+                "usr": "s:12Connect4Core5OwnerO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules06PopOutB0V13getNextPlayer9withBoard0A4Core5OwnerOAF0I0V_tKF",
+            "mangledName": "$s13Connect4Rules06PopOutB0V13getNextPlayer9withBoard0A4Core5OwnerOAF0I0V_tKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getMoves",
+            "printedName": "getMoves(in:of:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Connect4Core.Move]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Move",
+                    "printedName": "Connect4Core.Move",
+                    "usr": "s:12Connect4Core4MoveV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Owner",
+                "printedName": "Connect4Core.Owner",
+                "usr": "s:12Connect4Core5OwnerO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules06PopOutB0V8getMoves2in2ofSay0A4Core4MoveVGAG5BoardV_AG5OwnerOtKF",
+            "mangledName": "$s13Connect4Rules06PopOutB0V8getMoves2in2ofSay0A4Core4MoveVGAG5BoardV_AG5OwnerOtKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isMoveValid",
+            "printedName": "isMoveValid(onBoard:fromRow:andColumn:forPlayer:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Owner",
+                "printedName": "Connect4Core.Owner",
+                "usr": "s:12Connect4Core5OwnerO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules06PopOutB0V11isMoveValid7onBoard7fromRow9andColumn9forPlayerSb0A4Core0I0V_S2iAI5OwnerOtKF",
+            "mangledName": "$s13Connect4Rules06PopOutB0V11isMoveValid7onBoard7fromRow9andColumn9forPlayerSb0A4Core0I0V_S2iAI5OwnerOtKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isMoveValid",
+            "printedName": "isMoveValid(onBoard:withMove:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Move",
+                "printedName": "Connect4Core.Move",
+                "usr": "s:12Connect4Core4MoveV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules06PopOutB0V11isMoveValid7onBoard04withF0Sb0A4Core0I0V_AG0F0VtKF",
+            "mangledName": "$s13Connect4Rules06PopOutB0V11isMoveValid7onBoard04withF0Sb0A4Core0I0V_AG0F0VtKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isGameOver",
+            "printedName": "isGameOver(withBoard:andLastRowPlayed:andLastColumnPlayed:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(Swift.Bool, Connect4Core.Result)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Connect4Core.Result",
+                    "usr": "s:12Connect4Core6ResultO"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules06PopOutB0V10isGameOver9withBoard16andLastRowPlayed0jk6ColumnM0Sb_0A4Core6ResultOtAH0I0V_S2itKF",
+            "mangledName": "$s13Connect4Rules06PopOutB0V10isGameOver9withBoard16andLastRowPlayed0jk6ColumnM0Sb_0A4Core6ResultOtAH0I0V_S2itKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "playedMove",
+            "printedName": "playedMove(_:onStartingBoard:andResultingBoard:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Move",
+                "printedName": "Connect4Core.Move",
+                "usr": "s:12Connect4Core4MoveV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules06PopOutB0V10playedMove_15onStartingBoard012andResultingI0y0A4Core0F0V_AG0I0VAKtKF",
+            "mangledName": "$s13Connect4Rules06PopOutB0V10playedMove_15onStartingBoard012andResultingI0y0A4Core0F0V_AG0I0VAKtKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "Mutating",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "Mutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:13Connect4Rules06PopOutB0V",
+        "mangledName": "$s13Connect4Rules06PopOutB0V",
+        "moduleName": "Connect4Rules",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Rules",
+            "printedName": "Rules",
+            "usr": "s:12Connect4Core5RulesP",
+            "mangledName": "$s12Connect4Core5RulesP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Connect4Core",
+        "printedName": "Connect4Core",
+        "declKind": "Import",
+        "moduleName": "Connect4Rules"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TicTacToeRules",
+        "printedName": "TicTacToeRules",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "playMoveFunc",
+            "printedName": "playMoveFunc",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((inout Connect4Core.Board, Connect4Core.Move) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?))?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(inout Connect4Core.Board, Connect4Core.Move) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "BoardResult",
+                            "printedName": "Connect4Core.BoardResult",
+                            "usr": "s:12Connect4Core11BoardResultO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.Int?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.Int?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(Connect4Core.Board, Connect4Core.Move)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Board",
+                            "printedName": "Connect4Core.Board",
+                            "usr": "s:12Connect4Core5BoardV"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Move",
+                            "printedName": "Connect4Core.Move",
+                            "usr": "s:12Connect4Core4MoveV"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13Connect4Rules09TicTacToeB0V12playMoveFunc0A4Core11BoardResultO6result_SiSg3rowAI6columntAE0J0Vz_AE0G0VtcSgvp",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V12playMoveFunc0A4Core11BoardResultO6result_SiSg3rowAI6columntAE0J0Vz_AE0G0VtcSgvp",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((inout Connect4Core.Board, Connect4Core.Move) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?))?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(inout Connect4Core.Board, Connect4Core.Move) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Tuple",
+                            "printedName": "(result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "BoardResult",
+                                "printedName": "Connect4Core.BoardResult",
+                                "usr": "s:12Connect4Core11BoardResultO"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "Swift.Int?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Int",
+                                    "printedName": "Swift.Int",
+                                    "usr": "s:Si"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Optional",
+                                "printedName": "Swift.Int?",
+                                "children": [
+                                  {
+                                    "kind": "TypeNominal",
+                                    "name": "Int",
+                                    "printedName": "Swift.Int",
+                                    "usr": "s:Si"
+                                  }
+                                ],
+                                "usr": "s:Sq"
+                              }
+                            ]
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Tuple",
+                            "printedName": "(Connect4Core.Board, Connect4Core.Move)",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Board",
+                                "printedName": "Connect4Core.Board",
+                                "usr": "s:12Connect4Core5BoardV"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Move",
+                                "printedName": "Connect4Core.Move",
+                                "usr": "s:12Connect4Core4MoveV"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13Connect4Rules09TicTacToeB0V12playMoveFunc0A4Core11BoardResultO6result_SiSg3rowAI6columntAE0J0Vz_AE0G0VtcSgvg",
+                "mangledName": "$s13Connect4Rules09TicTacToeB0V12playMoveFunc0A4Core11BoardResultO6result_SiSg3rowAI6columntAE0J0Vz_AE0G0VtcSgvg",
+                "moduleName": "Connect4Rules",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13Connect4Rules09TicTacToeB0V4nameSSvp",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V4nameSSvp",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13Connect4Rules09TicTacToeB0V4nameSSvg",
+                "mangledName": "$s13Connect4Rules09TicTacToeB0V4nameSSvg",
+                "moduleName": "Connect4Rules",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "historic",
+            "printedName": "historic",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Connect4Core.Move]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Move",
+                    "printedName": "Connect4Core.Move",
+                    "usr": "s:12Connect4Core4MoveV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13Connect4Rules09TicTacToeB0V8historicSay0A4Core4MoveVGvp",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V8historicSay0A4Core4MoveVGvp",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Connect4Core.Move]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Move",
+                        "printedName": "Connect4Core.Move",
+                        "usr": "s:12Connect4Core4MoveV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13Connect4Rules09TicTacToeB0V8historicSay0A4Core4MoveVGvg",
+                "mangledName": "$s13Connect4Rules09TicTacToeB0V8historicSay0A4Core4MoveVGvg",
+                "moduleName": "Connect4Rules",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nbPiecesToAlign",
+            "printedName": "nbPiecesToAlign",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13Connect4Rules09TicTacToeB0V15nbPiecesToAlignSivp",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V15nbPiecesToAlignSivp",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13Connect4Rules09TicTacToeB0V15nbPiecesToAlignSivg",
+                "mangledName": "$s13Connect4Rules09TicTacToeB0V15nbPiecesToAlignSivg",
+                "moduleName": "Connect4Rules",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nbRows",
+            "printedName": "nbRows",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13Connect4Rules09TicTacToeB0V6nbRowsSivp",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V6nbRowsSivp",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13Connect4Rules09TicTacToeB0V6nbRowsSivg",
+                "mangledName": "$s13Connect4Rules09TicTacToeB0V6nbRowsSivg",
+                "moduleName": "Connect4Rules",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nbColumns",
+            "printedName": "nbColumns",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13Connect4Rules09TicTacToeB0V9nbColumnsSivp",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V9nbColumnsSivp",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13Connect4Rules09TicTacToeB0V9nbColumnsSivg",
+                "mangledName": "$s13Connect4Rules09TicTacToeB0V9nbColumnsSivg",
+                "moduleName": "Connect4Rules",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(nbRows:nbColumns:nbPiecesToAlign:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Connect4Rules.TicTacToeRules?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TicTacToeRules",
+                    "printedName": "Connect4Rules.TicTacToeRules",
+                    "usr": "s:13Connect4Rules09TicTacToeB0V"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13Connect4Rules09TicTacToeB0V6nbRows0F7Columns0F13PiecesToAlignACSgSi_S2itcfc",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V6nbRows0F7Columns0F13PiecesToAlignACSgSi_S2itcfc",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(withNbRows:andNbColumns:andNbPiecesToAlign:andHistoric:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Connect4Rules.TicTacToeRules?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TicTacToeRules",
+                    "printedName": "Connect4Rules.TicTacToeRules",
+                    "usr": "s:13Connect4Rules09TicTacToeB0V"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Connect4Core.Move]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Move",
+                    "printedName": "Connect4Core.Move",
+                    "usr": "s:12Connect4Core4MoveV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13Connect4Rules09TicTacToeB0V10withNbRows03andG7Columns0iG13PiecesToAlign0I8HistoricACSgSi_S2iSay0A4Core4MoveVGtcfc",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V10withNbRows03andG7Columns0iG13PiecesToAlign0I8HistoricACSgSi_S2iSay0A4Core4MoveVGtcfc",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "createBoard",
+            "printedName": "createBoard()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules09TicTacToeB0V11createBoard0A4Core0G0VyF",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V11createBoard0A4Core0G0VyF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "checkBoard",
+            "printedName": "checkBoard(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules09TicTacToeB0V10checkBoardyy0A4Core0G0VKF",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V10checkBoardyy0A4Core0G0VKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getNextPlayer",
+            "printedName": "getNextPlayer(withBoard:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Owner",
+                "printedName": "Connect4Core.Owner",
+                "usr": "s:12Connect4Core5OwnerO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules09TicTacToeB0V13getNextPlayer9withBoard0A4Core5OwnerOAF0J0V_tKF",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V13getNextPlayer9withBoard0A4Core5OwnerOAF0J0V_tKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getMoves",
+            "printedName": "getMoves(in:of:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Connect4Core.Move]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Move",
+                    "printedName": "Connect4Core.Move",
+                    "usr": "s:12Connect4Core4MoveV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Owner",
+                "printedName": "Connect4Core.Owner",
+                "usr": "s:12Connect4Core5OwnerO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules09TicTacToeB0V8getMoves2in2ofSay0A4Core4MoveVGAG5BoardV_AG5OwnerOtKF",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V8getMoves2in2ofSay0A4Core4MoveVGAG5BoardV_AG5OwnerOtKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isMoveValid",
+            "printedName": "isMoveValid(onBoard:fromRow:andColumn:forPlayer:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Owner",
+                "printedName": "Connect4Core.Owner",
+                "usr": "s:12Connect4Core5OwnerO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules09TicTacToeB0V11isMoveValid7onBoard7fromRow9andColumn9forPlayerSb0A4Core0J0V_S2iAI5OwnerOtKF",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V11isMoveValid7onBoard7fromRow9andColumn9forPlayerSb0A4Core0J0V_S2iAI5OwnerOtKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isMoveValid",
+            "printedName": "isMoveValid(onBoard:withMove:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Move",
+                "printedName": "Connect4Core.Move",
+                "usr": "s:12Connect4Core4MoveV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules09TicTacToeB0V11isMoveValid7onBoard04withG0Sb0A4Core0J0V_AG0G0VtKF",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V11isMoveValid7onBoard04withG0Sb0A4Core0J0V_AG0G0VtKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isGameOver",
+            "printedName": "isGameOver(withBoard:andLastRowPlayed:andLastColumnPlayed:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(Swift.Bool, Connect4Core.Result)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Connect4Core.Result",
+                    "usr": "s:12Connect4Core6ResultO"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules09TicTacToeB0V10isGameOver9withBoard16andLastRowPlayed0kl6ColumnN0Sb_0A4Core6ResultOtAH0J0V_S2itKF",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V10isGameOver9withBoard16andLastRowPlayed0kl6ColumnN0Sb_0A4Core6ResultOtAH0J0V_S2itKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "playedMove",
+            "printedName": "playedMove(_:onStartingBoard:andResultingBoard:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Move",
+                "printedName": "Connect4Core.Move",
+                "usr": "s:12Connect4Core4MoveV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Board",
+                "printedName": "Connect4Core.Board",
+                "usr": "s:12Connect4Core5BoardV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13Connect4Rules09TicTacToeB0V10playedMove_15onStartingBoard012andResultingJ0y0A4Core0G0V_AG0J0VAKtKF",
+            "mangledName": "$s13Connect4Rules09TicTacToeB0V10playedMove_15onStartingBoard012andResultingJ0y0A4Core0G0V_AG0J0VAKtKF",
+            "moduleName": "Connect4Rules",
+            "declAttributes": [
+              "Mutating",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "Mutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:13Connect4Rules09TicTacToeB0V",
+        "mangledName": "$s13Connect4Rules09TicTacToeB0V",
+        "moduleName": "Connect4Rules",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Rules",
+            "printedName": "Rules",
+            "usr": "s:12Connect4Core5RulesP",
+            "mangledName": "$s12Connect4Core5RulesP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
+      "kind": "StringLiteral",
+      "offset": 621,
+      "length": 15,
+      "value": "\"Pop Out Rules\""
+    },
+    {
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
+      "kind": "Array",
+      "offset": 798,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
+      "kind": "IntegerLiteral",
+      "offset": 843,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
+      "kind": "IntegerLiteral",
+      "offset": 885,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
+      "kind": "IntegerLiteral",
+      "offset": 935,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
+      "kind": "StringLiteral",
+      "offset": 446,
+      "length": 19,
+      "value": "\"Tic Tac Toe Rules\""
+    },
+    {
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
+      "kind": "Array",
+      "offset": 518,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
+      "kind": "IntegerLiteral",
+      "offset": 671,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
+      "kind": "IntegerLiteral",
+      "offset": 713,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
+      "kind": "IntegerLiteral",
+      "offset": 763,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
+      "kind": "Array",
+      "offset": 3217,
+      "length": 2,
+      "value": "[]"
+    }
+  ]
+}

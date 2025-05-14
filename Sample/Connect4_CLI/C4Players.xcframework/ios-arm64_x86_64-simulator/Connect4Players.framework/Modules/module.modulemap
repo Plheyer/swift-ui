@@ -1,0 +1,6 @@
+framework module Connect4Players {
+  umbrella header "Connect4Players.h"
+  export *
+
+  module * { export * }
+}

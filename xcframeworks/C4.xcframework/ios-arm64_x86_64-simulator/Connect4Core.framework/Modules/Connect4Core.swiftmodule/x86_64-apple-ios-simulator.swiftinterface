@@ -1,0 +1,207 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target x86_64-apple-ios18.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name Connect4Core
+@_exported import Connect4Core
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers open class AIPlayer : Connect4Core.Player {
+  @discardableResult
+  override open func chooseMove(in board: Connect4Core.Board, with rules: any Connect4Core.Rules) -> Connect4Core.Move?
+  override public init?(withName name: Swift.String, andId id: Connect4Core.Owner)
+  @objc deinit
+}
+public struct Board : Swift.Sendable {
+  public let nbRows: Swift.Int
+  public let nbColumns: Swift.Int
+  public var grid: [[Connect4Core.Piece?]] {
+    get
+  }
+  public var isFull: Swift.Bool {
+    get
+  }
+  public subscript(row: Swift.Int, column: Swift.Int) -> Connect4Core.Piece? {
+    get
+  }
+  public init?(withGrid grid: [[Connect4Core.Piece?]])
+  public init?(withNbRows nbRows: Swift.Int, andNbColumns nbColumns: Swift.Int)
+  public func countPieces(of owner: Connect4Core.Owner) -> Swift.Int
+  public func countPieces() -> (nbOfPiecesOfPlayer1: Swift.Int, nbOfPiecesOfPlayer2: Swift.Int)
+  public mutating func insert(piece: Connect4Core.Piece, atRow row: Swift.Int, andColumn column: Swift.Int) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)
+  public func getFirstEmptyRow(of column: Swift.Int) -> Swift.Int?
+  public mutating func insert(piece: Connect4Core.Piece, atColumn column: Swift.Int) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)
+  public mutating func removePiece(atRow row: Swift.Int, atColumn column: Swift.Int) -> Connect4Core.BoardResult
+  public mutating func insertOnTop(piece: Connect4Core.Piece, atColumn column: Swift.Int) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)
+  public mutating func insertOnBottom(piece: Connect4Core.Piece, atColumn column: Swift.Int) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)
+  public mutating func insertOnRight(piece: Connect4Core.Piece, atRow row: Swift.Int) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)
+  public mutating func insertOnLeft(piece: Connect4Core.Piece, atRow row: Swift.Int) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?)
+}
+extension Connect4Core.Board {
+  public func areAligned(withNbToAlign nbPiecesToAlign: Swift.Int, fromRow row: Swift.Int, andFromColumn column: Swift.Int) -> [Connect4Core.Cell]
+  public func checkHoles() -> Swift.Bool
+}
+public enum BoardResult : Swift.Equatable, Swift.Sendable {
+  case unknown
+  case ok
+  case failed(reason: Connect4Core.BoardFailingReason)
+  public static func == (a: Connect4Core.BoardResult, b: Connect4Core.BoardResult) -> Swift.Bool
+}
+public enum BoardFailingReason : Swift.Sendable {
+  case unknown, outOfBounds, cellNotEmpty, cellEmpty, columnFull
+  public static func == (a: Connect4Core.BoardFailingReason, b: Connect4Core.BoardFailingReason) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Cell : Swift.Equatable, Swift.Sendable {
+  public init(row: Swift.Int, col: Swift.Int, piece: Connect4Core.Piece?)
+  public let row: Swift.Int
+  public let col: Swift.Int
+  public let piece: Connect4Core.Piece?
+  public static func == (a: Connect4Core.Cell, b: Connect4Core.Cell) -> Swift.Bool
+}
+public struct Connect4Rules : Connect4Core.Rules, Swift.Sendable {
+  public var playMoveFunc: ((inout Connect4Core.Board, Connect4Core.Move) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?))? {
+    get
+  }
+  public let name: Swift.String
+  public var historic: [Connect4Core.Move] {
+    get
+  }
+  public let nbPiecesToAlign: Swift.Int
+  public let nbRows: Swift.Int
+  public let nbColumns: Swift.Int
+  public init?(nbRows: Swift.Int, nbColumns: Swift.Int, nbPiecesToAlign: Swift.Int)
+  public init?(withNbRows nbRows: Swift.Int, andNbColumns nbColumns: Swift.Int, andNbPiecesToAlign nbPiecesToAlign: Swift.Int, andHistoric historic: [Connect4Core.Move])
+  public func createBoard() -> Connect4Core.Board
+  public func checkBoard(_ board: Connect4Core.Board) throws
+  public func getNextPlayer(withBoard board: Connect4Core.Board) throws -> Connect4Core.Owner
+  public func getMoves(in board: Connect4Core.Board, of owner: Connect4Core.Owner) throws -> [Connect4Core.Move]
+  public func isMoveValid(onBoard board: Connect4Core.Board, fromRow: Swift.Int, andColumn column: Swift.Int, forPlayer player: Connect4Core.Owner) throws -> Swift.Bool
+  public func isMoveValid(onBoard board: Connect4Core.Board, withMove move: Connect4Core.Move) throws -> Swift.Bool
+  public mutating func playedMove(_ move: Connect4Core.Move, onStartingBoard board: Connect4Core.Board, andResultingBoard resultingBoard: Connect4Core.Board) throws
+  public func isGameOver(withBoard board: Connect4Core.Board, andLastRowPlayed row: Swift.Int, andLastColumnPlayed column: Swift.Int) throws -> (Swift.Bool, Connect4Core.Result)
+}
+extension Swift.Array where Element == [Connect4Core.Piece?] {
+  public var descr: Swift.String {
+    get
+  }
+}
+extension Swift.Array where Element == Swift.Int {
+  public func toMoves(withPlayer player: Connect4Core.Owner) -> [Connect4Core.Move]
+}
+@available(iOS 13.0, macOS 10.15, *)
+final public class Game : @unchecked Swift.Sendable {
+  final public var board: Connect4Core.Board {
+    get
+  }
+  final public var rules: any Connect4Core.Rules {
+    get
+  }
+  final public let players: [Connect4Core.Owner : Connect4Core.Player]
+  final public func addGameStartedListener(_ listener: @escaping (Connect4Core.Board) -> Swift.Void)
+  final public func addPlayerNotifiedListener(_ listener: @escaping (Connect4Core.Board, Connect4Core.Player) -> Swift.Void)
+  final public func addGameOverListener(_ listener: @escaping (Connect4Core.Board, Connect4Core.Result, Connect4Core.Player?) -> Swift.Void)
+  final public func addMoveChosenCallbacksListener(_ listener: @escaping (Connect4Core.Board, Connect4Core.Move, Connect4Core.Player) -> Swift.Void)
+  final public func addInvalidMoveCallbacksListener(_ listener: @escaping (Connect4Core.Board, Connect4Core.Move, Connect4Core.Player, Swift.Bool) -> Swift.Void)
+  final public func addBoardChangedListener(_ listener: @escaping (Connect4Core.Board) -> Swift.Void)
+  final public func addGameChangedListener(_ listener: @escaping (Connect4Core.Game, Connect4Core.Result) async throws -> Swift.Void)
+  public init(withBoard board: Connect4Core.Board, withRules rules: any Connect4Core.Rules, andPlayer1 player1: Connect4Core.Player, andPlayer2 player2: Connect4Core.Player) throws
+  convenience public init(withRules rules: any Connect4Core.Rules, andPlayer1 player1: Connect4Core.Player, andPlayer2 player2: Connect4Core.Player) throws
+  final public func start() async throws
+  final public func onPlayed(move: Connect4Core.Move?) async throws
+  @objc deinit
+}
+public enum GameError : Swift.Error, Swift.Equatable {
+  case invalidMove, nextPlayerError, badPlayerId(message: Swift.String), invalidRules
+  public static func == (a: Connect4Core.GameError, b: Connect4Core.GameError) -> Swift.Bool
+}
+@_inheritsConvenienceInitializers public class HumanPlayer : Connect4Core.Player {
+  public init?(withName name: Swift.String, andId id: Connect4Core.Owner, andInputMethod input: @escaping (_ hp: Connect4Core.HumanPlayer) -> Connect4Core.Move?)
+  override public init?(withName name: Swift.String, andId id: Connect4Core.Owner)
+  @discardableResult
+  override public func chooseMove(in board: Connect4Core.Board, with rules: any Connect4Core.Rules) -> Connect4Core.Move?
+  public func changeInput(input: @escaping (_ hp: Connect4Core.HumanPlayer) -> Connect4Core.Move?)
+  @objc deinit
+}
+public enum InvalidBoardError : Swift.Error, Swift.Equatable {
+  case badDimensions(nbRows: Swift.Int, nbColumns: Swift.Int, nbPiecesToAlign: Swift.Int)
+  case pieceWithNoOwner
+  case badNumberOfPiecesPlayed(nbPiecesOfPlayer1: Swift.Int, nbPiecesOfPlayer2: Swift.Int)
+  case gridWithHoles
+  public static func == (a: Connect4Core.InvalidBoardError, b: Connect4Core.InvalidBoardError) -> Swift.Bool
+}
+public struct Move : Swift.CustomStringConvertible, Swift.Equatable, Swift.Sendable {
+  public let owner: Connect4Core.Owner
+  public let row: Swift.Int
+  public let column: Swift.Int
+  public init(of owner: Connect4Core.Owner, toRow row: Swift.Int, toColumn column: Swift.Int)
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: Connect4Core.Move, b: Connect4Core.Move) -> Swift.Bool
+}
+public enum Owner : Swift.Sendable {
+  case noOne, player1, player2
+  public var simpleDescription: Swift.String {
+    get
+  }
+  public static func == (a: Connect4Core.Owner, b: Connect4Core.Owner) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Piece : Swift.CustomStringConvertible, Swift.Equatable, Swift.Sendable {
+  public let owner: Connect4Core.Owner
+  public init(withOwner owner: Connect4Core.Owner)
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: Connect4Core.Piece, b: Connect4Core.Piece) -> Swift.Bool
+}
+open class Player {
+  final public let name: Swift.String
+  final public let id: Connect4Core.Owner
+  public init?(withName name: Swift.String, andId id: Connect4Core.Owner)
+  @discardableResult
+  public func chooseMove(in board: Connect4Core.Board, with rules: any Connect4Core.Rules) -> Connect4Core.Move?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class RandomPlayer : Connect4Core.AIPlayer {
+  @discardableResult
+  override public func chooseMove(in board: Connect4Core.Board, with rules: any Connect4Core.Rules) -> Connect4Core.Move?
+  override public init?(withName name: Swift.String, andId id: Connect4Core.Owner)
+  @objc deinit
+}
+public enum Result : Swift.Equatable, Swift.Sendable {
+  case notFinished
+  case even
+  case winner(winner: Connect4Core.Owner, alignment: [Connect4Core.Cell])
+  public static func == (left: Connect4Core.Result, right: Connect4Core.Result) -> Swift.Bool
+}
+public protocol Rules {
+  func createBoard() -> Connect4Core.Board
+  func checkBoard(_ board: Connect4Core.Board) throws
+  func getNextPlayer(withBoard board: Connect4Core.Board) throws -> Connect4Core.Owner
+  func getMoves(in board: Connect4Core.Board, of: Connect4Core.Owner) throws -> [Connect4Core.Move]
+  func isMoveValid(onBoard: Connect4Core.Board, fromRow: Swift.Int, andColumn: Swift.Int, forPlayer: Connect4Core.Owner) throws -> Swift.Bool
+  func isMoveValid(onBoard: Connect4Core.Board, withMove move: Connect4Core.Move) throws -> Swift.Bool
+  func isGameOver(withBoard: Connect4Core.Board, andLastRowPlayed: Swift.Int, andLastColumnPlayed: Swift.Int) throws -> (Swift.Bool, Connect4Core.Result)
+  mutating func playedMove(_ move: Connect4Core.Move, onStartingBoard board: Connect4Core.Board, andResultingBoard resultingBoard: Connect4Core.Board) throws
+  init?(nbRows: Swift.Int, nbColumns: Swift.Int, nbPiecesToAlign: Swift.Int)
+  init?(withNbRows nbRows: Swift.Int, andNbColumns nbColumns: Swift.Int, andNbPiecesToAlign nbPiecesToAlign: Swift.Int, andHistoric historic: [Connect4Core.Move])
+  var name: Swift.String { get }
+  var historic: [Connect4Core.Move] { get }
+  var nbPiecesToAlign: Swift.Int { get }
+  var nbRows: Swift.Int { get }
+  var nbColumns: Swift.Int { get }
+  var playMoveFunc: ((inout Connect4Core.Board, Connect4Core.Move) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?))? { get }
+}
+extension Connect4Core.BoardFailingReason : Swift.Equatable {}
+extension Connect4Core.BoardFailingReason : Swift.Hashable {}
+extension Connect4Core.Owner : Swift.Equatable {}
+extension Connect4Core.Owner : Swift.Hashable {}

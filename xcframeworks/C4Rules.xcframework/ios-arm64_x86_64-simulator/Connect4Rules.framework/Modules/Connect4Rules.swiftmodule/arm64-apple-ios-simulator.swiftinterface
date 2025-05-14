@@ -1,0 +1,53 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios18.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name Connect4Rules
+import Connect4Core
+@_exported import Connect4Rules
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct PopOutRules : Connect4Core.Rules, Swift.Sendable {
+  public var playMoveFunc: ((inout Connect4Core.Board, Connect4Core.Move) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?))? {
+    get
+  }
+  public let name: Swift.String
+  public let nbPiecesToAlign: Swift.Int
+  public let nbRows: Swift.Int
+  public let nbColumns: Swift.Int
+  public var historic: [Connect4Core.Move] {
+    get
+  }
+  public init?(nbRows: Swift.Int, nbColumns: Swift.Int, nbPiecesToAlign: Swift.Int)
+  public init?(withNbRows nbRows: Swift.Int, andNbColumns nbColumns: Swift.Int, andNbPiecesToAlign nbPiecesToAlign: Swift.Int, andHistoric historic: [Connect4Core.Move])
+  public func createBoard() -> Connect4Core.Board
+  public func checkBoard(_ board: Connect4Core.Board) throws
+  public func getNextPlayer(withBoard board: Connect4Core.Board) throws -> Connect4Core.Owner
+  public func getMoves(in board: Connect4Core.Board, of owner: Connect4Core.Owner) throws -> [Connect4Core.Move]
+  public func isMoveValid(onBoard board: Connect4Core.Board, fromRow: Swift.Int, andColumn column: Swift.Int, forPlayer player: Connect4Core.Owner) throws -> Swift.Bool
+  public func isMoveValid(onBoard board: Connect4Core.Board, withMove move: Connect4Core.Move) throws -> Swift.Bool
+  public func isGameOver(withBoard board: Connect4Core.Board, andLastRowPlayed row: Swift.Int, andLastColumnPlayed column: Swift.Int) throws -> (Swift.Bool, Connect4Core.Result)
+  public mutating func playedMove(_ move: Connect4Core.Move, onStartingBoard board: Connect4Core.Board, andResultingBoard resultingBoard: Connect4Core.Board) throws
+}
+public struct TicTacToeRules : Connect4Core.Rules, Swift.Sendable {
+  public var playMoveFunc: ((inout Connect4Core.Board, Connect4Core.Move) -> (result: Connect4Core.BoardResult, row: Swift.Int?, column: Swift.Int?))? {
+    get
+  }
+  public let name: Swift.String
+  public var historic: [Connect4Core.Move] {
+    get
+  }
+  public let nbPiecesToAlign: Swift.Int
+  public let nbRows: Swift.Int
+  public let nbColumns: Swift.Int
+  public init?(nbRows: Swift.Int, nbColumns: Swift.Int, nbPiecesToAlign: Swift.Int)
+  public init?(withNbRows nbRows: Swift.Int, andNbColumns nbColumns: Swift.Int, andNbPiecesToAlign nbPiecesToAlign: Swift.Int, andHistoric historic: [Connect4Core.Move])
+  public func createBoard() -> Connect4Core.Board
+  public func checkBoard(_ board: Connect4Core.Board) throws
+  public func getNextPlayer(withBoard board: Connect4Core.Board) throws -> Connect4Core.Owner
+  public func getMoves(in board: Connect4Core.Board, of owner: Connect4Core.Owner) throws -> [Connect4Core.Move]
+  public func isMoveValid(onBoard board: Connect4Core.Board, fromRow row: Swift.Int, andColumn column: Swift.Int, forPlayer player: Connect4Core.Owner) throws -> Swift.Bool
+  public func isMoveValid(onBoard board: Connect4Core.Board, withMove move: Connect4Core.Move) throws -> Swift.Bool
+  public func isGameOver(withBoard board: Connect4Core.Board, andLastRowPlayed row: Swift.Int, andLastColumnPlayed column: Swift.Int) throws -> (Swift.Bool, Connect4Core.Result)
+  public mutating func playedMove(_ move: Connect4Core.Move, onStartingBoard board: Connect4Core.Board, andResultingBoard resultingBoard: Connect4Core.Board) throws
+}

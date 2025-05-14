@@ -1,0 +1,102 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-macos15.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name Connect4Persistance
+import Connect4Core
+@_exported import Connect4Persistance
+import Connect4Players
+import Connect4Rules
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+extension Connect4Core.Board : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(macOS 14.0, *)
+public struct FaceToFace {
+  public static func getResults(in file: Swift.String, withPlayer1Name pName1: Swift.String, andPlayer1Type pType1: Swift.String, andPlayer2Name pName2: Swift.String, andPlayer2Type pType2: Swift.String, for rules: Swift.String? = nil, withNbRows nbRows: Swift.Int, andNbColumns nbColumns: Swift.Int, andNbPiecesToAlign nbPiecesToAlign: Swift.Int, withFolder folderName: Swift.String? = nil) async throws -> [Connect4Persistance.GameResult]
+  public static func getResults(in file: Swift.String, with player1: Connect4Persistance.PlayerData, and player2: Connect4Persistance.PlayerData, for rules: Connect4Persistance.RulesData? = nil, withFolder folderName: Swift.String? = nil) async throws -> [Connect4Persistance.GameResult]
+}
+@available(macOS 14.0, *)
+extension Connect4Core.Game : Swift.Codable {
+  final public func encode(to encoder: any Swift.Encoder) throws
+  convenience public init(from decoder: any Swift.Decoder) throws
+}
+@available(macOS 10.15.0, *)
+public struct GameResult : Swift.Codable, Swift.Sendable {
+  public let date: Foundation.Date
+  public let players: [Connect4Persistance.PlayerData]
+  public let rules: Connect4Persistance.RulesData
+  public let winner: Connect4Core.Owner
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension Connect4Core.Move : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension Connect4Core.Owner : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 16.0.0, macOS 14.0, *)
+public struct Persistance {
+  public static func saveBoard(withName name: Swift.String, andBoard board: Connect4Core.Board, withFolderName folderName: Swift.String? = nil) async throws
+  public static func loadBoard(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> Connect4Core.Board?
+  public static func saveRules(withName name: Swift.String, andRules rules: any Connect4Core.Rules, withFolderName folderName: Swift.String? = nil) async throws
+  public static func loadRules(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> (any Connect4Core.Rules)?
+  public static func savePlayer(withName name: Swift.String, andPlayer player: Connect4Core.Player, withFolderName folderName: Swift.String? = nil) async throws
+  public static func loadPlayer(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> Connect4Core.Player?
+  public static func saveGame(withName name: Swift.String, andGame game: Connect4Core.Game, withFolderName folderName: Swift.String? = nil) async throws -> Swift.Bool
+  public static func loadGame(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> Connect4Core.Game?
+  public static func saveGameResult(withName name: Swift.String, andGame game: Connect4Core.Game, andResult result: Connect4Core.Result, withFolderName folderName: Swift.String? = nil) async throws -> Swift.Bool
+  public static func loadGameResults(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> [Connect4Persistance.GameResult]?
+}
+public enum PersistanceError : Swift.Error {
+  case invalidBoard, invalidRules, invalidPlayer, invalidGame, invalidResults
+  public static func == (a: Connect4Persistance.PersistanceError, b: Connect4Persistance.PersistanceError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Connect4Core.Piece : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(macOS 10.15.0, *)
+public struct PlayerData : Swift.Codable, Swift.Sendable {
+  public let name: Swift.String
+  public let id: Connect4Core.Owner
+  public let type: Swift.String
+  public init(name: Swift.String, id: Connect4Core.Owner, type: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+  public func toPlayer() -> Connect4Core.Player?
+}
+public class ReplayPlayer : Connect4Core.AIPlayer {
+  public init?(withName name: Swift.String, andId id: Connect4Core.Owner, andHistoric historic: [Connect4Core.Move])
+  @discardableResult
+  override public func chooseMove(in board: Connect4Core.Board, with rules: any Connect4Core.Rules) -> Connect4Core.Move?
+  @objc deinit
+}
+@available(macOS 10.15, *)
+extension Connect4Core.Game {
+  @available(macOS 14.0, *)
+  convenience public init(fromSavedGame file: Swift.String, inFolder folderName: Swift.String? = nil) async throws
+}
+public struct RulesData : Swift.Codable, Swift.Sendable {
+  public let nbRows: Swift.Int
+  public let nbColumns: Swift.Int
+  public let nbPiecesToAlign: Swift.Int
+  public let historic: [Connect4Core.Move]
+  public let type: Swift.String
+  public init(from rules: any Connect4Core.Rules)
+  public func toRules() -> (any Connect4Core.Rules)?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension Connect4Persistance.PersistanceError : Swift.Equatable {}
+extension Connect4Persistance.PersistanceError : Swift.Hashable {}
