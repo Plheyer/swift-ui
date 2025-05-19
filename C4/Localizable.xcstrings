@@ -1,6 +1,19 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    "%@ %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$lld"
+          }
+        }
+      }
+    },
     "Columns" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -14,6 +27,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Colonnes"
+          }
+        }
+      }
+    },
+    "Connect4" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connect 4!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puissance 4 !"
           }
         }
       }
@@ -34,6 +64,9 @@
           }
         }
       }
+    },
+    "IA" : {
+
     },
     "LimitedTime" : {
       "extractionState" : "manual",
@@ -120,6 +153,9 @@
         }
       }
     },
+    "Player type" : {
+
+    },
     "Player1" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -137,6 +173,9 @@
         }
       }
     },
+    "Player1Placeholder" : {
+
+    },
     "Player2" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -153,6 +192,9 @@
           }
         }
       }
+    },
+    "Player2Placeholder" : {
+
     },
     "Results" : {
       "extractionState" : "manual",

@@ -11,9 +11,7 @@ import SwiftUI
 struct C4App: App {
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                HomePage()
-            }
+            NavigationView()
         }
     }
 }

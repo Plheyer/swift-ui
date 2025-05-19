@@ -14,6 +14,7 @@ struct HomePage: View {
             Image("HomeImage")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+            Text(String(localized: "Connect4")).bold().font(.largeTitle)
             Spacer()
             
             Button(action: {}) {
