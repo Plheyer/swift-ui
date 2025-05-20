@@ -17,7 +17,7 @@ struct HomePage: View {
             Text(String(localized: "Connect4")).bold().font(.largeTitle)
             Spacer()
             
-            Button(action: {}) {
+            NavigationLink(destination: LaunchGame()) {
                 Text(String(localized: "NewGame"))
             }.buttonStyle(.borderedProminent)
             

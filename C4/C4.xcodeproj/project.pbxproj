@@ -12,6 +12,14 @@
 		EC328B202DD470D500CB402A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC328B1F2DD470D500CB402A /* Images.xcassets */; };
 		EC3E6C252DD4766E00D798E5 /* LaunchGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E6C242DD4766E00D798E5 /* LaunchGame.swift */; };
 		EC6A4E1F2DDBBD1700D7E398 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E1E2DDBBD1700D7E398 /* NavigationView.swift */; };
+		EC6A4E242DDCFF6B00D7E398 /* ChoosePlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E232DDCFF6B00D7E398 /* ChoosePlayerComponent.swift */; };
+		EC6A4E272DDD040900D7E398 /* ChooseRulesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E262DDD040900D7E398 /* ChooseRulesComponent.swift */; };
+		EC6A4E2F2DDD0D2100D7E398 /* C4Persistance.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2A2DDD0D0700D7E398 /* C4Persistance.xcframework */; };
+		EC6A4E312DDD0D2600D7E398 /* C4Rules.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2C2DDD0D0700D7E398 /* C4Rules.xcframework */; };
+		EC6A4E322DDD0DA600D7E398 /* C4.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E292DDD0D0700D7E398 /* C4.xcframework */; };
+		EC6A4E332DDD0DA600D7E398 /* C4.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E292DDD0D0700D7E398 /* C4.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC6A4E352DDD0DAA00D7E398 /* C4Players.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */; };
+		EC6A4E362DDD0DAA00D7E398 /* C4Players.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ECB94EE02DD46EE200D13E5A /* C4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB94EDF2DD46EE200D13E5A /* C4App.swift */; };
 		ECB94EE22DD46EE200D13E5A /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB94EE12DD46EE200D13E5A /* HomePage.swift */; };
 		ECB94EE42DD46EE300D13E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB94EE32DD46EE300D13E5A /* Assets.xcassets */; };
@@ -38,12 +46,33 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EC6A4E342DDD0DA600D7E398 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EC6A4E332DDD0DA600D7E398 /* C4.xcframework in Embed Frameworks */,
+				EC6A4E362DDD0DAA00D7E398 /* C4Players.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		EC328B1B2DD4704B00CB402A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		EC328B1D2DD470A200CB402A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EC328B1F2DD470D500CB402A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC3E6C242DD4766E00D798E5 /* LaunchGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchGame.swift; sourceTree = "<group>"; };
 		EC6A4E1E2DDBBD1700D7E398 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		EC6A4E232DDCFF6B00D7E398 /* ChoosePlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlayerComponent.swift; sourceTree = "<group>"; };
+		EC6A4E262DDD040900D7E398 /* ChooseRulesComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRulesComponent.swift; sourceTree = "<group>"; };
+		EC6A4E292DDD0D0700D7E398 /* C4.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = C4.xcframework; sourceTree = "<group>"; };
+		EC6A4E2A2DDD0D0700D7E398 /* C4Persistance.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = C4Persistance.xcframework; sourceTree = "<group>"; };
+		EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = C4Players.xcframework; sourceTree = "<group>"; };
+		EC6A4E2C2DDD0D0700D7E398 /* C4Rules.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = C4Rules.xcframework; sourceTree = "<group>"; };
 		ECB94EDC2DD46EE200D13E5A /* C4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB94EDF2DD46EE200D13E5A /* C4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4App.swift; sourceTree = "<group>"; };
 		ECB94EE12DD46EE200D13E5A /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
@@ -62,6 +91,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6A4E322DDD0DA600D7E398 /* C4.xcframework in Frameworks */,
+				EC6A4E312DDD0D2600D7E398 /* C4Rules.xcframework in Frameworks */,
+				EC6A4E2F2DDD0D2100D7E398 /* C4Persistance.xcframework in Frameworks */,
+				EC6A4E352DDD0DAA00D7E398 /* C4Players.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,14 +115,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EC6A4E1D2DDBBCF200D7E398 /* Views */ = {
+		EC6A4E212DDCFECE00D7E398 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EC3E6C242DD4766E00D798E5 /* LaunchGame.swift */,
 				ECB94EE12DD46EE200D13E5A /* HomePage.swift */,
+				EC3E6C242DD4766E00D798E5 /* LaunchGame.swift */,
 				EC6A4E1E2DDBBD1700D7E398 /* NavigationView.swift */,
 			);
-			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EC6A4E222DDCFEE200D7E398 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EC6A4E232DDCFF6B00D7E398 /* ChoosePlayerComponent.swift */,
+				EC6A4E262DDD040900D7E398 /* ChooseRulesComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EC6A4E282DDD0D0700D7E398 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC6A4E2D2DDD0D0700D7E398 /* xcframeworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC6A4E2D2DDD0D0700D7E398 /* xcframeworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC6A4E292DDD0D0700D7E398 /* C4.xcframework */,
+				EC6A4E2A2DDD0D0700D7E398 /* C4Persistance.xcframework */,
+				EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */,
+				EC6A4E2C2DDD0D0700D7E398 /* C4Rules.xcframework */,
+			);
+			name = xcframeworks;
+			path = ../xcframeworks;
 			sourceTree = "<group>";
 		};
 		ECB94ED32DD46EE200D13E5A = {
@@ -102,6 +164,7 @@
 				ECB94EF02DD46EE300D13E5A /* C4Tests */,
 				ECB94EFA2DD46EE300D13E5A /* C4UITests */,
 				ECB94EDD2DD46EE200D13E5A /* Products */,
+				EC6A4E282DDD0D0700D7E398 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,7 +181,8 @@
 		ECB94EDE2DD46EE200D13E5A /* C4 */ = {
 			isa = PBXGroup;
 			children = (
-				EC6A4E1D2DDBBCF200D7E398 /* Views */,
+				EC6A4E222DDCFEE200D7E398 /* Components */,
+				EC6A4E212DDCFECE00D7E398 /* Views */,
 				ECB94EDF2DD46EE200D13E5A /* C4App.swift */,
 				ECB94EE32DD46EE300D13E5A /* Assets.xcassets */,
 				ECB94EE52DD46EE300D13E5A /* C4.entitlements */,
@@ -162,6 +226,7 @@
 				ECB94ED82DD46EE200D13E5A /* Sources */,
 				ECB94ED92DD46EE200D13E5A /* Frameworks */,
 				ECB94EDA2DD46EE200D13E5A /* Resources */,
+				EC6A4E342DDD0DA600D7E398 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -286,7 +351,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6A4E242DDCFF6B00D7E398 /* ChoosePlayerComponent.swift in Sources */,
 				ECB94EE22DD46EE200D13E5A /* HomePage.swift in Sources */,
+				EC6A4E272DDD040900D7E398 /* ChooseRulesComponent.swift in Sources */,
 				EC3E6C252DD4766E00D798E5 /* LaunchGame.swift in Sources */,
 				EC6A4E1F2DDBBD1700D7E398 /* NavigationView.swift in Sources */,
 				ECB94EE02DD46EE200D13E5A /* C4App.swift in Sources */,

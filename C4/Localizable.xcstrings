@@ -1,15 +1,19 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-
-    },
-    "%@ %lld" : {
+    "ChoosePlayerNamePlaceholer" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$lld"
+            "state" : "translated",
+            "value" : "Enter the player name..."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrez le nom du joueur..."
           }
         }
       }
@@ -65,8 +69,22 @@
         }
       }
     },
-    "IA" : {
-
+    "LaunchGameTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NEW GAME"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NOUVELLE PARTIE"
+          }
+        }
+      }
     },
     "LimitedTime" : {
       "extractionState" : "manual",
@@ -153,9 +171,6 @@
         }
       }
     },
-    "Player type" : {
-
-    },
     "Player1" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -173,9 +188,6 @@
         }
       }
     },
-    "Player1Placeholder" : {
-
-    },
     "Player2" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -192,9 +204,6 @@
           }
         }
       }
-    },
-    "Player2Placeholder" : {
-
     },
     "Results" : {
       "extractionState" : "manual",
