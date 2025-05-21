@@ -7302,112 +7302,112 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Board.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Board.swift",
       "kind": "IntegerLiteral",
       "offset": 1101,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Board.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Board.swift",
       "kind": "IntegerLiteral",
       "offset": 1143,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Connect4Rules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Connect4Rules.swift",
       "kind": "StringLiteral",
       "offset": 398,
       "length": 24,
       "value": "\"Classic Connect4 Rules\""
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Connect4Rules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Connect4Rules.swift",
       "kind": "Array",
       "offset": 475,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Connect4Rules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Connect4Rules.swift",
       "kind": "IntegerLiteral",
       "offset": 616,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Connect4Rules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Connect4Rules.swift",
       "kind": "IntegerLiteral",
       "offset": 658,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Connect4Rules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Connect4Rules.swift",
       "kind": "IntegerLiteral",
       "offset": 708,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Game.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Game.swift",
       "kind": "Array",
       "offset": 284,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Game.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Game.swift",
       "kind": "Array",
       "offset": 612,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Game.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Game.swift",
       "kind": "Array",
       "offset": 997,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Game.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Game.swift",
       "kind": "Array",
       "offset": 1401,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Game.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Game.swift",
       "kind": "Array",
       "offset": 1812,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Game.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Game.swift",
       "kind": "Array",
       "offset": 2238,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Game.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Game.swift",
       "kind": "Array",
       "offset": 2562,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Game.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Game.swift",
       "kind": "BooleanLiteral",
       "offset": 3711,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Core\/Connect4Core\/Game.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Game.swift",
       "kind": "BooleanLiteral",
       "offset": 3753,
       "length": 5,

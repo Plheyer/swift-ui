@@ -1741,77 +1741,77 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
       "kind": "StringLiteral",
       "offset": 621,
       "length": 15,
       "value": "\"Pop Out Rules\""
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
       "kind": "Array",
       "offset": 798,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
       "kind": "IntegerLiteral",
       "offset": 843,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
       "kind": "IntegerLiteral",
       "offset": 885,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Rules\/Connect4Rules\/PopOutRules.swift",
       "kind": "IntegerLiteral",
       "offset": 935,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
       "kind": "StringLiteral",
       "offset": 446,
       "length": 19,
       "value": "\"Tic Tac Toe Rules\""
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
       "kind": "Array",
       "offset": 518,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
       "kind": "IntegerLiteral",
       "offset": 671,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
       "kind": "IntegerLiteral",
       "offset": 713,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
       "kind": "IntegerLiteral",
       "offset": 763,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/prepaSwiftUI\/package\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
+      "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Rules\/Connect4Rules\/TicTacToeRules.swift",
       "kind": "Array",
       "offset": 3217,
       "length": 2,

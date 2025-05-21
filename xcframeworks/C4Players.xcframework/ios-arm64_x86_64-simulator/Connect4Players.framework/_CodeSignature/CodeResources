@@ -10,47 +10,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		8Vdr5MDoGU7BxWPzDNwQPusXZrc=
+		BI0pNGnP4swcthgnXch8/1gfvWc=
 		</data>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		VyY/0TKmxWgeD2p2FmSgTx1T5H8=
+		YBwnzCBcj5OnlGDytu3jx+137pM=
 		</data>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		p0yCzlDaFh9pL30aIXtAmOsv1TE=
+		6+bg2R1A/s5/7FXn4OBHv3Gcb0Y=
 		</data>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		uZbzC4BOEDwEvcyzw0WNTCADSm4=
+		Uss6oPLam2aNfnIjnHyk9GNycIY=
 		</data>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		p0yCzlDaFh9pL30aIXtAmOsv1TE=
+		6+bg2R1A/s5/7FXn4OBHv3Gcb0Y=
 		</data>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		lIyf0KRIjATnrtUOPinrg81iLho=
+		aokFIWc55c4IRm+0A4/9z3KzzYo=
 		</data>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		VyY/0TKmxWgeD2p2FmSgTx1T5H8=
+		YBwnzCBcj5OnlGDytu3jx+137pM=
 		</data>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		/UP7wNgxhx8n3IjtMqFMpd+80CQ=
+		9YVhmaGh4RWrMJyJ0Q4oWHORLGE=
 		</data>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		/eMjA6YfB+wiozOF485/5roK/3c=
+		9k36zktBGR/QxEeRScUPM4VJXAc=
 		</data>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		/UP7wNgxhx8n3IjtMqFMpd+80CQ=
+		9YVhmaGh4RWrMJyJ0Q4oWHORLGE=
 		</data>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Agju2+XRtYWcw78zQ+mgg6W9IDM=
+		uJnnmEO+fCUbo5FB9JgTrYI/KCQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,70 +70,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+TsH5DvfQeuNekxk8wK1j7sNtPxbltglYg1Ohf8xrJ8=
+			GVMnpqnwLpGz6zAsBukC77sRs35z7M/OZMZfkjEz2xk=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QnelvGJVtrlgqGCLTWmPeVoFIwbW9GHm37XVbr4e07o=
+			YQqHhea6iwIUceso3U2gk3emFtlmY547cQ5Uq//yyFE=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hqShFX5ufXNdhqlr0ws+eeB890KfZJWr77KMKesypzY=
+			KwlP384nD9ucCyXzPpeokgXI0RkDVDl3u6I2UHUm7Z4=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QnelvGJVtrlgqGCLTWmPeVoFIwbW9GHm37XVbr4e07o=
+			YQqHhea6iwIUceso3U2gk3emFtlmY547cQ5Uq//yyFE=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eB+ZTmrzwYQXyxy0ALvJp3GeMs40ktGqyldqdgQMJBY=
+			jdmJPp+suaIFDy1tZNN12C1/nV5ogeTD1zN8Pd8KLMw=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+TsH5DvfQeuNekxk8wK1j7sNtPxbltglYg1Ohf8xrJ8=
+			GVMnpqnwLpGz6zAsBukC77sRs35z7M/OZMZfkjEz2xk=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1Qb9nNaVu8/bn/smuHY0wFFrDQJnSUNXPECfXvrrQhA=
+			WSNh6amqA2vpn78y7J53KpX01Wam85omQtT1HhrmJN8=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			crNoYRE3js4eult4nroO6g/+6XLuqyZoGmWB+6k5FM8=
+			2Qoyb1DBRdj85Y3F0oREnpbzyCstnGH2MpAU6/KnAq4=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1Qb9nNaVu8/bn/smuHY0wFFrDQJnSUNXPECfXvrrQhA=
+			WSNh6amqA2vpn78y7J53KpX01Wam85omQtT1HhrmJN8=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			A6sFTjMkUwQSK4eszHUMkx8GCZrH9HRYGWW8W6fK508=
+			uv2PXZloqUVTZsHGUICSyEAF1npPlZ5FFl8QM9aJoz0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

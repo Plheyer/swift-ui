@@ -1,6 +1,19 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    "%@ %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$lld"
+          }
+        }
+      }
+    },
     "ChoosePlayerNamePlaceholer" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -170,6 +183,9 @@
           }
         }
       }
+    },
+    "Player type" : {
+
     },
     "Player1" : {
       "extractionState" : "manual",

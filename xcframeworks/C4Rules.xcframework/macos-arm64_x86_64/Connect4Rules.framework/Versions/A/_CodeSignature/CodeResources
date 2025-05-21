@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		4nC+kcKTEfEPwFuy5NaFfyiTr3M=
+		+6c9FfeVDVQTA1/5ggNM4QuZToE=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -22,70 +22,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+0yQse+le9tgHmPJoff1W+VcTOdLIMdJwPVTGZntM9U=
+			bmBU/ieEnPyDYz/+9/wxMxTLegHofORTYAk0AVwSCz8=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/arm64-apple-macos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zjeh8yrX3hwWy+eOCCbhVCTtwqgxTcZ5NcDjMPvosXM=
+			H2LI9h5Ehc4INZp74h3EGyHtv6LLH6b6r5A/4dcjpzI=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/arm64-apple-macos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tFEaivc4n1/QAfnDv52FyIVYXn1ifc5ukAYYw4SD9GE=
+			yLnq7BIiUsoG55OGH3cAYjMJzrwtO6tarBsX2gp+UTk=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/arm64-apple-macos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zjeh8yrX3hwWy+eOCCbhVCTtwqgxTcZ5NcDjMPvosXM=
+			H2LI9h5Ehc4INZp74h3EGyHtv6LLH6b6r5A/4dcjpzI=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/arm64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			X+w9fOa8qhaTR0wYW+dv/c8RVPjyCm+toUGTNgI4fng=
+			k70cqzgAIlG1qzP4Rd3Ka3+Bz/kq6/Dwry7/YVDnVUw=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/x86_64-apple-macos.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+0yQse+le9tgHmPJoff1W+VcTOdLIMdJwPVTGZntM9U=
+			bmBU/ieEnPyDYz/+9/wxMxTLegHofORTYAk0AVwSCz8=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/x86_64-apple-macos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iXdBPIZXQUhXXOKhS6o8pyOwn5C9grFkj12Pzk2SNFI=
+			qn/nv2ezrYvEKh+Hwe9g7KbXM/YdDO9CnP6JUPoDDLE=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/x86_64-apple-macos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			I1oMITy0FajzkQ4J0K8qnw2oNd6pGyIFjDH0MdG8y2I=
+			RpzSYCQ8i6UqKpx63LQoW5PKoj96iSv+9czFLCcKGe0=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/x86_64-apple-macos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iXdBPIZXQUhXXOKhS6o8pyOwn5C9grFkj12Pzk2SNFI=
+			qn/nv2ezrYvEKh+Hwe9g7KbXM/YdDO9CnP6JUPoDDLE=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/x86_64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3pKy34KxCvs+XuX1BhxiHVEUUGjRFlwi+/GTT0cXyLU=
+			5NVLhFsoEzfvNrZSszp6L9t1rzx4aNuwOypr899e0eE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -99,7 +99,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			26XJz0/4S1N1Pn5Q7h2iPs//Kzd2M2LI7tJu+yZAu7E=
+			39JrEam3zPhTAx6Sux0E4euBkqRcF/DBAKRPl4Ye3Ng=
 			</data>
 		</dict>
 	</dict>

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		dfarOv904MlK2ctYJnsSbtlduCM=
+		a+QcFoahNkI4zzhkOG3HdFH/uAs=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -22,70 +22,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qKtqKSn+UAJWIFtXgYMDbJJRJpZTgM+eM9K2lmhOyVw=
+			3bKNmAxFqF8BqEo1Dcx9t9Fn4/X+FiFfuInmOIL5rS4=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/arm64-apple-macos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Xuyx/lbKQzGAKN94DbzYBWOBKafwn/zABv3NaneB3i4=
+			j/T/2L3dzZB0Y2yKk7FqMkUxIRgPnuyvURewlapCagc=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/arm64-apple-macos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UtHvbeIlwA3Qa4aYaUbrByTbzzWubub8Iz5Q8HezEq4=
+			zXi1DQSJ0dyceavlWliOVbquXwAs2+zzgkWoQyP0HXE=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/arm64-apple-macos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Xuyx/lbKQzGAKN94DbzYBWOBKafwn/zABv3NaneB3i4=
+			j/T/2L3dzZB0Y2yKk7FqMkUxIRgPnuyvURewlapCagc=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/arm64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2RwC5tZa2bF03zKUd57M3gGIL1y7wyLbVOdvJXwMBT4=
+			L6e6qGYDM/rN3mhCs1w1JU3nRWU5+hq4/OBKXetDLEw=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-macos.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qKtqKSn+UAJWIFtXgYMDbJJRJpZTgM+eM9K2lmhOyVw=
+			3bKNmAxFqF8BqEo1Dcx9t9Fn4/X+FiFfuInmOIL5rS4=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-macos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yo4l8vv7fLy8+1Z8ronH7M2P8cr9ZuFdLzwX/gVopvo=
+			XlsGkgkTnbTV5u4f6J9HYXdjZQv4gXB4ILjI5Ggi5gE=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-macos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OQa+sFzBQ4IqbwYaUBirHjF7/SaoI/2CaifbWCc4pas=
+			wDZbfPcrBFtIXnxdYwDSGNNlTVux84cJjhKB7T39X3k=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-macos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yo4l8vv7fLy8+1Z8ronH7M2P8cr9ZuFdLzwX/gVopvo=
+			XlsGkgkTnbTV5u4f6J9HYXdjZQv4gXB4ILjI5Ggi5gE=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zJ2EEvFUDEmKYJmuTmOSP9O3Cqs9TmsYTfGEezwHnBg=
+			BGJnFNYG4cfOClerUB6lNXBRWWteQ/hkuFdedddQDUU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -99,7 +99,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZvA7KUXwgsCWvtnKjHhmOvV5lzduO2VVQKCOpbjC7yQ=
+			A1eHkcZoQibsmXtQmwn8lL9SbdszqkFbHNgp51DTRaw=
 			</data>
 		</dict>
 	</dict>

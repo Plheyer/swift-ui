@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		A0n5orIP7yjGqAlVH71d30LiCn0=
+		n0WfEAvqQeJLHsMyDH2cCHYn6DE=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -22,70 +22,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+TsH5DvfQeuNekxk8wK1j7sNtPxbltglYg1Ohf8xrJ8=
+			GVMnpqnwLpGz6zAsBukC77sRs35z7M/OZMZfkjEz2xk=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-macos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CocbVR2cUluGh5rCUZ92HDpdi9LBi+qZzdWMxDdhQjo=
+			w7xY9I6FEPAn8CMqHX0qW+xmEtfzScMtvPCeGiQKi10=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-macos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sm8QNcmGOZbeuf6Kqn9pZPPbJOcvHvY76LqQ+1P/SRU=
+			L2vAI4s3hxzlD/uGNHHPzvf9v7sdV/jpOaoS3vRLINg=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-macos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CocbVR2cUluGh5rCUZ92HDpdi9LBi+qZzdWMxDdhQjo=
+			w7xY9I6FEPAn8CMqHX0qW+xmEtfzScMtvPCeGiQKi10=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/vRug7y1HBEzPyPxbSaRmG64vC1i5jCqmHWzkKgOSR4=
+			oXqieaLuWVz4LflEos9b7PJUD8o7kzzumJiS/+ykqyE=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-macos.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+TsH5DvfQeuNekxk8wK1j7sNtPxbltglYg1Ohf8xrJ8=
+			GVMnpqnwLpGz6zAsBukC77sRs35z7M/OZMZfkjEz2xk=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-macos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L/gVETxBz+JqBzpXx51ou2BRUNeePMfLKUjvyg6SZAY=
+			YlbzGYTvNyzF2rTLYFPHcn6IP/tqIdc0U9D8P8ALzZI=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-macos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5xNns1jdWEjuMddJocLIEtjsN1ey5E2+ngShetaOvo0=
+			igLYX/9cN4xfzTN16osG7QijRLdLNblTaEkds1NLQDU=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-macos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L/gVETxBz+JqBzpXx51ou2BRUNeePMfLKUjvyg6SZAY=
+			YlbzGYTvNyzF2rTLYFPHcn6IP/tqIdc0U9D8P8ALzZI=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gjOLgiFrPrmfVFWv+OtdWsEDcbCtPVrIwQbieEXuC7A=
+			IMQlu6HgPwBSDFGTMpfi4Zc/gva6EvKDRI9kISYXMhM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -99,7 +99,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BPxP+jBF5S2gY3Gr2kaGW4HARfl3lzbW+h8YDHYOPIw=
+			n5yfYYKr2JJtYL533FZrL0yR9TrW4djpFxjseux4TQY=
 			</data>
 		</dict>
 	</dict>

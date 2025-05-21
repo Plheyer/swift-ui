@@ -14,12 +14,10 @@
 		EC6A4E1F2DDBBD1700D7E398 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E1E2DDBBD1700D7E398 /* NavigationView.swift */; };
 		EC6A4E242DDCFF6B00D7E398 /* ChoosePlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E232DDCFF6B00D7E398 /* ChoosePlayerComponent.swift */; };
 		EC6A4E272DDD040900D7E398 /* ChooseRulesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E262DDD040900D7E398 /* ChooseRulesComponent.swift */; };
-		EC6A4E2F2DDD0D2100D7E398 /* C4Persistance.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2A2DDD0D0700D7E398 /* C4Persistance.xcframework */; };
-		EC6A4E312DDD0D2600D7E398 /* C4Rules.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2C2DDD0D0700D7E398 /* C4Rules.xcframework */; };
-		EC6A4E322DDD0DA600D7E398 /* C4.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E292DDD0D0700D7E398 /* C4.xcframework */; };
-		EC6A4E332DDD0DA600D7E398 /* C4.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E292DDD0D0700D7E398 /* C4.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EC6A4E352DDD0DAA00D7E398 /* C4Players.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */; };
-		EC6A4E362DDD0DAA00D7E398 /* C4Players.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC6A4E372DDDA5D900D7E398 /* C4.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E292DDD0D0700D7E398 /* C4.xcframework */; };
+		EC6A4E382DDDA5DD00D7E398 /* C4Persistance.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2A2DDD0D0700D7E398 /* C4Persistance.xcframework */; };
+		EC6A4E392DDDA5E000D7E398 /* C4Players.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */; };
+		EC6A4E3A2DDDA5E200D7E398 /* C4Rules.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2C2DDD0D0700D7E398 /* C4Rules.xcframework */; };
 		ECB94EE02DD46EE200D13E5A /* C4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB94EDF2DD46EE200D13E5A /* C4App.swift */; };
 		ECB94EE22DD46EE200D13E5A /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB94EE12DD46EE200D13E5A /* HomePage.swift */; };
 		ECB94EE42DD46EE300D13E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB94EE32DD46EE300D13E5A /* Assets.xcassets */; };
@@ -45,21 +43,6 @@
 			remoteInfo = C4;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		EC6A4E342DDD0DA600D7E398 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				EC6A4E332DDD0DA600D7E398 /* C4.xcframework in Embed Frameworks */,
-				EC6A4E362DDD0DAA00D7E398 /* C4Players.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EC328B1B2DD4704B00CB402A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -91,10 +74,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC6A4E322DDD0DA600D7E398 /* C4.xcframework in Frameworks */,
-				EC6A4E312DDD0D2600D7E398 /* C4Rules.xcframework in Frameworks */,
-				EC6A4E2F2DDD0D2100D7E398 /* C4Persistance.xcframework in Frameworks */,
-				EC6A4E352DDD0DAA00D7E398 /* C4Players.xcframework in Frameworks */,
+				EC6A4E3A2DDDA5E200D7E398 /* C4Rules.xcframework in Frameworks */,
+				EC6A4E392DDDA5E000D7E398 /* C4Players.xcframework in Frameworks */,
+				EC6A4E382DDDA5DD00D7E398 /* C4Persistance.xcframework in Frameworks */,
+				EC6A4E372DDDA5D900D7E398 /* C4.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +209,6 @@
 				ECB94ED82DD46EE200D13E5A /* Sources */,
 				ECB94ED92DD46EE200D13E5A /* Frameworks */,
 				ECB94EDA2DD46EE200D13E5A /* Resources */,
-				EC6A4E342DDD0DA600D7E398 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
