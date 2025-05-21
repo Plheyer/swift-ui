@@ -29,14 +29,23 @@ struct ChooseRulesComponent: View {
                     Text(String(localized: "Dimensions"))
                 }.padding(.top, 5)
                 VStack {
-                    Stepper(value: $nbRows, in: range, step: 1){
-                        Text("\(String(localized: "Rows")) \(nbRows)")
+                    HStack {
+                        Text(String(localized: "Rows"))
+                        Stepper(value: $nbRows, in: range, step: 1){
+                            Text("\(nbRows)")
+                        }
                     }
-                    Stepper(value: $nbColumns, in: range, step: 1){
-                        Text("\(String(localized: "Columns")) \(nbColumns)")
+                    HStack {
+                        Text(String(localized: "Columns"))
+                        Stepper(value: $nbColumns, in: range, step: 1){
+                            Text("\(nbColumns)")
+                        }
                     }
-                    Stepper(value: $tokenToAlign, in: range, step: 1){
-                        Text("\(String(localized: "TokensToAlign")) \(tokenToAlign)")
+                    HStack {
+                        Text(String(localized: "TokensToAlign"))
+                        Stepper(value: $tokenToAlign, in: range, step: 1){
+                            Text("\(tokenToAlign)")
+                        }
                     }
                 }
                 Spacer()

@@ -21,7 +21,7 @@ struct HomePage: View {
                 Text(String(localized: "NewGame"))
             }.buttonStyle(.borderedProminent)
             
-            Button(action: {}) {
+            NavigationLink(destination: SavedGames()) {
                 Text(String(localized: "Results"))
             }.buttonStyle(.borderedProminent)
             
