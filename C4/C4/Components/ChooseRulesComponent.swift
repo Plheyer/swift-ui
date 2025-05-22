@@ -21,6 +21,7 @@ struct ChooseRulesComponent: View {
                         Text(rule)
                     }
                 }
+                .tint(.primaryAccentBackground)
                 Spacer()
             }
             HStack(alignment: .top) {
@@ -51,7 +52,9 @@ struct ChooseRulesComponent: View {
                 Spacer()
             }
             HStack {
+                Image(systemName: "clock")
                 Toggle(String(localized: "LimitedTime"), isOn: $isLimitedTime).toggleStyle(.switch).fixedSize()
+                .tint(.primaryAccentBackground)
                 if (isLimitedTime) {
                     TextField("", text: $minutesString).textFieldStyle(.roundedBorder)
                         .keyboardType(.decimalPad)
@@ -62,6 +65,6 @@ struct ChooseRulesComponent: View {
                 }
                 Spacer()
             }
-        }.padding()
+        }.padding(2)
     }
 }

@@ -23,6 +23,15 @@
 		EC6A4E412DDDA8B900D7E398 /* GameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E402DDDA8B900D7E398 /* GameVM.swift */; };
 		EC6A4E432DDDB2AE00D7E398 /* GamesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E422DDDB2AE00D7E398 /* GamesVM.swift */; };
 		EC73FD662DDDB87500B28CE2 /* GamesStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD652DDDB87500B28CE2 /* GamesStub.swift */; };
+		EC73FD682DDDE44600B28CE2 /* FaceToFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD672DDDE44600B28CE2 /* FaceToFace.swift */; };
+		EC73FD6D2DDE5BD300B28CE2 /* ResultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD6C2DDE5BD300B28CE2 /* ResultExtensions.swift */; };
+		EC73FD6F2DDF3FFA00B28CE2 /* BoardStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD6E2DDF3FFA00B28CE2 /* BoardStub.swift */; };
+		EC73FD732DDF42B500B28CE2 /* FaceToFaceChartComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD722DDF42B500B28CE2 /* FaceToFaceChartComponent.swift */; };
+		EC73FD752DDF43B500B28CE2 /* FaceToFacePlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD742DDF43B500B28CE2 /* FaceToFacePlayerComponent.swift */; };
+		EC73FD772DDF448100B28CE2 /* PlayerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD762DDF448100B28CE2 /* PlayerVM.swift */; };
+		EC73FD792DDF45A700B28CE2 /* PlayerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD782DDF45A700B28CE2 /* PlayerStub.swift */; };
+		EC73FD7B2DDF476D00B28CE2 /* FaceToFaceListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD7A2DDF476D00B28CE2 /* FaceToFaceListComponent.swift */; };
+		EC73FD7D2DDF74F700B28CE2 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD7C2DDF74F700B28CE2 /* SideMenu.swift */; };
 		ECB94EE02DD46EE200D13E5A /* C4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB94EDF2DD46EE200D13E5A /* C4App.swift */; };
 		ECB94EE22DD46EE200D13E5A /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB94EE12DD46EE200D13E5A /* HomePage.swift */; };
 		ECB94EE42DD46EE300D13E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB94EE32DD46EE300D13E5A /* Assets.xcassets */; };
@@ -66,6 +75,15 @@
 		EC6A4E402DDDA8B900D7E398 /* GameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
 		EC6A4E422DDDB2AE00D7E398 /* GamesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesVM.swift; sourceTree = "<group>"; };
 		EC73FD652DDDB87500B28CE2 /* GamesStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesStub.swift; sourceTree = "<group>"; };
+		EC73FD672DDDE44600B28CE2 /* FaceToFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceToFace.swift; sourceTree = "<group>"; };
+		EC73FD6C2DDE5BD300B28CE2 /* ResultExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExtensions.swift; sourceTree = "<group>"; };
+		EC73FD6E2DDF3FFA00B28CE2 /* BoardStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardStub.swift; sourceTree = "<group>"; };
+		EC73FD722DDF42B500B28CE2 /* FaceToFaceChartComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceToFaceChartComponent.swift; sourceTree = "<group>"; };
+		EC73FD742DDF43B500B28CE2 /* FaceToFacePlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceToFacePlayerComponent.swift; sourceTree = "<group>"; };
+		EC73FD762DDF448100B28CE2 /* PlayerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVM.swift; sourceTree = "<group>"; };
+		EC73FD782DDF45A700B28CE2 /* PlayerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStub.swift; sourceTree = "<group>"; };
+		EC73FD7A2DDF476D00B28CE2 /* FaceToFaceListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceToFaceListComponent.swift; sourceTree = "<group>"; };
+		EC73FD7C2DDF74F700B28CE2 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		ECB94EDC2DD46EE200D13E5A /* C4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB94EDF2DD46EE200D13E5A /* C4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4App.swift; sourceTree = "<group>"; };
 		ECB94EE12DD46EE200D13E5A /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
@@ -115,6 +133,7 @@
 				EC3E6C242DD4766E00D798E5 /* LaunchGame.swift */,
 				EC6A4E1E2DDBBD1700D7E398 /* NavigationView.swift */,
 				EC6A4E3B2DDDA66900D7E398 /* SavedGames.swift */,
+				EC73FD672DDDE44600B28CE2 /* FaceToFace.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,6 +144,10 @@
 				EC6A4E232DDCFF6B00D7E398 /* ChoosePlayerComponent.swift */,
 				EC6A4E262DDD040900D7E398 /* ChooseRulesComponent.swift */,
 				EC6A4E3D2DDDA72600D7E398 /* GameListComponent.swift */,
+				EC73FD722DDF42B500B28CE2 /* FaceToFaceChartComponent.swift */,
+				EC73FD742DDF43B500B28CE2 /* FaceToFacePlayerComponent.swift */,
+				EC73FD7A2DDF476D00B28CE2 /* FaceToFaceListComponent.swift */,
+				EC73FD7C2DDF74F700B28CE2 /* SideMenu.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -154,6 +177,7 @@
 			children = (
 				EC6A4E402DDDA8B900D7E398 /* GameVM.swift */,
 				EC6A4E422DDDB2AE00D7E398 /* GamesVM.swift */,
+				EC73FD762DDF448100B28CE2 /* PlayerVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -162,8 +186,18 @@
 			isa = PBXGroup;
 			children = (
 				EC73FD652DDDB87500B28CE2 /* GamesStub.swift */,
+				EC73FD6E2DDF3FFA00B28CE2 /* BoardStub.swift */,
+				EC73FD782DDF45A700B28CE2 /* PlayerStub.swift */,
 			);
 			path = Stub;
+			sourceTree = "<group>";
+		};
+		EC73FD692DDDE90300B28CE2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EC73FD6C2DDE5BD300B28CE2 /* ResultExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		ECB94ED32DD46EE200D13E5A = {
@@ -193,6 +227,7 @@
 		ECB94EDE2DD46EE200D13E5A /* C4 */ = {
 			isa = PBXGroup;
 			children = (
+				EC73FD692DDDE90300B28CE2 /* Extensions */,
 				EC73FD642DDDB86800B28CE2 /* Stub */,
 				EC6A4E3F2DDDA87D00D7E398 /* ViewModels */,
 				EC6A4E222DDCFEE200D7E398 /* Components */,
@@ -365,16 +400,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC6A4E242DDCFF6B00D7E398 /* ChoosePlayerComponent.swift in Sources */,
+				EC73FD752DDF43B500B28CE2 /* FaceToFacePlayerComponent.swift in Sources */,
 				ECB94EE22DD46EE200D13E5A /* HomePage.swift in Sources */,
 				EC6A4E272DDD040900D7E398 /* ChooseRulesComponent.swift in Sources */,
 				EC6A4E3E2DDDA72600D7E398 /* GameListComponent.swift in Sources */,
 				EC6A4E432DDDB2AE00D7E398 /* GamesVM.swift in Sources */,
 				EC73FD662DDDB87500B28CE2 /* GamesStub.swift in Sources */,
+				EC73FD7D2DDF74F700B28CE2 /* SideMenu.swift in Sources */,
+				EC73FD6D2DDE5BD300B28CE2 /* ResultExtensions.swift in Sources */,
 				EC3E6C252DD4766E00D798E5 /* LaunchGame.swift in Sources */,
+				EC73FD772DDF448100B28CE2 /* PlayerVM.swift in Sources */,
 				EC6A4E3C2DDDA66900D7E398 /* SavedGames.swift in Sources */,
+				EC73FD6F2DDF3FFA00B28CE2 /* BoardStub.swift in Sources */,
+				EC73FD7B2DDF476D00B28CE2 /* FaceToFaceListComponent.swift in Sources */,
+				EC73FD682DDDE44600B28CE2 /* FaceToFace.swift in Sources */,
+				EC73FD792DDF45A700B28CE2 /* PlayerStub.swift in Sources */,
 				EC6A4E1F2DDBBD1700D7E398 /* NavigationView.swift in Sources */,
 				EC6A4E412DDDA8B900D7E398 /* GameVM.swift in Sources */,
 				ECB94EE02DD46EE200D13E5A /* C4App.swift in Sources */,
+				EC73FD732DDF42B500B28CE2 /* FaceToFaceChartComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

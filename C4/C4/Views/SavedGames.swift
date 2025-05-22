@@ -6,11 +6,13 @@ struct SavedGames: View {
     var body: some View {
          ScrollView {
             Spacer()
-            GameListComponent(gameListTitle: "\(String(localized: "inProgressGames"))...", games: inProgressGames)
+            GameListComponent(gameListTitle: "\(String(localized: "inProgressGames"))...", games: inProgressGames, separator: " vs. ")
             Spacer()
-            GameListComponent(gameListTitle: String(localized: "finishedGames"), games: finishedGames)
+            GameListComponent(gameListTitle: String(localized: "finishedGames"), games: finishedGames, separator: " bat ")
             Spacer()
         }
+         .frame(height: .infinity)
+         .background(Color(.primaryBackground))
         .navigationBarTitle(String(localized: "SavedGamesTitle"))
     }
 }

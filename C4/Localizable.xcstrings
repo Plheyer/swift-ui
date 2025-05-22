@@ -1,28 +1,20 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-      "localizations" : {
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "s"
-          }
-        }
-      }
-    },
-    "%@ %lld" : {
+    "Back" : {
+      "comment" : "Retour",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$lld"
+            "state" : "translated",
+            "value" : "Back"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "s"
+            "value" : "Retour"
           }
         }
       }
@@ -108,6 +100,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dimensions"
+          }
+        }
+      }
+    },
+    "FaceToFace" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face to Face"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face à face"
           }
         }
       }
@@ -214,6 +223,16 @@
         }
       }
     },
+    "Name" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom"
+          }
+        }
+      }
+    },
     "NewGame" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -244,6 +263,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jouer"
+          }
+        }
+      }
+    },
+    "Player" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Joueur"
           }
         }
       }
@@ -407,6 +436,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jetons à aligner"
+          }
+        }
+      }
+    },
+    "Type" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type"
+          }
+        }
+      }
+    },
+    "Winner" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gagnant"
           }
         }
       }

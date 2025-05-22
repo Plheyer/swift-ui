@@ -19,11 +19,21 @@ struct HomePage: View {
             
             NavigationLink(destination: LaunchGame()) {
                 Text(String(localized: "NewGame"))
-            }.buttonStyle(.borderedProminent)
+                    .padding(.horizontal, 15)
+                    .padding(.vertical, 8)
+            }
+            .background(Color(.primaryAccentBackground))
+            .foregroundColor(.primaryBackground)
+            .cornerRadius(5)
             
             NavigationLink(destination: SavedGames()) {
                 Text(String(localized: "Results"))
-            }.buttonStyle(.borderedProminent)
+                .padding(.horizontal, 15)
+                .padding(.vertical, 8)
+            }
+            .background(Color(.primaryAccentBackground))
+            .foregroundColor(.primaryBackground)
+            .cornerRadius(5)
             
             Spacer()
         }

@@ -14,6 +14,7 @@ struct ChoosePlayerComponent: View {
                     Text(ai)
                 }
             }
+            .tint(.primaryAccentBackground)
             if (selectedPlayer == "Human") {
                 TextField(String(localized: "ChoosePlayerNamePlaceholer"), text: $playerName)
             } else {

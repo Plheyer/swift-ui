@@ -5,6 +5,7 @@ struct GameListComponent: View {
     var gameListTitle : String
     @ObservedObject var games : GamesVM
     var formatter : DateFormatter = DateFormatter()
+    var separator : String
     
     var body: some View {
         VStack {
@@ -16,14 +17,16 @@ struct GameListComponent: View {
                 Spacer()
                 Text(String(localized: "Rules"))
             }
+            Divider()
             ForEach (games.games) { g in
                 HStack {
                     Text(g.dateFormatted)
                     Spacer()
-                    Text(g.players.map { $0.name }.joined(separator: ","))
+                    Text(g.players.map { $0.name }.joined(separator: separator))
                     Spacer()
-                    Text(g.rules.name)
+                    Text(g.rules.name.split(separator: " ")[0])
                 }
+                Divider()
             }
         }
         .padding()

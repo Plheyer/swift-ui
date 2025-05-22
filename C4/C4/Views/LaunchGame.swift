@@ -17,7 +17,7 @@ struct LaunchGame: View {
     @State var secondsString = "0"
     
     var body: some View {
-        VStack {
+        ScrollView {
             HStack {
                 ChoosePlayerComponent(playerName: $player1Name, selectedPlayer: $selectedPlayer1, playerText: String(localized: "Player1"))
                 ChoosePlayerComponent(playerName: $player2Name, selectedPlayer: $selectedPlayer2, playerText: String(localized: "Player2"))
@@ -26,10 +26,17 @@ struct LaunchGame: View {
             ChooseRulesComponent(selectedRule: $selectedRule, nbRows: $nbRows, nbColumns: $nbColumns, tokenToAlign: $tokenToAlign, isLimitedTime: $isLimitedTime, minutesString: $minutesString, secondsString: $secondsString)
             Button(action: {}) {
                 Text(String(localized: "Play"))
-            }.buttonStyle(.borderedProminent)
+                .padding(.horizontal, 15)
+                .padding(.vertical, 8)
+            }
+            .background(Color(.primaryAccentBackground))
+            .foregroundColor(.primaryBackground)
+            .cornerRadius(5)
         }
         .padding()
+        .background(Color(.primaryBackground))
         .navigationBarTitle(String(localized: "LaunchGameTitle"))
+        .frame(height: .infinity)
     }
 }
 
