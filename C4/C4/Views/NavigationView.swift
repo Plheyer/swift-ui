@@ -33,7 +33,7 @@ struct NavigationView: View {
                     }
                 }
                 .transition(.move(edge: .leading))
-                .frame(height: .infinity)
+                .frame(maxHeight: .infinity)
                 .background(Color(.primaryBackground))
                 .onTapGesture {
                     if showingMenu {

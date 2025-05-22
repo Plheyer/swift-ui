@@ -1,4 +1,5 @@
 import SwiftUI
+import Connect4Core
 
 struct LaunchGame: View {
     @State var player1Name: String = ""
@@ -16,6 +17,9 @@ struct LaunchGame: View {
     @State var minutesString = "2"
     @State var secondsString = "0"
     
+    @State var board = BoardStub().getBoards()[0]
+    @State var rule : Rules = Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!
+    
     var body: some View {
         ScrollView {
             HStack {
@@ -24,7 +28,8 @@ struct LaunchGame: View {
             }
             Divider()
             ChooseRulesComponent(selectedRule: $selectedRule, nbRows: $nbRows, nbColumns: $nbColumns, tokenToAlign: $tokenToAlign, isLimitedTime: $isLimitedTime, minutesString: $minutesString, secondsString: $secondsString)
-            Button(action: {}) {
+
+            NavigationLink(destination: GameView(board: $board, rules: $rule)) {
                 Text(String(localized: "Play"))
                 .padding(.horizontal, 15)
                 .padding(.vertical, 8)
@@ -36,7 +41,7 @@ struct LaunchGame: View {
         .padding()
         .background(Color(.primaryBackground))
         .navigationBarTitle(String(localized: "LaunchGameTitle"))
-        .frame(height: .infinity)
+        .frame(maxHeight: .infinity)
     }
 }
 

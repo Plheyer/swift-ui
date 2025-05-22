@@ -32,8 +32,8 @@ struct FaceToFace: View {
              }
              FaceToFaceListComponent(games: GamesStub().getGamesVM()[1])
         }
-         .frame(height: .infinity)
-         .background(Color(.primaryBackground))
+        .frame(maxHeight: .infinity)
+        .background(Color(.primaryBackground))
         .navigationBarTitle(String(localized: "SavedGamesTitle"))
     }
 }

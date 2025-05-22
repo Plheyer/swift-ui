@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    "%lld" : {
+
+    },
     "Back" : {
       "comment" : "Retour",
       "extractionState" : "manual",
@@ -232,6 +238,9 @@
           }
         }
       }
+    },
+    "New grid" : {
+
     },
     "NewGame" : {
       "extractionState" : "manual",
