@@ -2,6 +2,8 @@ import SwiftUI
 
 struct SideMenu: View {
     @Binding var showingMenu : Bool
+    @Binding var orientation: UIDeviceOrientation?
+    @Binding var idiom: UIUserInterfaceIdiom?
     
     var body: some View {
         HStack {
@@ -14,7 +16,7 @@ struct SideMenu: View {
         .padding(.bottom, 15)
         
         VStack(alignment: .leading) {
-            NavigationLink(destination: LaunchGame()) {
+            NavigationLink(destination: LaunchGame(orientation: $orientation, idiom: $idiom)) {
                 Text(String(localized: "NewGame"))
                 .padding(.horizontal, 15)
                 .padding(.vertical, 8)

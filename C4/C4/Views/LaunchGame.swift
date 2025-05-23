@@ -2,6 +2,9 @@ import SwiftUI
 import Connect4Core
 
 struct LaunchGame: View {
+    @Binding var orientation: UIDeviceOrientation?
+    @Binding var idiom: UIUserInterfaceIdiom?
+    
     @State var player1Name: String = ""
     @State var player2Name: String = ""
     var ais = ["Negamax", "MinMax", "Finish him", "Human"]
@@ -31,7 +34,7 @@ struct LaunchGame: View {
             Divider()
             ChooseRulesComponent(selectedRule: $selectedRule, nbRows: $nbRows, nbColumns: $nbColumns, tokenToAlign: $tokenToAlign, isLimitedTime: $isLimitedTime, minutesString: $minutesString, secondsString: $secondsString)
 
-            NavigationLink(destination: GameView(board: $board, rules: $rule, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)) {
+            NavigationLink(destination: GameView(board: $board, rules: $rule, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn, orientation: $orientation, idiom: $idiom)) {
                 Text(String(localized: "Play"))
                 .padding(.horizontal, 15)
                 .padding(.vertical, 8)
@@ -43,10 +46,26 @@ struct LaunchGame: View {
         .padding()
         .background(Color(.primaryBackground))
         .navigationBarTitle(String(localized: "LaunchGameTitle"))
-        .frame(maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
-#Preview {
-    LaunchGame()
+#Preview("Phone/Portait") {
+    LaunchGamePreview(orientation: .portrait, idiom: .phone)
+}
+
+#Preview("Phone/Landscape") {
+    LaunchGamePreview(orientation: .landscapeLeft, idiom: .phone)
+}
+
+#Preview("Pad") {
+    LaunchGamePreview(orientation: .portrait, idiom: .pad)
+}
+
+private struct LaunchGamePreview : View {
+    @State var orientation: UIDeviceOrientation?
+    @State var idiom: UIUserInterfaceIdiom?
+    var body: some View {
+        LaunchGamePreview(orientation: orientation, idiom: idiom)
+    }
 }

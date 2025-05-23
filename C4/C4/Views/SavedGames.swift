@@ -11,7 +11,7 @@ struct SavedGames: View {
             GameListComponent(gameListTitle: String(localized: "finishedGames"), games: finishedGames, separator: " bat ")
             Spacer()
         }
-         .frame(maxHeight: .infinity)
+         .frame(maxWidth: .infinity, maxHeight: .infinity)
          .background(Color(.primaryBackground))
         .navigationBarTitle(String(localized: "SavedGamesTitle"))
     }

@@ -8,39 +8,37 @@
 import SwiftUI
 
 struct HomePage: View {
+    @Binding var orientation: UIDeviceOrientation?
+    @Binding var idiom: UIUserInterfaceIdiom?
+    
     var body: some View {
-        VStack {
-            Spacer()
-            Image("HomeImage")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            Text(String(localized: "Connect4")).bold().font(.largeTitle)
-            Spacer()
-            
-            NavigationLink(destination: LaunchGame()) {
-                Text(String(localized: "NewGame"))
-                    .padding(.horizontal, 15)
-                    .padding(.vertical, 8)
-            }
-            .background(Color(.primaryAccentBackground))
-            .foregroundColor(.primaryBackground)
-            .cornerRadius(5)
-            
-            NavigationLink(destination: SavedGames()) {
-                Text(String(localized: "Results"))
-                .padding(.horizontal, 15)
-                .padding(.vertical, 8)
-            }
-            .background(Color(.primaryAccentBackground))
-            .foregroundColor(.primaryBackground)
-            .cornerRadius(5)
-            
-            Spacer()
+        switch(orientation, idiom) {
+        case (.portrait, .phone), (.portraitUpsideDown, .phone), (.portrait, .pad), (.portraitUpsideDown, .pad):
+                HomePortraitComponent(orientation: $orientation, idiom: $idiom)
+            case (.landscapeLeft, .phone), (.landscapeRight, .phone):
+                HomeLandscapeComponent(orientation: $orientation, idiom: $idiom)
+            default:
+                HomeLandscapeComponent(orientation: $orientation, idiom: $idiom)
         }
-        .padding()
     }
 }
 
-#Preview {
-    HomePage()
+#Preview("Phone/Portait") {
+    HomePagePreview(orientation: .portrait, idiom: .phone)
+}
+
+#Preview("Phone/Landscape") {
+    HomePagePreview(orientation: .landscapeLeft, idiom: .phone)
+}
+
+#Preview("Pad") {
+    HomePagePreview(orientation: .portrait, idiom: .pad)
+}
+
+private struct HomePagePreview : View {
+    @State var orientation: UIDeviceOrientation?
+    @State var idiom: UIUserInterfaceIdiom?
+    var body: some View {
+        HomePage(orientation: $orientation, idiom: $idiom)
+    }
 }

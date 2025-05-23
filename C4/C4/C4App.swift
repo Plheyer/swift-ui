@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct C4App: App {
+    @State var orientation: UIDeviceOrientation?
+    @State var idiom: UIUserInterfaceIdiom?
     var body: some Scene {
         WindowGroup {
-            NavigationView()
+            NavigationView(orientation: $orientation, idiom: $idiom)
         }
     }
 }

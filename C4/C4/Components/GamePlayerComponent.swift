@@ -56,7 +56,7 @@ struct GamePlayerComponent: View {
             }
             Spacer()
         }
-        .padding()
+        .frame(maxWidth: 200)
     }
 }
 

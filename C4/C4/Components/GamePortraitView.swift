@@ -1,0 +1,79 @@
+//
+//  ContentView.swift
+//  C4
+//
+//  Created by etudiant on 14/05/2025.
+//
+
+import Connect4Core
+import SwiftUI
+
+struct GamePortraitView: View {
+    @Binding var board : Board
+    @Binding var rules : Rules
+    @State var isPaused : Bool = false
+    @Binding var isPlayer1Turn : Bool
+    @Binding var isPlayer2Turn : Bool
+    var body: some View {
+        ScrollView {
+            HStack {
+                GamePlayerComponent(player: HumanPlayer(withName: "Preview", andId: .player1)!, isPlayerTurn: $isPlayer1Turn, color: Color(red: 255, green: 0, blue: 0, opacity: 0.003))
+                Spacer()
+                GamePlayerComponent(player: HumanPlayer(withName: "Preview2", andId: .player2)!, isPlayerTurn: $isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.003))
+            }
+            
+            GridBoardComponent(board: $board)
+            Button("", systemImage: isPaused ? "play.circle" : "pause.circle") {
+                isPaused.toggle()
+            }
+            .foregroundColor(.primaryAccentBackground)
+            .font(.largeTitle)
+            .padding(.top, 10)
+            
+            Text("\(String(localized: "Rules")) : \(rules.shortName)")
+            
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(.primaryBackground))
+    }
+}
+
+#Preview {
+    GamePortraitViewPreview()
+}
+
+private struct GamePortraitViewPreview: View {
+    @State private var index = 0
+    @State private var board = BoardStub().getBoards()[0]
+    @State private var rules : Rules = Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!
+    @State var isPlayer1Turn = false
+    @State var isPlayer2Turn = true
+
+    var body: some View {
+        VStack {
+            GamePortraitView(board: $board, rules: $rules, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
+            Button("New grid") {
+                index = (index + 1) % 7
+                board = BoardStub().getBoards()[index]
+            }
+            .padding(.horizontal, 15)
+            .padding(.vertical, 8)
+            .background(Color(.primaryAccentBackground))
+            .foregroundColor(.primaryBackground)
+            .cornerRadius(5)
+            
+            Button(action: {
+                isPlayer1Turn.toggle()
+                isPlayer2Turn.toggle()
+            }) {
+                Text("Change player turn")
+            }
+            .padding(.horizontal, 15)
+            .padding(.vertical, 8)
+            .background(Color(.primaryAccentBackground))
+            .foregroundColor(.primaryBackground)
+            .cornerRadius(5)
+        }
+        .background(Color(.primaryBackground))
+    }
+}

@@ -14,66 +14,45 @@ struct GameView: View {
     @State var isPaused : Bool = false
     @Binding var isPlayer1Turn : Bool
     @Binding var isPlayer2Turn : Bool
+    @Binding var orientation: UIDeviceOrientation?
+    @Binding var idiom: UIUserInterfaceIdiom?
+    
     var body: some View {
-        ScrollView {
-            HStack {
-                GamePlayerComponent(player: HumanPlayer(withName: "Preview", andId: .player1)!, isPlayerTurn: $isPlayer1Turn, color: Color(red: 255, green: 0, blue: 0, opacity: 0.003))
-                Spacer()
-                GamePlayerComponent(player: HumanPlayer(withName: "Preview2", andId: .player2)!, isPlayerTurn: $isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.003))
-            }
-            
-            GridBoardComponent(board: $board)
-            Button("", systemImage: isPaused ? "play.circle" : "pause.circle") {
-                isPaused.toggle()
-            }
-            .foregroundColor(.primaryAccentBackground)
-            .font(.largeTitle)
-            .padding(.top, 10)
-            
-            Text("\(String(localized: "Rules")) : \(rules.name)")
-            
+        switch(orientation, idiom) {
+        case (.portrait, .phone), (.portraitUpsideDown, .phone), (.portrait, .pad), (.portraitUpsideDown, .pad):
+                GamePortraitView(board: $board, rules: $rules, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
+            case (.landscapeLeft, .phone), (.landscapeRight, .phone):
+                GameLandscapeView(board: $board, rules: $rules, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
+            default:
+                GameLandscapeView(board: $board, rules: $rules, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(.primaryBackground))
     }
 }
 
-#Preview {
-    PreviewWrapper()
+
+#Preview("Phone/Portait") {
+    GameViewPreview(orientation: .portrait, idiom: .phone)
 }
 
-private struct PreviewWrapper: View {
+#Preview("Phone/Landscape") {
+    GameViewPreview(orientation: .landscapeLeft, idiom: .phone)
+}
+
+#Preview("Pad") {
+    GameViewPreview(orientation: .portrait, idiom: .pad)
+}
+
+private struct GameViewPreview : View {
     @State private var index = 0
     @State private var board = BoardStub().getBoards()[0]
     @State private var rules : Rules = Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!
     @State var isPlayer1Turn = false
     @State var isPlayer2Turn = true
-
+    
+    @State var orientation: UIDeviceOrientation?
+    @State var idiom: UIUserInterfaceIdiom?
+    @State var isPaused : Bool = false
     var body: some View {
-        VStack {
-            GameView(board: $board, rules: $rules, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
-            Button("New grid") {
-                index = (index + 1) % 7
-                board = BoardStub().getBoards()[index]
-            }
-            .padding(.horizontal, 15)
-            .padding(.vertical, 8)
-            .background(Color(.primaryAccentBackground))
-            .foregroundColor(.primaryBackground)
-            .cornerRadius(5)
-            
-            Button(action: {
-                isPlayer1Turn.toggle()
-                isPlayer2Turn.toggle()
-            }) {
-                Text("Change player turn")
-            }
-            .padding(.horizontal, 15)
-            .padding(.vertical, 8)
-            .background(Color(.primaryAccentBackground))
-            .foregroundColor(.primaryBackground)
-            .cornerRadius(5)
-        }
-        .background(Color(.primaryBackground))
+        GameView(board: $board, rules: $rules, isPaused: isPaused, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn, orientation: $orientation, idiom: $idiom)
     }
 }

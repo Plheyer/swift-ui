@@ -23,6 +23,7 @@ struct ChoosePlayerComponent: View {
             Image("HomeImage")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 200)
             if (selectedPlayer == "Human") {
                 Button("Modify", systemImage: "photo.artframe", action: {})
             }
