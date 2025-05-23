@@ -231,6 +231,12 @@
     },
     "Name" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -240,7 +246,20 @@
       }
     },
     "New grid" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New grid"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouvelle grille"
+          }
+        }
+      }
     },
     "NewGame" : {
       "extractionState" : "manual",
@@ -278,6 +297,12 @@
     },
     "Player" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Player"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -288,6 +313,12 @@
     },
     "Player type" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Player type"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -451,6 +482,12 @@
     },
     "Type" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -461,10 +498,33 @@
     },
     "Winner" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Winner"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gagnant"
+          }
+        }
+      }
+    },
+    "YourTurn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your turn!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "À vous de jouer !"
           }
         }
       }

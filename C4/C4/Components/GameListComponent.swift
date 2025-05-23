@@ -24,7 +24,7 @@ struct GameListComponent: View {
                     Spacer()
                     Text(g.players.map { $0.name }.joined(separator: separator))
                     Spacer()
-                    Text(g.rules.name.split(separator: " ")[0])
+                    Text(g.rules.shortName)
                 }
                 Divider()
             }

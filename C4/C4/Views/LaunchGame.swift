@@ -16,6 +16,8 @@ struct LaunchGame: View {
     @State var isLimitedTime = false
     @State var minutesString = "2"
     @State var secondsString = "0"
+    @State var isPlayer1Turn = true
+    @State var isPlayer2Turn = false
     
     @State var board = BoardStub().getBoards()[0]
     @State var rule : Rules = Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!
@@ -29,7 +31,7 @@ struct LaunchGame: View {
             Divider()
             ChooseRulesComponent(selectedRule: $selectedRule, nbRows: $nbRows, nbColumns: $nbColumns, tokenToAlign: $tokenToAlign, isLimitedTime: $isLimitedTime, minutesString: $minutesString, secondsString: $secondsString)
 
-            NavigationLink(destination: GameView(board: $board, rules: $rule)) {
+            NavigationLink(destination: GameView(board: $board, rules: $rule, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)) {
                 Text(String(localized: "Play"))
                 .padding(.horizontal, 15)
                 .padding(.vertical, 8)
