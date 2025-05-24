@@ -4,6 +4,16 @@
     "" : {
 
     },
+    "%@ : %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ : %2$@"
+          }
+        }
+      }
+    },
     "%lld" : {
 
     },
@@ -24,6 +34,9 @@
           }
         }
       }
+    },
+    "Change player turn" : {
+
     },
     "ChoosePlayerNamePlaceholer" : {
       "extractionState" : "manual",
@@ -144,6 +157,12 @@
         }
       }
     },
+    "FinishHim" : {
+
+    },
+    "Human" : {
+
+    },
     "inProgressGames" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -244,6 +263,9 @@
           }
         }
       }
+    },
+    "Negamax" : {
+
     },
     "New grid" : {
       "localizations" : {
@@ -377,6 +399,9 @@
           }
         }
       }
+    },
+    "Random" : {
+
     },
     "Results" : {
       "extractionState" : "manual",

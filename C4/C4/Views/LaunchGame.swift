@@ -4,13 +4,16 @@ import Connect4Core
 struct LaunchGame: View {
     @Binding var orientation: UIDeviceOrientation?
     @Binding var idiom: UIUserInterfaceIdiom?
+    @State var isPresented = false
     
     @State var player1Name: String = ""
     @State var player2Name: String = ""
     var ais = ["Negamax", "MinMax", "Finish him", "Human"]
     var rules = ["Classic", "Push", "TicTacToe"]
-    @State private var selectedPlayer1: String = "Negamax"
-    @State private var selectedPlayer2: String = "Negamax"
+    @State var selectedPlayerType1: String = String("Human")
+    @State var selectedPlayerType2: String = String("Random")
+    @State var selectedPlayer1: PlayerVM = PlayerVM(name: "Player 1")
+    @State var selectedPlayer2: PlayerVM = PlayerVM(name: "Player 2")
     @State private var selectedRule: String = "Classic"
     @State var nbRows = 6
     @State var nbColumns = 7
@@ -28,8 +31,8 @@ struct LaunchGame: View {
     var body: some View {
         ScrollView {
             HStack {
-                ChoosePlayerComponent(playerName: $player1Name, selectedPlayer: $selectedPlayer1, playerText: String(localized: "Player1"))
-                ChoosePlayerComponent(playerName: $player2Name, selectedPlayer: $selectedPlayer2, playerText: String(localized: "Player2"))
+                ChoosePlayerComponent(selectedPlayerType: $selectedPlayerType1, selectedPlayer: $selectedPlayer1, isPresented: $isPresented, playerText: String(localized: "Player1"))
+                ChoosePlayerComponent(selectedPlayerType: $selectedPlayerType2, selectedPlayer: $selectedPlayer2, isPresented: $isPresented, playerText: String(localized: "Player2"))
             }
             Divider()
             ChooseRulesComponent(selectedRule: $selectedRule, nbRows: $nbRows, nbColumns: $nbColumns, tokenToAlign: $tokenToAlign, isLimitedTime: $isLimitedTime, minutesString: $minutesString, secondsString: $secondsString)
@@ -47,6 +50,9 @@ struct LaunchGame: View {
         .background(Color(.primaryBackground))
         .navigationBarTitle(String(localized: "LaunchGameTitle"))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .sheet(isPresented: $isPresented) {
+            AddPlayerComponent(isPresented: $isPresented)
+        }
     }
 }
 

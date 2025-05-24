@@ -48,6 +48,8 @@
 		ECB94EF22DD46EE300D13E5A /* C4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB94EF12DD46EE300D13E5A /* C4Tests.swift */; };
 		ECB94EFC2DD46EE300D13E5A /* C4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB94EFB2DD46EE300D13E5A /* C4UITests.swift */; };
 		ECB94EFE2DD46EE300D13E5A /* C4UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB94EFD2DD46EE300D13E5A /* C4UITestsLaunchTests.swift */; };
+		ECEFC0F62DE19C7100237068 /* HumanPlayerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEFC0F52DE19C7100237068 /* HumanPlayerVM.swift */; };
+		ECEFC0F82DE1B67500237068 /* AddPlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEFC0F72DE1B67500237068 /* AddPlayerComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		ECB94EF72DD46EE300D13E5A /* C4UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C4UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB94EFB2DD46EE300D13E5A /* C4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4UITests.swift; sourceTree = "<group>"; };
 		ECB94EFD2DD46EE300D13E5A /* C4UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ECEFC0F52DE19C7100237068 /* HumanPlayerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanPlayerVM.swift; sourceTree = "<group>"; };
+		ECEFC0F72DE1B67500237068 /* AddPlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 				EC2F81D72DE10B43000D4514 /* HomeLandscapeComponent.swift */,
 				EC2F81D92DE1127D000D4514 /* GamePortraitView.swift */,
 				EC2F81DB2DE112A9000D4514 /* GameLandscapeView.swift */,
+				ECEFC0F72DE1B67500237068 /* AddPlayerComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				EC6A4E402DDDA8B900D7E398 /* GameVM.swift */,
 				EC6A4E422DDDB2AE00D7E398 /* GamesVM.swift */,
 				EC73FD762DDF448100B28CE2 /* PlayerVM.swift */,
+				ECEFC0F52DE19C7100237068 /* HumanPlayerVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -441,6 +447,7 @@
 				EC73FD6D2DDE5BD300B28CE2 /* ResultExtensions.swift in Sources */,
 				EC3E6C252DD4766E00D798E5 /* LaunchGame.swift in Sources */,
 				EC73FD772DDF448100B28CE2 /* PlayerVM.swift in Sources */,
+				ECEFC0F62DE19C7100237068 /* HumanPlayerVM.swift in Sources */,
 				EC6A4E3C2DDDA66900D7E398 /* SavedGames.swift in Sources */,
 				EC73FD812DDFB8E100B28CE2 /* GridBoardComponent.swift in Sources */,
 				EC73FD6F2DDF3FFA00B28CE2 /* BoardStub.swift in Sources */,
@@ -453,6 +460,7 @@
 				EC6A4E1F2DDBBD1700D7E398 /* NavigationView.swift in Sources */,
 				EC6A4E412DDDA8B900D7E398 /* GameVM.swift in Sources */,
 				EC2F81D82DE10B43000D4514 /* HomeLandscapeComponent.swift in Sources */,
+				ECEFC0F82DE1B67500237068 /* AddPlayerComponent.swift in Sources */,
 				ECB94EE02DD46EE200D13E5A /* C4App.swift in Sources */,
 				EC73FD732DDF42B500B28CE2 /* FaceToFaceChartComponent.swift in Sources */,
 			);
