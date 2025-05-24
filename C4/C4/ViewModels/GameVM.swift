@@ -15,12 +15,6 @@ public class GameVM : Identifiable, ObservableObject {
     public let rules : Rules
     public let board : Board
     
-    public var dateFormatted : String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        return formatter.string(from: date)
-    }
-    
     public init(date : Date, players : [Player], rules : Rules, board: Board) {
         self.id = UUID()
         self.date = date

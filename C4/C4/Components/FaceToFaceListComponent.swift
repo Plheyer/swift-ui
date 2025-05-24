@@ -14,7 +14,7 @@ struct FaceToFaceListComponent: View {
             Divider()
             ForEach (games.games) { g in
                 HStack {
-                    Text(g.dateFormatted).frame(maxWidth: .infinity, alignment: .leading)
+                    // Text(g.dateFormatted).frame(maxWidth: .infinity, alignment: .leading)
                     Text(g.getWinnerPlayer()?.name ?? "Draw").frame(maxWidth: .infinity, alignment: .center)
                     Text(g.rules.shortName).frame(maxWidth: .infinity, alignment: .trailing)
                 }

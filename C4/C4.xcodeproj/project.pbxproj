@@ -50,6 +50,9 @@
 		ECB94EFE2DD46EE300D13E5A /* C4UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB94EFD2DD46EE300D13E5A /* C4UITestsLaunchTests.swift */; };
 		ECEFC0F62DE19C7100237068 /* HumanPlayerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEFC0F52DE19C7100237068 /* HumanPlayerVM.swift */; };
 		ECEFC0F82DE1B67500237068 /* AddPlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEFC0F72DE1B67500237068 /* AddPlayerComponent.swift */; };
+		ECEFC0FA2DE1D03300237068 /* GameResultsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEFC0F92DE1D03300237068 /* GameResultsVM.swift */; };
+		ECEFC0FC2DE1D30B00237068 /* DateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEFC0FB2DE1D30B00237068 /* DateFormatterExtensions.swift */; };
+		ECEFC0FE2DE1D3C100237068 /* GameResultVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEFC0FD2DE1D3C100237068 /* GameResultVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +120,9 @@
 		ECB94EFD2DD46EE300D13E5A /* C4UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ECEFC0F52DE19C7100237068 /* HumanPlayerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanPlayerVM.swift; sourceTree = "<group>"; };
 		ECEFC0F72DE1B67500237068 /* AddPlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerComponent.swift; sourceTree = "<group>"; };
+		ECEFC0F92DE1D03300237068 /* GameResultsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultsVM.swift; sourceTree = "<group>"; };
+		ECEFC0FB2DE1D30B00237068 /* DateFormatterExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensions.swift; sourceTree = "<group>"; };
+		ECEFC0FD2DE1D3C100237068 /* GameResultVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,8 @@
 				EC6A4E422DDDB2AE00D7E398 /* GamesVM.swift */,
 				EC73FD762DDF448100B28CE2 /* PlayerVM.swift */,
 				ECEFC0F52DE19C7100237068 /* HumanPlayerVM.swift */,
+				ECEFC0F92DE1D03300237068 /* GameResultsVM.swift */,
+				ECEFC0FD2DE1D3C100237068 /* GameResultVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 				EC73FD6C2DDE5BD300B28CE2 /* ResultExtensions.swift */,
 				EC2F81D12DE0BB39000D4514 /* RulesExtensions.swift */,
 				EC2F81D32DE0BE18000D4514 /* PlayerExtensions.swift */,
+				ECEFC0FB2DE1D30B00237068 /* DateFormatterExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -448,10 +457,12 @@
 				EC3E6C252DD4766E00D798E5 /* LaunchGame.swift in Sources */,
 				EC73FD772DDF448100B28CE2 /* PlayerVM.swift in Sources */,
 				ECEFC0F62DE19C7100237068 /* HumanPlayerVM.swift in Sources */,
+				ECEFC0FC2DE1D30B00237068 /* DateFormatterExtensions.swift in Sources */,
 				EC6A4E3C2DDDA66900D7E398 /* SavedGames.swift in Sources */,
 				EC73FD812DDFB8E100B28CE2 /* GridBoardComponent.swift in Sources */,
 				EC73FD6F2DDF3FFA00B28CE2 /* BoardStub.swift in Sources */,
 				EC73FD7F2DDFAB8600B28CE2 /* GameView.swift in Sources */,
+				ECEFC0FE2DE1D3C100237068 /* GameResultVM.swift in Sources */,
 				EC73FD7B2DDF476D00B28CE2 /* FaceToFaceListComponent.swift in Sources */,
 				EC2F81DC2DE112A9000D4514 /* GameLandscapeView.swift in Sources */,
 				EC73FD682DDDE44600B28CE2 /* FaceToFace.swift in Sources */,
@@ -461,6 +472,7 @@
 				EC6A4E412DDDA8B900D7E398 /* GameVM.swift in Sources */,
 				EC2F81D82DE10B43000D4514 /* HomeLandscapeComponent.swift in Sources */,
 				ECEFC0F82DE1B67500237068 /* AddPlayerComponent.swift in Sources */,
+				ECEFC0FA2DE1D03300237068 /* GameResultsVM.swift in Sources */,
 				ECB94EE02DD46EE200D13E5A /* C4App.swift in Sources */,
 				EC73FD732DDF42B500B28CE2 /* FaceToFaceChartComponent.swift in Sources */,
 			);

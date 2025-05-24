@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " "
+          }
+        }
+      }
     },
     "%@ : %@" : {
       "localizations" : {
@@ -11,11 +18,34 @@
             "state" : "new",
             "value" : "%1$@ : %2$@"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " "
+          }
         }
       }
     },
     "%lld" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " "
+          }
+        }
+      }
+    },
+    "AddPlayer" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter un joueur"
+          }
+        }
+      }
     },
     "Back" : {
       "comment" : "Retour",
@@ -35,8 +65,42 @@
         }
       }
     },
+    "beat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "beat"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bat"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        }
+      }
+    },
     "Change player turn" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changer le joueur courant"
+          }
+        }
+      }
     },
     "ChoosePlayerNamePlaceholer" : {
       "extractionState" : "manual",
@@ -158,10 +222,24 @@
       }
     },
     "FinishHim" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FinishHim"
+          }
+        }
+      }
     },
     "Human" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Humain"
+          }
+        }
+      }
     },
     "inProgressGames" : {
       "extractionState" : "manual",
@@ -265,7 +343,14 @@
       }
     },
     "Negamax" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Negamax"
+          }
+        }
+      }
     },
     "New grid" : {
       "localizations" : {
@@ -401,7 +486,14 @@
       }
     },
     "Random" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aléatoire"
+          }
+        }
+      }
     },
     "Results" : {
       "extractionState" : "manual",
@@ -450,6 +542,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Règles du jeu"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sauvegarder"
           }
         }
       }
@@ -548,7 +650,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "À vous de jouer !"
           }
         }

@@ -8,6 +8,7 @@
 import Foundation
 import Connect4Core
 import Connect4Rules
+import Connect4Persistance
 
 public extension Connect4Core.Rules {
     var shortName : String {
@@ -17,6 +18,22 @@ public extension Connect4Core.Rules {
             case is PopOutRules:
                 return "PopOut"
             case is TicTacToeRules:
+                return "Tic tac toe"
+            default:
+                return "Unknown"
+        }
+    }
+}
+
+
+public extension Connect4Persistance.RulesData {
+    var shortName : String {
+        switch self.type {
+            case "\(Connect4Rules.self)":
+                return "Classic"
+            case "\(PopOutRules.self)":
+                return "PopOut"
+            case "\(TicTacToeRules.self)":
                 return "Tic tac toe"
             default:
                 return "Unknown"

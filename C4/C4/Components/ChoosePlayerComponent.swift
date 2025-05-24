@@ -5,7 +5,7 @@ import Connect4Players
 
 struct ChoosePlayerComponent: View {
     @State private var avatarItem: PhotosPickerItem?
-    @State private var avatarImage: Image? = Image("HomeImage")
+    @State private var avatarImage: Image? = Image("DefaultPlayerImage")
     
     @Binding var selectedPlayerType: String
     @Binding var selectedPlayer: PlayerVM
@@ -37,7 +37,7 @@ struct ChoosePlayerComponent: View {
                     .tint(Color(.primaryAccentBackground))
                 }
             } else {
-                Text(selectedPlayer.name)
+                Text(selectedPlayerType)
             }
             avatarImage?
                 .resizable()
