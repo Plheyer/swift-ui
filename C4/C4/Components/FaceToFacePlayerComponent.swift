@@ -3,16 +3,22 @@ import Connect4Core
 import Charts
 
 struct FaceToFacePlayerComponent: View {
+    var pickerCallback : () async -> ()
     @Binding public var selectedPlayer : PlayerVM
-    @Binding public var players : [PlayerVM]
+    @ObservedObject public var playersVM : PlayersVM
     var body: some View {
         VStack {
             Image("HomeImage")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             Picker("Player", selection: $selectedPlayer) {
-                ForEach(players, id: \.self) { player in
+                ForEach(playersVM.players, id: \.self) { player in
                     Text(player.name)
+                }
+            }
+            .onChange(of: selectedPlayer) {
+                Task {
+                    await self.pickerCallback()
                 }
             }
             .tint(.primaryAccentBackground)

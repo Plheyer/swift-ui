@@ -7,7 +7,38 @@ struct SavedGames: View {
     @StateObject public var inProgressGames : GameResultsVM = GameResultsVM()
     @StateObject public var finishedGames : GameResultsVM = GameResultsVM()
     
-    @State var debug = ""
+    public func loadResults() async {
+        do {
+            results = try await Persistance.loadGameResults(withName: "GameResults") ?? []
+            
+            inProgressGames.gameResults = results.filter {
+                switch ($0.winner) {
+                    case .noOne:
+                        return true
+                    default:
+                        return false
+                }
+            }
+            .map {
+                GameResultVM(date: $0.date, players: $0.players, rules: $0.rules, winner: $0.winner)
+            }
+            
+            finishedGames.gameResults = results.filter {
+                switch ($0.winner) {
+                    case .player1, .player2:
+                        return true
+                    default:
+                        return false
+                }
+            }
+            .map {
+                GameResultVM(date: $0.date, players: $0.players, rules: $0.rules, winner: $0.winner)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     var body: some View {
          ScrollView {
             Spacer()
@@ -20,35 +51,10 @@ struct SavedGames: View {
         .background(Color(.primaryBackground))
         .navigationBarTitle(String(localized: "SavedGamesTitle"))
         .task {
-            do {
-                results = try await Persistance.loadGameResults(withName: "GameResults") ?? []
-                
-                inProgressGames.gameResults = results.filter {
-                    switch ($0.winner) {
-                        case .noOne:
-                            return true
-                        default:
-                            return false
-                    }
-                }
-                .map {
-                    GameResultVM(date: $0.date, players: $0.players, rules: $0.rules, winner: $0.winner)
-                }
-                debug = "\(inProgressGames.gameResults.count)"
-                finishedGames.gameResults = results.filter {
-                    switch ($0.winner) {
-                        case .player1, .player2:
-                            return true
-                        default:
-                            return false
-                    }
-                }
-                .map {
-                    GameResultVM(date: $0.date, players: $0.players, rules: $0.rules, winner: $0.winner)
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
+            await loadResults()
+        }
+        .refreshable {
+            await loadResults()
         }
     }
 }

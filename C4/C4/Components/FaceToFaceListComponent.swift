@@ -3,7 +3,7 @@ import Connect4Core
 import Charts
 
 struct FaceToFaceListComponent: View {
-    @ObservedObject var games : GamesVM
+    @ObservedObject var games : GameResultsVM
     var body: some View {
         VStack {
             HStack {
@@ -12,11 +12,16 @@ struct FaceToFaceListComponent: View {
                 Text(String(localized: "Rules")).frame(maxWidth: .infinity, alignment: .trailing)
             }
             Divider()
-            ForEach (games.games) { g in
+            ForEach (games.gameResults) { g in
                 HStack {
-                    // Text(g.dateFormatted).frame(maxWidth: .infinity, alignment: .leading)
-                    Text(g.getWinnerPlayer()?.name ?? "Draw").frame(maxWidth: .infinity, alignment: .center)
-                    Text(g.rules.shortName).frame(maxWidth: .infinity, alignment: .trailing)
+                    Text(DateFormatter().defaultFormat(date: g.date))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Text(g.players.first { $0.id == g.winner }?.name ?? "Draw")
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    
+                    Text(g.rules.shortName)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 Divider()
             }

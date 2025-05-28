@@ -41,6 +41,7 @@
 		EC73FD7F2DDFAB8600B28CE2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD7E2DDFAB8600B28CE2 /* GameView.swift */; };
 		EC73FD812DDFB8E100B28CE2 /* GridBoardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD802DDFB8E100B28CE2 /* GridBoardComponent.swift */; };
 		EC73FD832DE0B23E00B28CE2 /* GamePlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD822DE0B23E00B28CE2 /* GamePlayerComponent.swift */; };
+		ECAE6A212DE7228400A3EA02 /* PlayersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAE6A202DE7228400A3EA02 /* PlayersVM.swift */; };
 		ECB94EE02DD46EE200D13E5A /* C4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB94EDF2DD46EE200D13E5A /* C4App.swift */; };
 		ECB94EE22DD46EE200D13E5A /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB94EE12DD46EE200D13E5A /* HomePage.swift */; };
 		ECB94EE42DD46EE300D13E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB94EE32DD46EE300D13E5A /* Assets.xcassets */; };
@@ -107,6 +108,7 @@
 		EC73FD7E2DDFAB8600B28CE2 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		EC73FD802DDFB8E100B28CE2 /* GridBoardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBoardComponent.swift; sourceTree = "<group>"; };
 		EC73FD822DE0B23E00B28CE2 /* GamePlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerComponent.swift; sourceTree = "<group>"; };
+		ECAE6A202DE7228400A3EA02 /* PlayersVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersVM.swift; sourceTree = "<group>"; };
 		ECB94EDC2DD46EE200D13E5A /* C4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB94EDF2DD46EE200D13E5A /* C4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4App.swift; sourceTree = "<group>"; };
 		ECB94EE12DD46EE200D13E5A /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				ECEFC0F52DE19C7100237068 /* HumanPlayerVM.swift */,
 				ECEFC0F92DE1D03300237068 /* GameResultsVM.swift */,
 				ECEFC0FD2DE1D3C100237068 /* GameResultVM.swift */,
+				ECAE6A202DE7228400A3EA02 /* PlayersVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				ECB94EE22DD46EE200D13E5A /* HomePage.swift in Sources */,
 				EC2F81D22DE0BB39000D4514 /* RulesExtensions.swift in Sources */,
 				EC6A4E272DDD040900D7E398 /* ChooseRulesComponent.swift in Sources */,
+				ECAE6A212DE7228400A3EA02 /* PlayersVM.swift in Sources */,
 				EC6A4E3E2DDDA72600D7E398 /* GameListComponent.swift in Sources */,
 				EC2F81DA2DE1127D000D4514 /* GamePortraitView.swift in Sources */,
 				EC6A4E432DDDB2AE00D7E398 /* GamesVM.swift in Sources */,
