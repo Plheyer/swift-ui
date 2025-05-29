@@ -1,10 +1,3 @@
-//
-//  GameVM.swift
-//  C4
-//
-//  Created by etudiant on 21/05/2025.
-//
-
 import SwiftUI
 import Connect4Core
 import Connect4Persistance

@@ -9,22 +9,50 @@ import Connect4Core
 import SwiftUI
 
 struct GameView: View {
-    @Binding var board : Board
-    @Binding var rules : Rules
-    @State var isPaused : Bool = false
-    @Binding var isPlayer1Turn : Bool
-    @Binding var isPlayer2Turn : Bool
+    @ObservedObject public var game: GameVM
+    @ObservedObject public var timer: TimerVM
+    
+    // Orientation
     @Binding var orientation: UIDeviceOrientation?
     @Binding var idiom: UIUserInterfaceIdiom?
     
+    // Gameplay
+    @State var isPaused : Bool = false
+    @State var isPlayer1Turn = true
+    @State var isPlayer2Turn = false
+    
+    let debug = false
+    
     var body: some View {
+        if debug { // To see if the parameters are passed correctly from the LaunchGame
+            Text("nb Rows \(game.rules.nbRows)")
+            Text("nb Columns \(game.rules.nbColumns)")
+            Text("tokens to align \(game.rules.tokensToAlign)")
+            Text("type rules \(game.rules.type)")
+            Text("p1 name \(game.players[.player1]?.name ?? "BUG")")
+            Text("p1 type \(game.players[.player1]?.type ?? "BUG")")
+            Text("p2 name \(game.players[.player2]?.name ?? "BUG")")
+            Text("p2 type \(game.players[.player2]?.type ?? "BUG")")
+            Text("p1 image")
+            game.players[.player1]!.image
+                .resizable()
+                .frame(width: 100, height: 100)
+            Text("p2 image")
+            game.players[.player2]!.image
+                .resizable()
+                .frame(width: 100, height: 100)
+            Text("timer limited? \(timer.isLimitedTime)")
+            Text("timer minutes \(timer.minutesString)")
+            Text("timer seconds \(timer.secondsString)")
+        }
+        
         switch(orientation, idiom) {
-        case (.portrait, .phone), (.portraitUpsideDown, .phone), (.portrait, .pad), (.portraitUpsideDown, .pad):
-                GamePortraitView(board: $board, rules: $rules, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
+            case (.portrait, .phone), (.portraitUpsideDown, .phone), (.portrait, .pad), (.portraitUpsideDown, .pad):
+                GamePortraitView(game: game, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
             case (.landscapeLeft, .phone), (.landscapeRight, .phone):
-                GameLandscapeView(board: $board, rules: $rules, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
+                GameLandscapeView(game: game, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
             default:
-                GameLandscapeView(board: $board, rules: $rules, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
+                GameLandscapeView(game: game, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
         }
     }
 }
@@ -43,16 +71,12 @@ struct GameView: View {
 }
 
 private struct GameViewPreview : View {
-    @State private var index = 0
-    @State private var board = BoardStub().getBoards()[0]
-    @State private var rules : Rules = Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!
-    @State var isPlayer1Turn = false
-    @State var isPlayer2Turn = true
+    @StateObject public var gameVM : GameVM = GameVM(with: PlayerStub().getPlayersVM()[0], andWith: PlayerStub().getPlayersVM()[1], board: Board(withNbRows: 6, andNbColumns: 7)!)
+    @StateObject public var timerVM = TimerVM()
     
     @State var orientation: UIDeviceOrientation?
     @State var idiom: UIUserInterfaceIdiom?
-    @State var isPaused : Bool = false
     var body: some View {
-        GameView(board: $board, rules: $rules, isPaused: isPaused, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn, orientation: $orientation, idiom: $idiom)
+        GameView(game: gameVM, timer: timerVM, orientation: $orientation, idiom: $idiom)
     }
 }

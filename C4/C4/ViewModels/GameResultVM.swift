@@ -1,14 +1,8 @@
-//
-//  GameVM.swift
-//  C4
-//
-//  Created by etudiant on 21/05/2025.
-//
-
 import SwiftUI
 import Connect4Core
 import Connect4Persistance
 
+// This VM is used to handle results in lists, thus we need : Identifiable, Hashable, ...
 public class GameResultVM : Identifiable, ObservableObject, Hashable {
     public let date: Date
     public let players: [PlayerData]

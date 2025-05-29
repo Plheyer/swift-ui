@@ -1,22 +1,19 @@
 import SwiftUI
+import Connect4Core
+import Connect4Rules
 
 struct ChooseRulesComponent: View {
-    var rules = ["Classic", "Push", "TicTacToe"]
-    @Binding var selectedRule: String
-    @Binding var nbRows: Int
-    @Binding var nbColumns: Int
-    @Binding var tokenToAlign: Int
+    public var rules = ["\(Connect4Rules.self)", "\(TicTacToeRules.self)", "\(PopOutRules.self)"]
+    @ObservedObject public var rule: RuleVM
+    @ObservedObject public var timer : TimerVM
     let range = 4...20
-    @Binding var isLimitedTime : Bool
-    @Binding var minutesString : String
-    @Binding var secondsString : String
     
     var body: some View {
         VStack {
             HStack {
                 Image(systemName: "list.bullet.clipboard")
                 Text(String(localized: "Rules"))
-                Picker("Rules", selection: $selectedRule) {
+                Picker("Rules", selection: $rule.type) {
                     ForEach(rules, id: \.self) { rule in
                         Text(rule)
                     }
@@ -29,23 +26,29 @@ struct ChooseRulesComponent: View {
                     Image(systemName: "square.resize")
                     Text(String(localized: "Dimensions"))
                 }.padding(.top, 5)
-                VStack {
-                    HStack {
+                Grid {
+                    GridRow {
                         Text(String(localized: "Rows"))
-                        Stepper(value: $nbRows, in: range, step: 1){
-                            Text("\(nbRows)")
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                        Stepper(value: $rule.nbRows, in: range, step: 1) {
+                            Text(rule.nbRows.description)
                         }
                     }
-                    HStack {
+                    GridRow {
                         Text(String(localized: "Columns"))
-                        Stepper(value: $nbColumns, in: range, step: 1){
-                            Text("\(nbColumns)")
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                        Stepper(value: $rule.nbColumns, in: range, step: 1) {
+                            Text(rule.nbColumns.description)
                         }
                     }
-                    HStack {
+                    GridRow {
                         Text(String(localized: "TokensToAlign"))
-                        Stepper(value: $tokenToAlign, in: range, step: 1){
-                            Text("\(tokenToAlign)")
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                        Stepper(value: $rule.tokensToAlign, in: range, step: 1) {
+                            Text(rule.tokensToAlign.description)
                         }
                     }
                 }
@@ -53,13 +56,13 @@ struct ChooseRulesComponent: View {
             }
             HStack {
                 Image(systemName: "clock")
-                Toggle(String(localized: "LimitedTime"), isOn: $isLimitedTime).toggleStyle(.switch).fixedSize()
+                Toggle(String(localized: "LimitedTime"), isOn: $timer.isLimitedTime).toggleStyle(.switch).fixedSize()
                 .tint(.primaryAccentBackground)
-                if (isLimitedTime) {
-                    TextField("", text: $minutesString).textFieldStyle(.roundedBorder)
+                if (timer.isLimitedTime) {
+                    TextField("", text: $timer.minutesString).textFieldStyle(.roundedBorder)
                         .keyboardType(.decimalPad)
                     Text(String(localized: "min"))
-                    TextField("", text: $secondsString).textFieldStyle(.roundedBorder)
+                    TextField("", text: $timer.secondsString).textFieldStyle(.roundedBorder)
                         .keyboardType(.decimalPad)
                     Text(String(localized: "sec"))
                 }

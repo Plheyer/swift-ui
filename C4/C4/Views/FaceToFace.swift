@@ -4,15 +4,15 @@ import Connect4Persistance
 import Charts
 
 struct FaceToFace: View {
-    @State public var player1 : PlayerVM = PlayerStub().getPlayersVM()[0]
-    @State public var player2 : PlayerVM = PlayerStub().getPlayersVM()[1]
-    @State public var players : PlayersVM = PlayersVM(players: PlayerStub().getPlayersVM())
-    @State var results: GameResultsVM = GameResultsVM()
+    @State public var player1Name : String = PlayerStub().getPlayersVM()[0].name
+    @State public var player2Name : String = PlayerStub().getPlayersVM()[1].name
+    @StateObject public var players : PlayersVM = PlayersVM(players: PlayerStub().getPlayersVM())
+    @StateObject var results: GameResultsVM = GameResultsVM()
     @State private var debug: String = ""
     
     func loadFaceToFace() async {
         do {
-            let res = try await Connect4Persistance.FaceToFace.getResults(in: "GameResults", with: PlayerData(name: player1.name, id: .player1, type: "HumanPlayer"), and: PlayerData(name: player2.name, id: .player2, type: "HumanPlayer"))
+            let res = try await Connect4Persistance.FaceToFace.getResults(in: "GameResults", with: PlayerData(name: player1Name, id: .player1, type: "HumanPlayer"), and: PlayerData(name: player2Name, id: .player2, type: "HumanPlayer"))
             results.gameResults = res
                 .map {
                     GameResultVM(date: $0.date, players: $0.players, rules: $0.rules, winner: $0.winner)
@@ -26,9 +26,9 @@ struct FaceToFace: View {
          ScrollView {
              Text(debug)
              HStack(spacing: 10) {
-                 FaceToFacePlayerComponent(pickerCallback: self.loadFaceToFace, selectedPlayer: $player1, playersVM: players).frame(maxWidth: .infinity, alignment: .leading)
-                 FaceToFaceChartComponent(games: results, player1Name: player1.name).frame(maxWidth: .infinity, alignment: .center)
-                 FaceToFacePlayerComponent(pickerCallback: self.loadFaceToFace, selectedPlayer: $player2, playersVM: players).frame(maxWidth: .infinity, alignment: .trailing)
+                 FaceToFacePlayerComponent(pickerCallback: self.loadFaceToFace, selectedPlayer: $player1Name, playersVM: players).frame(maxWidth: .infinity, alignment: .leading)
+                 FaceToFaceChartComponent(games: results, player1Name: player1Name).frame(maxWidth: .infinity, alignment: .center)
+                 FaceToFacePlayerComponent(pickerCallback: self.loadFaceToFace, selectedPlayer: $player2Name, playersVM: players).frame(maxWidth: .infinity, alignment: .trailing)
              }
              
              FaceToFaceListComponent(games: results)

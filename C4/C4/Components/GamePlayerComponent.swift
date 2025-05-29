@@ -9,7 +9,7 @@ import Connect4Core
 import SwiftUI
 
 struct GamePlayerComponent: View {
-    var player : Player
+    @ObservedObject public var player : PlayerVM
     @Binding var isPlayerTurn : Bool
     var timer = "00:00:00"
     var color : Color
@@ -17,11 +17,11 @@ struct GamePlayerComponent: View {
         VStack {
             HStack {
                 ZStack {
-                    Image("HomeImage")
+                    player.image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .clipShape(.circle)
-                        .frame(width: 70)
+                        .frame(width: 70, height: 70)
                     HStack(alignment: .bottom) {
                         Spacer()
                         VStack {
@@ -67,12 +67,14 @@ struct GamePlayerComponent: View {
 private struct GamePlayerComponentPreview : View {
     @State var isPlayer1Turn = false
     @State var isPlayer2Turn = true
+    @State var player1VM = PlayerVM(name: "player1", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
+    @State var player2VM = PlayerVM(name: "player2", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
     var body : some View {
         VStack {
             HStack {
-                GamePlayerComponent(player: HumanPlayer(withName: "Preview", andId: .player1)!, isPlayerTurn: $isPlayer1Turn, color: Color(red: 255, green: 0, blue: 0, opacity: 0.003))
+                GamePlayerComponent(player: player1VM, isPlayerTurn: $isPlayer1Turn, color: Color(red: 255, green: 0, blue: 0, opacity: 0.3))
                 Spacer()
-                GamePlayerComponent(player: HumanPlayer(withName: "Preview2", andId: .player2)!, isPlayerTurn: $isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.003))
+                GamePlayerComponent(player: player2VM, isPlayerTurn: $isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.3))
             }
             Button(action: {
                 isPlayer1Turn.toggle()

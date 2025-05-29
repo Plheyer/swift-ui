@@ -1,43 +1,36 @@
 import SwiftUI
 import Connect4Core
+import Connect4Rules
 
 struct LaunchGame: View {
-    @Binding var orientation: UIDeviceOrientation?
-    @Binding var idiom: UIUserInterfaceIdiom?
-    @State var isPresented = false
+    // Orientation
+    @Binding public var orientation: UIDeviceOrientation?
+    @Binding public var idiom: UIUserInterfaceIdiom?
     
-    @State var player1Name: String = ""
-    @State var player2Name: String = ""
-    var ais = ["Negamax", "MinMax", "Finish him", "Human"]
-    var rules = ["Classic", "Push", "TicTacToe"]
-    @State var selectedPlayerType1: String = String("Human")
-    @State var selectedPlayerType2: String = String("Random")
-    @State var selectedPlayer1: PlayerVM = PlayerVM(name: "Player 1")
-    @State var selectedPlayer2: PlayerVM = PlayerVM(name: "Player 2")
-    @State private var selectedRule: String = "Classic"
-    @State var nbRows = 6
-    @State var nbColumns = 7
-    @State var tokenToAlign = 4
-    let range = 4...20
-    @State var isLimitedTime = false
-    @State var minutesString = "2"
-    @State var secondsString = "0"
-    @State var isPlayer1Turn = true
-    @State var isPlayer2Turn = false
+    // Game
+    // TODO: Change the stub
+    private let defaultPlayer1 = PlayerStub().getPlayersVM()[0]
+    private let defaultPlayer2 = PlayerStub().getPlayersVM()[1]
     
-    @State var board = BoardStub().getBoards()[0]
-    @State var rule : Rules = Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!
+    @StateObject public var gameVM : GameVM = GameVM(with: PlayerStub().getPlayersVM()[0], andWith: PlayerStub().getPlayersVM()[1], board: Board(withNbRows: 6, andNbColumns: 7)!)
+    
+    @StateObject public var newPlayerVM : PlayerVM = PlayerVM(name: "", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
+    
+    public var players = PlayersVM(players: PlayerStub().getPlayersVM()) // Have to fetch all players from persistance
+    
+    // Timer
+    @StateObject public var timerVM = TimerVM()
     
     var body: some View {
         ScrollView {
             HStack {
-                ChoosePlayerComponent(selectedPlayerType: $selectedPlayerType1, selectedPlayer: $selectedPlayer1, isPresented: $isPresented, playerText: String(localized: "Player1"))
-                ChoosePlayerComponent(selectedPlayerType: $selectedPlayerType2, selectedPlayer: $selectedPlayer2, isPresented: $isPresented, playerText: String(localized: "Player2"))
+                ChoosePlayerComponent(playerVM: gameVM.players[.player1] ?? defaultPlayer1, newPlayerVM: newPlayerVM, playerText: String(localized: "Player1"))
+                ChoosePlayerComponent(playerVM: gameVM.players[.player2] ?? defaultPlayer2, newPlayerVM: newPlayerVM, playerText: String(localized: "Player2"))
             }
             Divider()
-            ChooseRulesComponent(selectedRule: $selectedRule, nbRows: $nbRows, nbColumns: $nbColumns, tokenToAlign: $tokenToAlign, isLimitedTime: $isLimitedTime, minutesString: $minutesString, secondsString: $secondsString)
+            ChooseRulesComponent(rule: gameVM.rules, timer: timerVM)
 
-            NavigationLink(destination: GameView(board: $board, rules: $rule, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn, orientation: $orientation, idiom: $idiom)) {
+            NavigationLink(destination: GameView(game: gameVM, timer: timerVM, orientation: $orientation, idiom: $idiom)) {
                 Text(String(localized: "Play"))
                 .padding(.horizontal, 15)
                 .padding(.vertical, 8)
@@ -50,8 +43,34 @@ struct LaunchGame: View {
         .background(Color(.primaryBackground))
         .navigationBarTitle(String(localized: "LaunchGameTitle"))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .sheet(isPresented: $isPresented) {
-            AddPlayerComponent(isPresented: $isPresented)
+        .sheet(isPresented: $newPlayerVM.isEditing) {
+            NavigationStack {
+                AddPlayerComponent(playerVM: newPlayerVM)
+                .toolbar {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Save") {
+                            Task {
+                                await newPlayerVM.onEdited(isCancelled: false)
+                            }
+                        }
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, 8)
+                        .foregroundColor(.primaryAccentBackground)
+                        .cornerRadius(5)
+                    }
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") {
+                            Task {
+                                await newPlayerVM.onEdited(isCancelled: true)
+                            }
+                        }
+                        .padding(.horizontal, 15)
+                        .padding(.vertical, 8)
+                        .foregroundColor(.secondaryBackground)
+                        .cornerRadius(5)
+                    }
+                }
+            }
         }
     }
 }
@@ -72,6 +91,6 @@ private struct LaunchGamePreview : View {
     @State var orientation: UIDeviceOrientation?
     @State var idiom: UIUserInterfaceIdiom?
     var body: some View {
-        LaunchGamePreview(orientation: orientation, idiom: idiom)
+        LaunchGame(orientation: $orientation, idiom: $idiom)
     }
 }

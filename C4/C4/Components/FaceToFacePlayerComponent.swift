@@ -4,7 +4,7 @@ import Charts
 
 struct FaceToFacePlayerComponent: View {
     var pickerCallback : () async -> ()
-    @Binding public var selectedPlayer : PlayerVM
+    @Binding public var selectedPlayer : String
     @ObservedObject public var playersVM : PlayersVM
     var body: some View {
         VStack {
@@ -12,8 +12,8 @@ struct FaceToFacePlayerComponent: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             Picker("Player", selection: $selectedPlayer) {
-                ForEach(playersVM.players, id: \.self) { player in
-                    Text(player.name)
+                ForEach(playersVM.players.map { $0.name }, id: \.self) { name in
+                    Text(name)
                 }
             }
             .onChange(of: selectedPlayer) {

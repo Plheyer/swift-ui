@@ -590,6 +590,9 @@
         }
       }
     },
+    "State" : {
+
+    },
     "TokensToAlign" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -1,59 +1,39 @@
-//
-//  GameVM.swift
-//  C4
-//
-//  Created by etudiant on 21/05/2025.
-//
-
 import SwiftUI
 import Connect4Core
+import Connect4Persistance
 
-public class GameVM : Identifiable, ObservableObject {
-    public let id : UUID
-    public let date : Date
-    public let players : [Player]
-    public let rules : Rules
-    public let board : Board
+public class GameVM : ObservableObject {
+    @Published public var board : Board
+    @Published public var rules: RuleVM
+    @Published public var players: [Connect4Core.Owner : PlayerVM]
+    @Published var isEditing: Bool = false // For the modal view
     
-    public init(date : Date, players : [Player], rules : Rules, board: Board) {
-        self.id = UUID()
-        self.date = date
-        self.players = players
-        self.rules = rules
+    public init(with player1: PlayerVM, andWith player2: PlayerVM, board: Board) {
         self.board = board
+        self.rules = RuleVM(nbRows: 6, nbColumns: 7, tokensToAlign: 4, type: "\(Connect4Rules.self)") // Default rules
+        self.players = [.player1:player1, .player2:player2]
     }
     
-    public func getGameResult() -> Connect4Core.Result {
-        if let lastMove = self.rules.historic.last {
-            do {
-                let (_, result) = try self.rules.isGameOver(withBoard: self.board, andLastRowPlayed: lastMove.row, andLastColumnPlayed: lastMove.column)
-                return result
-            } catch {
-                return Result.notFinished
-            }
-        }
-        return Result.notFinished
+    public func onEditing() {
+        self.isEditing = true
     }
     
-    public func getWinnerPlayer() -> Player? {
-        if let lastMove = self.rules.historic.last {
-            do {
-                let (_, result) = try self.rules.isGameOver(withBoard: self.board, andLastRowPlayed: lastMove.row, andLastColumnPlayed: lastMove.column)
-                switch (result) {
-                    case .winner(winner: let winner, alignment: _):
-                        switch (winner) {
-                        case .noOne:
-                            return nil
-                        default:
-                            return self.players.first { $0.id == winner }
-                        }
-                    default:
-                        return nil
+    public func onEdited(isCancelled: Bool = true) async -> Bool {
+        self.isEditing = false
+        if !isCancelled {
+            if let rules = self.rules.model, players.count == 2, let player1 = players.values.first?.model, let player2 = players.values.dropFirst().first?.model {
+                do {
+                    let game = try? Game(withBoard: board, withRules: rules, andPlayer1: player1, andPlayer2: player2)
+                    if let game {
+                        return try await Persistance.saveGame(withName: "Games", andGame: game)
+                    }
+                    return false
+                } catch {
+                    print(error.localizedDescription)
+                    return false
                 }
-            } catch {
-                return nil
             }
         }
-        return nil
+        return false
     }
 }

@@ -35,6 +35,13 @@ struct GridBoardComponent: View {
     }
 }
 
-//#Preview {
-//    GameView()
-//}
+#Preview {
+    GridBoardComponentPreview()
+}
+
+private struct GridBoardComponentPreview : View {
+    @State var board = BoardStub().getBoards()[1]
+    var body : some View {
+        GridBoardComponent(board: $board)
+    }
+}

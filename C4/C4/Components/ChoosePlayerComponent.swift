@@ -4,45 +4,44 @@ import Connect4Core
 import Connect4Players
 
 struct ChoosePlayerComponent: View {
+    @ObservedObject public var playerVM : PlayerVM
+    @ObservedObject public var newPlayerVM : PlayerVM
     @State private var avatarItem: PhotosPickerItem?
-    @State private var avatarImage: Image? = Image("DefaultPlayerImage")
     
-    @Binding var selectedPlayerType: String
-    @Binding var selectedPlayer: PlayerVM
-    @Binding var isPresented: Bool
+    
     var playerText: String
-    var playersType: [String] = [String(localized: "Human"), String(localized: "Random"), String(localized: "FinishHim"), String(localized: "Negamax")]
+    var playersType: [String] = ["\(HumanPlayer.self)", "\(RandomPlayer.self)", "\(FinnishHimPlayer.self)", "\(SimpleNegaMaxPlayer.self)"]
     var players: [PlayerVM] = PlayerStub().getPlayersVM()
     
     var body: some View {
         VStack {
             Text(playerText)
-            Picker("Player type", selection: $selectedPlayerType) {
+            Picker("Player type", selection: $playerVM.type) {
                 ForEach(playersType, id: \.self) { player in
-                    Text(player)
+                    Text(PlayerVM.getLocalizedType(from: player))
                 }
             }
             .tint(.primaryAccentBackground)
-            if (selectedPlayerType == String("Human")) {
+            if (playerVM.type == "\(HumanPlayer.self)") {
                 HStack {
-                    Picker("Player", selection: $selectedPlayer) {
-                        ForEach(players, id: \.self) { player in
-                            Text(player.name)
+                    Picker("Player", selection: $playerVM.name) {
+                        ForEach(players.map { $0.name }, id: \.self) { name in
+                            Text(name)
                         }
                     }
                     .tint(Color(.primaryAccentBackground))
                     Button("", systemImage: "plus") {
-                        isPresented.toggle()
+                        newPlayerVM.onEditing()
                     }
                     .tint(Color(.primaryAccentBackground))
                 }
             } else {
-                Text(selectedPlayerType)
+                Text(PlayerVM.getLocalizedType(from: playerVM.type))
             }
-            avatarImage?
+            playerVM.image
                 .resizable()
                 .frame(width: 100, height: 100)
-            if (selectedPlayerType == String("Human")) {
+            if (playerVM.type == "\(HumanPlayer.self)") {
                 HStack {
                     PhotosPicker(selection: $avatarItem, matching: .images) {
                         HStack {
@@ -55,7 +54,7 @@ struct ChoosePlayerComponent: View {
                 .onChange(of: avatarItem) {
                     Task {
                         if let loaded = try? await avatarItem?.loadTransferable(type: Image.self) {
-                            avatarImage = loaded
+                            playerVM.image = loaded
                         } else {
                             print("Failed")
                         }
@@ -72,15 +71,13 @@ struct ChoosePlayerComponent: View {
 }
 
 private struct ChoosePlayerComponentPreview : View {
-    @State var selectedPlayerType1: String = String("Human")
-    @State var selectedPlayerType2: String = String("Random")
-    @State var selectedPlayer1: PlayerVM = PlayerVM(name: "Player 1")
-    @State var selectedPlayer2: PlayerVM = PlayerVM(name: "Player 2")
-    @State var isPresented: Bool = false
+    @State var player1VM = PlayerVM(name: "Player 1", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
+    @State var player2VM = PlayerVM(name: "Player 2", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")
+    @State var newPlayerVM = PlayerVM(name: "", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
     var body: some View {
         HStack{
-            ChoosePlayerComponent(selectedPlayerType: $selectedPlayerType1, selectedPlayer: $selectedPlayer1, isPresented: $isPresented, playerText: "Player 1")
-            ChoosePlayerComponent(selectedPlayerType: $selectedPlayerType2, selectedPlayer: $selectedPlayer2, isPresented: $isPresented, playerText: "Player 2")
+            ChoosePlayerComponent(playerVM: player1VM, newPlayerVM: newPlayerVM, playerText: "Player 1")
+            ChoosePlayerComponent(playerVM: player2VM, newPlayerVM: newPlayerVM, playerText: "Player 2")
         }
         Spacer()
     }

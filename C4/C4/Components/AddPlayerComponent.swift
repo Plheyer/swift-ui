@@ -10,10 +10,10 @@ import SwiftUI
 import _PhotosUI_SwiftUI
 
 struct AddPlayerComponent: View {
+    @ObservedObject var playerVM: PlayerVM
     @State private var avatarItem: PhotosPickerItem?
     @State private var avatarImage: Image? = Image("HomeImage")
     @State private var playerName: String = ""
-    @Binding var isPresented: Bool
     var body: some View {
         VStack(alignment: .center) {
             Text(String(localized: "AddPlayer"))
@@ -43,25 +43,6 @@ struct AddPlayerComponent: View {
             TextField(String(localized: "ChoosePlayerNamePlaceholer"), text: $playerName)
                 .frame(width: 200)
                 .textFieldStyle(.roundedBorder)
-            HStack {
-                Button("Cancel") {
-                    isPresented.toggle()
-                }
-                .padding(.horizontal, 15)
-                .padding(.vertical, 8)
-                .background(Color(.secondaryBackground))
-                .foregroundColor(.primaryBackground)
-                .cornerRadius(5)
-                
-                Button("Save") {
-                    isPresented.toggle()
-                }
-                .padding(.horizontal, 15)
-                .padding(.vertical, 8)
-                .background(Color(.primaryAccentBackground))
-                .foregroundColor(.primaryBackground)
-                .cornerRadius(5)
-            }
             Spacer()
         }
         .padding()
@@ -75,8 +56,8 @@ struct AddPlayerComponent: View {
 }
 
 private struct AddPlayerComponentPreview : View {
-    @State var isPresented: Bool = false
+    @StateObject var playerVM = PlayerVM(name: "", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
     var body: some View {
-        AddPlayerComponent(isPresented: $isPresented)
+        AddPlayerComponent(playerVM: playerVM)
     }
 }
