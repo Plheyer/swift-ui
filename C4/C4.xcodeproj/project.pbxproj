@@ -17,6 +17,8 @@
 		EC328B1E2DD470A200CB402A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC328B1D2DD470A200CB402A /* Colors.xcassets */; };
 		EC328B202DD470D500CB402A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC328B1F2DD470D500CB402A /* Images.xcassets */; };
 		EC3E6C252DD4766E00D798E5 /* LaunchGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E6C242DD4766E00D798E5 /* LaunchGame.swift */; };
+		EC58CA532DE8C156008953B9 /* PersistanceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58CA522DE8C156008953B9 /* PersistanceExtensions.swift */; };
+		EC58CA552DE8C35A008953B9 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58CA542DE8C35A008953B9 /* ViewExtensions.swift */; };
 		EC6A4E1F2DDBBD1700D7E398 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E1E2DDBBD1700D7E398 /* NavigationView.swift */; };
 		EC6A4E242DDCFF6B00D7E398 /* ChoosePlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E232DDCFF6B00D7E398 /* ChoosePlayerComponent.swift */; };
 		EC6A4E272DDD040900D7E398 /* ChooseRulesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E262DDD040900D7E398 /* ChooseRulesComponent.swift */; };
@@ -83,6 +85,8 @@
 		EC328B1D2DD470A200CB402A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EC328B1F2DD470D500CB402A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC3E6C242DD4766E00D798E5 /* LaunchGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchGame.swift; sourceTree = "<group>"; };
+		EC58CA522DE8C156008953B9 /* PersistanceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceExtensions.swift; sourceTree = "<group>"; };
+		EC58CA542DE8C35A008953B9 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		EC6A4E1E2DDBBD1700D7E398 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		EC6A4E232DDCFF6B00D7E398 /* ChoosePlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlayerComponent.swift; sourceTree = "<group>"; };
 		EC6A4E262DDD040900D7E398 /* ChooseRulesComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRulesComponent.swift; sourceTree = "<group>"; };
@@ -170,8 +174,8 @@
 		EC6A4E222DDCFEE200D7E398 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				EC6A4E232DDCFF6B00D7E398 /* ChoosePlayerComponent.swift */,
 				EC6A4E262DDD040900D7E398 /* ChooseRulesComponent.swift */,
+				EC6A4E232DDCFF6B00D7E398 /* ChoosePlayerComponent.swift */,
 				EC6A4E3D2DDDA72600D7E398 /* GameListComponent.swift */,
 				EC73FD722DDF42B500B28CE2 /* FaceToFaceChartComponent.swift */,
 				EC73FD742DDF43B500B28CE2 /* FaceToFacePlayerComponent.swift */,
@@ -238,6 +242,8 @@
 				EC2F81D12DE0BB39000D4514 /* RulesExtensions.swift */,
 				EC2F81D32DE0BE18000D4514 /* PlayerExtensions.swift */,
 				ECEFC0FB2DE1D30B00237068 /* DateFormatterExtensions.swift */,
+				EC58CA522DE8C156008953B9 /* PersistanceExtensions.swift */,
+				EC58CA542DE8C35A008953B9 /* ViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -463,11 +469,13 @@
 				EC73FD812DDFB8E100B28CE2 /* GridBoardComponent.swift in Sources */,
 				EC73FD6F2DDF3FFA00B28CE2 /* BoardStub.swift in Sources */,
 				EC73FD7F2DDFAB8600B28CE2 /* GameView.swift in Sources */,
+				EC58CA552DE8C35A008953B9 /* ViewExtensions.swift in Sources */,
 				ECEFC0FE2DE1D3C100237068 /* GameResultVM.swift in Sources */,
 				EC73FD7B2DDF476D00B28CE2 /* FaceToFaceListComponent.swift in Sources */,
 				EC2F81DC2DE112A9000D4514 /* GameLandscapeView.swift in Sources */,
 				EC73FD682DDDE44600B28CE2 /* FaceToFace.swift in Sources */,
 				EC73FD792DDF45A700B28CE2 /* PlayerStub.swift in Sources */,
+				EC58CA532DE8C156008953B9 /* PersistanceExtensions.swift in Sources */,
 				EC2F81D42DE0BE18000D4514 /* PlayerExtensions.swift in Sources */,
 				EC6A4E1F2DDBBD1700D7E398 /* NavigationView.swift in Sources */,
 				EC2F81D82DE10B43000D4514 /* HomeLandscapeComponent.swift in Sources */,

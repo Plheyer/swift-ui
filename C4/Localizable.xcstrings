@@ -342,6 +342,12 @@
         }
       }
     },
+    "nb Columns %lld" : {
+
+    },
+    "nb Rows %lld" : {
+
+    },
     "Negamax" : {
       "localizations" : {
         "fr" : {
@@ -384,6 +390,27 @@
           }
         }
       }
+    },
+    "OK" : {
+
+    },
+    "p1 image" : {
+
+    },
+    "p1 name %@" : {
+
+    },
+    "p1 type %@" : {
+
+    },
+    "p2 image" : {
+
+    },
+    "p2 name %@" : {
+
+    },
+    "p2 type %@" : {
+
     },
     "Play" : {
       "extractionState" : "manual",
@@ -484,6 +511,9 @@
           }
         }
       }
+    },
+    "Players have not been set correctly" : {
+
     },
     "Random" : {
       "localizations" : {
@@ -593,6 +623,15 @@
     "State" : {
 
     },
+    "timer minutes %@" : {
+
+    },
+    "timer seconds %@" : {
+
+    },
+    "tokens to align %lld" : {
+
+    },
     "TokensToAlign" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -610,6 +649,9 @@
         }
       }
     },
+    "Try again later." : {
+
+    },
     "Type" : {
       "localizations" : {
         "en" : {
@@ -625,6 +667,9 @@
           }
         }
       }
+    },
+    "type rules %@" : {
+
     },
     "Winner" : {
       "localizations" : {

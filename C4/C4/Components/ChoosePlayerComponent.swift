@@ -2,6 +2,7 @@ import SwiftUI
 import PhotosUI
 import Connect4Core
 import Connect4Players
+import Connect4Persistance
 
 struct ChoosePlayerComponent: View {
     @ObservedObject public var playerVM : PlayerVM
@@ -11,8 +12,7 @@ struct ChoosePlayerComponent: View {
     
     var playerText: String
     var playersType: [String] = ["\(HumanPlayer.self)", "\(RandomPlayer.self)", "\(FinnishHimPlayer.self)", "\(SimpleNegaMaxPlayer.self)"]
-    var players: [PlayerVM] = PlayerStub().getPlayersVM()
-    
+    @State var players: [PlayerVM] = []
     var body: some View {
         VStack {
             Text(playerText)
@@ -25,11 +25,20 @@ struct ChoosePlayerComponent: View {
             if (playerVM.type == "\(HumanPlayer.self)") {
                 HStack {
                     Picker("Player", selection: $playerVM.name) {
-                        ForEach(players.map { $0.name }, id: \.self) { name in
+                        ForEach(players.filter { $0.type == "\(HumanPlayer.self)" }.map { $0.name }, id: \.self) { name in
                             Text(name)
                         }
                     }
                     .tint(Color(.primaryAccentBackground))
+                    .onChange(of: playerVM.name) {
+                        Task {
+                            do {
+                                playerVM.image = try await Persistance.loadImage(withName: playerVM.name, withFolderName: "images") ?? Image("DefaultPlayerImage")
+                            } catch {
+                                playerVM.image = Image("DefaultPlayerImage")
+                            }
+                        }
+                    }
                     Button("", systemImage: "plus") {
                         newPlayerVM.onEditing()
                     }
@@ -55,6 +64,7 @@ struct ChoosePlayerComponent: View {
                     Task {
                         if let loaded = try? await avatarItem?.loadTransferable(type: Image.self) {
                             playerVM.image = loaded
+                            await playerVM.savePlayerImage()
                         } else {
                             print("Failed")
                         }
@@ -63,6 +73,9 @@ struct ChoosePlayerComponent: View {
             }
         }
         .padding()
+        .task {
+            players.append(contentsOf: await PlayersVM.loadAllPlayers())
+        }
     }
 }
 

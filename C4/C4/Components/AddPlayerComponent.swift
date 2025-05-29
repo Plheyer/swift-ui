@@ -12,14 +12,12 @@ import _PhotosUI_SwiftUI
 struct AddPlayerComponent: View {
     @ObservedObject var playerVM: PlayerVM
     @State private var avatarItem: PhotosPickerItem?
-    @State private var avatarImage: Image? = Image("HomeImage")
-    @State private var playerName: String = ""
     var body: some View {
         VStack(alignment: .center) {
             Text(String(localized: "AddPlayer"))
                 .font(.title)
             
-            avatarImage?
+            playerVM.image
                 .resizable()
                 .frame(width: 100, height: 100)
             HStack {
@@ -34,13 +32,13 @@ struct AddPlayerComponent: View {
             .onChange(of: avatarItem) {
                 Task {
                     if let loaded = try? await avatarItem?.loadTransferable(type: Image.self) {
-                        avatarImage = loaded
+                        playerVM.image = loaded
                     } else {
                         print("Failed")
                     }
                 }
             }
-            TextField(String(localized: "ChoosePlayerNamePlaceholer"), text: $playerName)
+            TextField(String(localized: "ChoosePlayerNamePlaceholer"), text: $playerVM.name)
                 .frame(width: 200)
                 .textFieldStyle(.roundedBorder)
             Spacer()

@@ -45,8 +45,13 @@ public class PlayerVM : Identifiable, ObservableObject, Hashable {
     public func onEdited(isCancelled: Bool = true) async {
         if !isCancelled {
             await savePlayer()
+            await savePlayerImage()
         }
-        self.isEditing = false
+        await MainActor.run {
+            self.isEditing = false
+        }
+        self.name = ""
+        self.image = Image("DefaultPlayerImage")
     }
     
     public static func getLocalizedType(from type: String) -> String {
@@ -64,13 +69,22 @@ public class PlayerVM : Identifiable, ObservableObject, Hashable {
         }
     }
     
+    // Public to allow image updates
+    public func savePlayerImage() async {
+        do {
+            try await Persistance.saveImage(self.image, withName: self.name, withFolderName: "images")
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     // Private because to save a Player, it's required to pass through onEdited
     private func savePlayer() async {
         let player = HumanPlayer(withName: self.name, andId: .player1)
         if let player {
             do {
                 // Saving as a HumanPlayer because we can't create AI Players
-                try await Persistance.savePlayer(withName: self.name, andPlayer: player)
+                try await Persistance.savePlayer(withName: self.name, andPlayer: player, withFolderName: "players")
             } catch {
                 print(error.localizedDescription)
             }

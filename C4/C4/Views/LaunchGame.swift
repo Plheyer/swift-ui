@@ -8,15 +8,14 @@ struct LaunchGame: View {
     @Binding public var idiom: UIUserInterfaceIdiom?
     
     // Game
-    // TODO: Change the stub
-    private let defaultPlayer1 = PlayerStub().getPlayersVM()[0]
-    private let defaultPlayer2 = PlayerStub().getPlayersVM()[1]
+    private let defaultPlayer1: PlayerVM = PlayerVM(name: "\(RandomPlayer.self)", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")
+    private let defaultPlayer2: PlayerVM = PlayerVM(name: "\(RandomPlayer.self)", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")
     
-    @StateObject public var gameVM : GameVM = GameVM(with: PlayerStub().getPlayersVM()[0], andWith: PlayerStub().getPlayersVM()[1], board: Board(withNbRows: 6, andNbColumns: 7)!)
+    @StateObject public var gameVM : GameVM = GameVM(with: PlayerVM(name: "\(RandomPlayer.self)", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)"), andWith: PlayerVM(name: "\(RandomPlayer.self)", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)"), board: Board(withNbRows: 6, andNbColumns: 7)!)
     
     @StateObject public var newPlayerVM : PlayerVM = PlayerVM(name: "", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
     
-    public var players = PlayersVM(players: PlayerStub().getPlayersVM()) // Have to fetch all players from persistance
+    @State public var players = PlayersVM() // Have to fetch all players from persistance
     
     // Timer
     @StateObject public var timerVM = TimerVM()
@@ -43,6 +42,11 @@ struct LaunchGame: View {
         .background(Color(.primaryBackground))
         .navigationBarTitle(String(localized: "LaunchGameTitle"))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onAppear() {
+            Task {
+                players.players = await PlayersVM.loadAllPlayers()
+            }
+        }
         .sheet(isPresented: $newPlayerVM.isEditing) {
             NavigationStack {
                 AddPlayerComponent(playerVM: newPlayerVM)
@@ -51,6 +55,7 @@ struct LaunchGame: View {
                         Button("Save") {
                             Task {
                                 await newPlayerVM.onEdited(isCancelled: false)
+                                players.players = await PlayersVM.loadAllPlayers()
                             }
                         }
                         .padding(.horizontal, 15)

@@ -4,7 +4,5 @@
 
 ### Swift UI
 
-- Link views to data
-- Be able to launch a real game
-- Save a game not finished
+- Hinder user to create new player with an existing username
 - Handle MacOS
