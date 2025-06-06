@@ -18,7 +18,7 @@ struct GameLandscapeView: View {
     
     @State private var errorShowing = false
     var body: some View {
-        ScrollView {
+        VStack {
             if let player1 = game.players[.player1], let player2 = game.players[.player2] {
                 HStack {
                     Spacer()

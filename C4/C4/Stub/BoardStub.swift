@@ -60,7 +60,21 @@ public struct BoardStub {
                 [Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .noOne)],
                 [Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .noOne)],
                 [Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .noOne)],
-            ])! // Not finished
+            ])!, // Not finished
+            Board(withGrid: [
+                [Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .noOne)],
+                [Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .noOne)],
+                [Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .noOne)],
+                [Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .noOne)],
+            ])!, // Not finished
+            Board(withGrid: [
+                [Piece(withOwner: .noOne), Piece(withOwner: .noOne), Piece(withOwner: .noOne), Piece(withOwner: .noOne), Piece(withOwner: .noOne)],
+                [Piece(withOwner: .noOne), Piece(withOwner: .player1), Piece(withOwner: .noOne), Piece(withOwner: .noOne), Piece(withOwner: .player2)],
+                [Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1)],
+                [Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2)],
+                [Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1)],
+                [Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2), Piece(withOwner: .player1), Piece(withOwner: .player2)],
+            ])!, // Not finished
         ]
     }
 }
