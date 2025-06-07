@@ -55,6 +55,8 @@
 		ECE6A91A2DF03D300055066D /* CellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A9192DF03D300055066D /* CellNode.swift */; };
 		ECE6A91C2DF03DEF0055066D /* BoardNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A91B2DF03DEF0055066D /* BoardNode.swift */; };
 		ECE6A91E2DF04CA90055066D /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A91D2DF04CA90055066D /* PlayerNode.swift */; };
+		ECE6A9212DF4788C0055066D /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A9202DF4788C0055066D /* ImageHelper.swift */; };
+		ECE6A9232DF484280055066D /* NodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A9222DF484280055066D /* NodeHelper.swift */; };
 		ECEFC0F82DE1B67500237068 /* AddPlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEFC0F72DE1B67500237068 /* AddPlayerComponent.swift */; };
 		ECEFC0FA2DE1D03300237068 /* GameResultsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEFC0F92DE1D03300237068 /* GameResultsVM.swift */; };
 		ECEFC0FC2DE1D30B00237068 /* DateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEFC0FB2DE1D30B00237068 /* DateFormatterExtensions.swift */; };
@@ -131,6 +133,8 @@
 		ECE6A9192DF03D300055066D /* CellNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellNode.swift; sourceTree = "<group>"; };
 		ECE6A91B2DF03DEF0055066D /* BoardNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardNode.swift; sourceTree = "<group>"; };
 		ECE6A91D2DF04CA90055066D /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
+		ECE6A9202DF4788C0055066D /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		ECE6A9222DF484280055066D /* NodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeHelper.swift; sourceTree = "<group>"; };
 		ECEFC0F72DE1B67500237068 /* AddPlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerComponent.swift; sourceTree = "<group>"; };
 		ECEFC0F92DE1D03300237068 /* GameResultsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultsVM.swift; sourceTree = "<group>"; };
 		ECEFC0FB2DE1D30B00237068 /* DateFormatterExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensions.swift; sourceTree = "<group>"; };
@@ -283,6 +287,7 @@
 		ECB94EDE2DD46EE200D13E5A /* C4 */ = {
 			isa = PBXGroup;
 			children = (
+				ECE6A91F2DF478800055066D /* Utils */,
 				ECE6A9162DF036F00055066D /* Scene */,
 				EC73FD692DDDE90300B28CE2 /* Extensions */,
 				EC73FD642DDDB86800B28CE2 /* Stub */,
@@ -331,6 +336,15 @@
 				ECE6A91D2DF04CA90055066D /* PlayerNode.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		ECE6A91F2DF478800055066D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ECE6A9202DF4788C0055066D /* ImageHelper.swift */,
+				ECE6A9222DF484280055066D /* NodeHelper.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,6 +490,7 @@
 				EC6A4E272DDD040900D7E398 /* ChooseRulesComponent.swift in Sources */,
 				ECAE6A212DE7228400A3EA02 /* PlayersVM.swift in Sources */,
 				ECAA52ED2DE8504E00EBA2E0 /* RuleVM.swift in Sources */,
+				ECE6A9232DF484280055066D /* NodeHelper.swift in Sources */,
 				EC6A4E3E2DDDA72600D7E398 /* GameListComponent.swift in Sources */,
 				EC2F81DA2DE1127D000D4514 /* GamePortraitView.swift in Sources */,
 				EC73FD832DE0B23E00B28CE2 /* GamePlayerComponent.swift in Sources */,
@@ -506,6 +521,7 @@
 				ECEFC0F82DE1B67500237068 /* AddPlayerComponent.swift in Sources */,
 				ECEFC0FA2DE1D03300237068 /* GameResultsVM.swift in Sources */,
 				ECB94EE02DD46EE200D13E5A /* C4App.swift in Sources */,
+				ECE6A9212DF4788C0055066D /* ImageHelper.swift in Sources */,
 				EC73FD732DDF42B500B28CE2 /* FaceToFaceChartComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

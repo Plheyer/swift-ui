@@ -7,6 +7,7 @@ public class PlayerVM : Identifiable, ObservableObject, Hashable {
     public let id : UUID // Only to be identifiable in a list
     @Published public var name : String
     @Published public var image: Image
+    @Published public var imagePath: String?
     @Published public var type : String // Not only useful when displaying all the players, to know which one is an AI, also when choosing a player type when launching a game
     @Published var isEditing: Bool = false // For the modal view
     
@@ -23,11 +24,12 @@ public class PlayerVM : Identifiable, ObservableObject, Hashable {
         }
     }
     
-    public init(name : String, owner: Owner, image: Image, type: String) {
+    public init(name : String, owner: Owner, image: Image, type: String, imagePath: String? = "") {
         self.id = UUID()
         self.name = name
         self.image = image
         self.type = type
+        self.imagePath = imagePath
     }
     
     public static func == (lhs: PlayerVM, rhs: PlayerVM) -> Bool {
@@ -72,7 +74,7 @@ public class PlayerVM : Identifiable, ObservableObject, Hashable {
     // Public to allow image updates
     public func savePlayerImage() async {
         do {
-            try await Persistance.saveImage(self.image, withName: self.name, withFolderName: "images")
+            self.imagePath = try await Persistance.saveImage(self.image, withName: self.name, withFolderName: "images")
         } catch {
             print(error.localizedDescription)
         }

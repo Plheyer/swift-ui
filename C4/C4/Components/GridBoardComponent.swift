@@ -11,11 +11,15 @@ import SpriteKit
 
 struct GridBoardComponent: View {
     @Binding var board : Board
+    let player1ImagePath: String
+    let player2ImagePath: String
     @State var scene: GameScene
     
-    public init(board: Binding<Board>) {
+    public init(board: Binding<Board>, player1ImagePath: String, player2ImagePath: String) {
         self._board = board
-        scene = GameScene(nbRows: board.wrappedValue.nbRows, nbColumns: board.wrappedValue.nbColumns)
+        self.player1ImagePath = player1ImagePath
+        self.player2ImagePath = player2ImagePath
+        scene = GameScene(nbRows: board.wrappedValue.nbRows, nbColumns: board.wrappedValue.nbColumns, player1ImagePath: player1ImagePath, player2ImagePath: player2ImagePath)
     }
     
     var body: some View {
@@ -49,7 +53,9 @@ struct GridBoardComponent: View {
 
 private struct GridBoardComponentPreview : View {
     @State var board = BoardStub().getBoards()[5]
+    let player1ImagePath = "/Users/etudiant/Downloads/anonymous.png"
+    let player2ImagePath = "/Users/etudiant/Downloads/larry.webp"
     var body : some View {
-        GridBoardComponent(board: $board)
+        GridBoardComponent(board: $board, player1ImagePath: player1ImagePath, player2ImagePath: player2ImagePath)
     }
 }

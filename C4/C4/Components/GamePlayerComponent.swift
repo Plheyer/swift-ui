@@ -67,8 +67,8 @@ struct GamePlayerComponent: View {
 private struct GamePlayerComponentPreview : View {
     @State var isPlayer1Turn = false
     @State var isPlayer2Turn = true
-    @State var player1VM = PlayerVM(name: "player1", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
-    @State var player2VM = PlayerVM(name: "player2", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
+    @State var player1VM = PlayerVM(name: "player1", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)", imagePath: "/Users/etudiant/Downloads/anonymous.png")
+    @State var player2VM = PlayerVM(name: "player2", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)", imagePath: "/Users/etudiant/Downloads/larry.webp")
     var body : some View {
         VStack {
             HStack {

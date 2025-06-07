@@ -26,7 +26,9 @@ public class PlayersVM : ObservableObject {
         // TODO: Get all players and append them to players
         for player in PlayerStub().getPlayersVM() {
             do {
-                player.image = try await Persistance.loadImage(withName: player.name, withFolderName: "images") ?? Image("DefaultPlayerImage")
+                let loaded = try await Persistance.loadImage(withName: player.name, withFolderName: "images")
+                player.image = loaded.image ?? Image("DefaultPlayerImage")
+                player.imagePath = loaded.path
             } catch {
                 player.image = Image("DefaultPlayerImage")
             }

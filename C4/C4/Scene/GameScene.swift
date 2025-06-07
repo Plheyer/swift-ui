@@ -3,14 +3,18 @@ import SpriteKit
 
 public class GameScene : SKScene {
     var boardNode : BoardNode?
+    var player1ImagePath: String = ""
+    var player2ImagePath: String = ""
     override public init(size: CGSize) {
         super.init(size: size)
         self.scaleMode = .aspectFit
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     }
     
-    convenience init(nbRows: Int, nbColumns: Int) {
+    convenience init(nbRows: Int, nbColumns: Int, player1ImagePath: String, player2ImagePath: String) {
         self.init(size: CGSize(width: nbColumns * 100, height: nbRows * 100 + 150))
+        self.player1ImagePath = player1ImagePath
+        self.player2ImagePath = player2ImagePath
         initBoard(nbRows: nbRows, nbColumns: nbColumns)
         initTopbar()
         self.backgroundColor = .clear
@@ -27,18 +31,18 @@ public class GameScene : SKScene {
     func initTopbar() {
         let toolbarNode = SKNode()
         self.addChild(toolbarNode)
-        let p1 = PlayerNode(width: 80, height: 80, color: .red, droppedAction: droppedAction)
+        let p1 = PlayerNode(width: 80, height: 80, imagePath: self.player1ImagePath, droppedAction: droppedAction)
         toolbarNode.addChild(p1)
         p1.position.x = -self.size.width/3
         p1.position.y = self.size.height/2 - 115
-        let p2 = PlayerNode(width: 80, height: 80, color: .yellow, droppedAction: droppedAction)
+        let p2 = PlayerNode(width: 80, height: 80, imagePath: self.player2ImagePath, droppedAction: droppedAction)
         toolbarNode.addChild(p2)
         p2.position.x = self.size.width/3 - 80
         p2.position.y = self.size.height/2 - 115
     }
     
-    func droppedAction(position : CGPoint, token: UIColor) {
-        boardNode?.placeToken(in: position, token: token)
+    func droppedAction(position : CGPoint, imagePath: String?, cropNode: SKCropNode?) {
+        boardNode?.placeToken(in: position, imagePath: imagePath, cropNode: cropNode)
     }
     
     required init?(coder aDecoder: NSCoder) {

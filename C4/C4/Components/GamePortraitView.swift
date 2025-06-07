@@ -25,7 +25,7 @@ struct GamePortraitView: View {
                     GamePlayerComponent(player: player2, isPlayerTurn: $isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.3))
                 }
                 
-                GridBoardComponent(board: $game.board)
+                GridBoardComponent(board: $game.board, player1ImagePath: player1.imagePath ?? "", player2ImagePath: player2.imagePath ?? "")
                 Button("", systemImage: isPaused ? "play.circle" : "pause.circle") {
                     isPaused.toggle()
                 }

@@ -22,6 +22,16 @@ struct ChoosePlayerComponent: View {
                 }
             }
             .tint(.primaryAccentBackground)
+            .onChange(of: playerVM.type) {
+                if playerVM.type == "\(HumanPlayer.self)" {
+                    playerVM.name = players.first { $0.type == "\(HumanPlayer.self)" }?.name ?? "Unknown" // Updating the name when passing to human player
+                } else {
+                    playerVM.name = playerVM.type
+                }
+                Task {
+                    await playerVM.savePlayerImage() // Save for sync
+                }
+            }
             if (playerVM.type == "\(HumanPlayer.self)") {
                 HStack {
                     Picker("Player", selection: $playerVM.name) {
@@ -33,9 +43,18 @@ struct ChoosePlayerComponent: View {
                     .onChange(of: playerVM.name) {
                         Task {
                             do {
-                                playerVM.image = try await Persistance.loadImage(withName: playerVM.name, withFolderName: "images") ?? Image("DefaultPlayerImage")
+                                let loaded = try await Persistance.loadImage(withName: playerVM.name, withFolderName: "images")
+                                
+                                if let loadedImage = loaded.image {
+                                    playerVM.image = loadedImage
+                                    playerVM.imagePath = loaded.path
+                                } else {
+                                    playerVM.image = Image("DefaultPlayerImage")
+                                    await playerVM.savePlayerImage() // Save for sync
+                                }
                             } catch {
                                 playerVM.image = Image("DefaultPlayerImage")
+                                await playerVM.savePlayerImage() // Save for sync
                             }
                         }
                     }
@@ -75,6 +94,7 @@ struct ChoosePlayerComponent: View {
         .padding()
         .task {
             players.append(contentsOf: await PlayersVM.loadAllPlayers())
+            await playerVM.savePlayerImage() // Saving default images to have a more consistent state with images, not half images as ImageSet and the other half saved in the storage.
         }
     }
 }

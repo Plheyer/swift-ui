@@ -40,14 +40,20 @@ public class BoardNode : SKNode {
         self.addChild(cellsNode)
     }
     
-    func placeToken(in location: CGPoint, token: UIColor) {
+    // Can take an imagePath (not recommended, takes lot's of time to load) or a cropNode (at least 1 of both)
+    func placeToken(in location: CGPoint, imagePath: String?, cropNode: SKCropNode?) {
         let xIndex = ceil(location.x/100) - 1
         let yIndex = ceil(location.y/100) - 1
         let node = cellsNode.children.first { ceil(($0.position.x - (spacing + padding) / 2) / 100) == xIndex && ceil(($0.position.y - (spacing + padding) / 2) / 100) == yIndex  }
         if let node, node is CellNode {
-            let a = node as? CellNode
-            a?.changeColor(color: token)
-        } else {
+            let cellNode = node as? CellNode
+            if let cropNode {
+                cellNode?.cropNode = cropNode
+            } else if let imagePath {
+                cellNode?.imagePath = imagePath
+            } else {
+                
+            }
         }
     }
 }

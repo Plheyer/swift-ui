@@ -40,7 +40,7 @@ struct GameLandscapeView: View {
                     
                     Spacer()
                     
-                    GridBoardComponent(board: $game.board)
+                    GridBoardComponent(board: $game.board, player1ImagePath: game.players[.player1]?.imagePath ?? "", player2ImagePath: game.players[.player2]?.imagePath ?? "")
                     
                     Spacer()
                 }
