@@ -86,7 +86,7 @@ public class PlayerVM : Identifiable, ObservableObject, Hashable {
         if let player {
             do {
                 // Saving as a HumanPlayer because we can't create AI Players
-                try await Persistance.savePlayer(withName: self.name, andPlayer: player, withFolderName: "players")
+                _ = try await Persistance.addPlayer(withName: "players", andPlayer: player)
             } catch {
                 print(error.localizedDescription)
             }

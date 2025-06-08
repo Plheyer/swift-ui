@@ -23,8 +23,8 @@ struct LaunchGame: View {
     var body: some View {
         ScrollView {
             HStack {
-                ChoosePlayerComponent(playerVM: gameVM.players[.player1] ?? defaultPlayer1, newPlayerVM: newPlayerVM, playerText: String(localized: "Player1"))
-                ChoosePlayerComponent(playerVM: gameVM.players[.player2] ?? defaultPlayer2, newPlayerVM: newPlayerVM, playerText: String(localized: "Player2"))
+                ChoosePlayerComponent(playerVM: gameVM.players[.player1] ?? defaultPlayer1, newPlayerVM: newPlayerVM, playerText: String(localized: "Player1"), players: players)
+                ChoosePlayerComponent(playerVM: gameVM.players[.player2] ?? defaultPlayer2, newPlayerVM: newPlayerVM, playerText: String(localized: "Player2"), players: players)
             }
             Divider()
             ChooseRulesComponent(rule: gameVM.rules, timer: timerVM)
@@ -44,7 +44,7 @@ struct LaunchGame: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear() {
             Task {
-                players.players = await PlayersVM.loadAllPlayers()
+                await players.loadAllPlayers()
             }
         }
         .sheet(isPresented: $newPlayerVM.isEditing) {
@@ -55,7 +55,7 @@ struct LaunchGame: View {
                         Button("Save") {
                             Task {
                                 await newPlayerVM.onEdited(isCancelled: false)
-                                players.players = await PlayersVM.loadAllPlayers()
+                                await players.loadAllPlayers()
                             }
                         }
                         .padding(.horizontal, 15)

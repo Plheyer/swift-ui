@@ -12,7 +12,7 @@ struct ChoosePlayerComponent: View {
     
     var playerText: String
     var playersType: [String] = ["\(HumanPlayer.self)", "\(RandomPlayer.self)", "\(FinnishHimPlayer.self)", "\(SimpleNegaMaxPlayer.self)"]
-    @State var players: [PlayerVM] = []
+    @ObservedObject var players: PlayersVM
     var body: some View {
         VStack {
             Text(playerText)
@@ -24,7 +24,7 @@ struct ChoosePlayerComponent: View {
             .tint(.primaryAccentBackground)
             .onChange(of: playerVM.type) {
                 if playerVM.type == "\(HumanPlayer.self)" {
-                    playerVM.name = players.first { $0.type == "\(HumanPlayer.self)" }?.name ?? "Unknown" // Updating the name when passing to human player
+                    playerVM.name = players.players.first { $0.type == "\(HumanPlayer.self)" }?.name ?? "Unknown" // Updating the name when passing to human player
                 } else {
                     playerVM.name = playerVM.type
                 }
@@ -35,7 +35,7 @@ struct ChoosePlayerComponent: View {
             if (playerVM.type == "\(HumanPlayer.self)") {
                 HStack {
                     Picker("Player", selection: $playerVM.name) {
-                        ForEach(players.filter { $0.type == "\(HumanPlayer.self)" }.map { $0.name }, id: \.self) { name in
+                        ForEach(players.players.filter { $0.type == "\(HumanPlayer.self)" }.map { $0.name }, id: \.self) { name in
                             Text(name)
                         }
                     }
@@ -93,7 +93,6 @@ struct ChoosePlayerComponent: View {
         }
         .padding()
         .task {
-            players.append(contentsOf: await PlayersVM.loadAllPlayers())
             await playerVM.savePlayerImage() // Saving default images to have a more consistent state with images, not half images as ImageSet and the other half saved in the storage.
         }
     }
@@ -107,10 +106,12 @@ private struct ChoosePlayerComponentPreview : View {
     @State var player1VM = PlayerVM(name: "Player 1", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
     @State var player2VM = PlayerVM(name: "Player 2", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")
     @State var newPlayerVM = PlayerVM(name: "", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
+    @State public var players = PlayersVM()
     var body: some View {
         HStack{
-            ChoosePlayerComponent(playerVM: player1VM, newPlayerVM: newPlayerVM, playerText: "Player 1")
-            ChoosePlayerComponent(playerVM: player2VM, newPlayerVM: newPlayerVM, playerText: "Player 2")
+            ChoosePlayerComponent(playerVM: player1VM, newPlayerVM: newPlayerVM, playerText: "Player 1", players: players)
+            ChoosePlayerComponent(playerVM: player2VM, newPlayerVM: newPlayerVM, playerText: "Player 2", players: players
+            )
         }
         Spacer()
     }

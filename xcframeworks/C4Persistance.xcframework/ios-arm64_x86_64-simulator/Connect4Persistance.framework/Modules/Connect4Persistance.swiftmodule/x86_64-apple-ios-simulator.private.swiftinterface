@@ -43,16 +43,12 @@ extension Connect4Core.Owner : Swift.Codable {
 }
 @available(iOS 16.0.0, macOS 14.0, *)
 public struct Persistance {
-  public static func saveBoard(withName name: Swift.String, andBoard board: Connect4Core.Board, withFolderName folderName: Swift.String? = nil) async throws
-  public static func loadBoard(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> Connect4Core.Board?
-  public static func saveRules(withName name: Swift.String, andRules rules: any Connect4Core.Rules, withFolderName folderName: Swift.String? = nil) async throws
-  public static func loadRules(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> (any Connect4Core.Rules)?
-  public static func savePlayer(withName name: Swift.String, andPlayer player: Connect4Core.Player, withFolderName folderName: Swift.String? = nil) async throws
-  public static func loadPlayer(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> Connect4Core.Player?
   public static func saveGame(withName name: Swift.String, andGame game: Connect4Core.Game, withFolderName folderName: Swift.String? = nil) async throws -> Swift.Bool
   public static func loadGame(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> Connect4Core.Game?
   public static func saveGameResult(withName name: Swift.String, andGame game: Connect4Core.Game, andResult result: Connect4Core.Result, withFolderName folderName: Swift.String? = nil) async throws -> Swift.Bool
   public static func loadGameResults(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> [Connect4Persistance.GameResult]?
+  public static func addPlayer(withName name: Swift.String, andPlayer player: Connect4Core.Player, withFolderName folderName: Swift.String? = nil) async throws -> Swift.Bool
+  public static func getPlayers(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> [Connect4Core.Player]?
 }
 public enum PersistanceError : Swift.Error {
   case invalidBoard, invalidRules, invalidPlayer, invalidGame, invalidResults

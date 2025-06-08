@@ -590,309 +590,6 @@
         "children": [
           {
             "kind": "Function",
-            "name": "saveBoard",
-            "printedName": "saveBoard(withName:andBoard:withFolderName:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Board",
-                "printedName": "Connect4Core.Board",
-                "usr": "s:12Connect4Core5BoardV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:19Connect4Persistance0B0V9saveBoard8withName03andD00e6FolderF0ySS_0A4Core0D0VSSSgtYaKFZ",
-            "mangledName": "$s19Connect4Persistance0B0V9saveBoard8withName03andD00e6FolderF0ySS_0A4Core0D0VSSSgtYaKFZ",
-            "moduleName": "Connect4Persistance",
-            "static": true,
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "loadBoard",
-            "printedName": "loadBoard(withName:withFolderName:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Connect4Core.Board?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Board",
-                    "printedName": "Connect4Core.Board",
-                    "usr": "s:12Connect4Core5BoardV"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:19Connect4Persistance0B0V9loadBoard8withName0e6FolderF00A4Core0D0VSgSS_SSSgtYaKFZ",
-            "mangledName": "$s19Connect4Persistance0B0V9loadBoard8withName0e6FolderF00A4Core0D0VSgSS_SSSgtYaKFZ",
-            "moduleName": "Connect4Persistance",
-            "static": true,
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "saveRules",
-            "printedName": "saveRules(withName:andRules:withFolderName:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Rules",
-                "printedName": "any Connect4Core.Rules",
-                "usr": "s:12Connect4Core5RulesP"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:19Connect4Persistance0B0V9saveRules8withName03andD00e6FolderF0ySS_0A4Core0D0_pSSSgtYaKFZ",
-            "mangledName": "$s19Connect4Persistance0B0V9saveRules8withName03andD00e6FolderF0ySS_0A4Core0D0_pSSSgtYaKFZ",
-            "moduleName": "Connect4Persistance",
-            "static": true,
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "loadRules",
-            "printedName": "loadRules(withName:withFolderName:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "(any Connect4Core.Rules)?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Rules",
-                    "printedName": "any Connect4Core.Rules",
-                    "usr": "s:12Connect4Core5RulesP"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:19Connect4Persistance0B0V9loadRules8withName0e6FolderF00A4Core0D0_pSgSS_SSSgtYaKFZ",
-            "mangledName": "$s19Connect4Persistance0B0V9loadRules8withName0e6FolderF00A4Core0D0_pSgSS_SSSgtYaKFZ",
-            "moduleName": "Connect4Persistance",
-            "static": true,
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "savePlayer",
-            "printedName": "savePlayer(withName:andPlayer:withFolderName:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Player",
-                "printedName": "Connect4Core.Player",
-                "usr": "s:12Connect4Core6PlayerC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:19Connect4Persistance0B0V10savePlayer8withName03andD00e6FolderF0ySS_0A4Core0D0CSSSgtYaKFZ",
-            "mangledName": "$s19Connect4Persistance0B0V10savePlayer8withName03andD00e6FolderF0ySS_0A4Core0D0CSSSgtYaKFZ",
-            "moduleName": "Connect4Persistance",
-            "static": true,
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "loadPlayer",
-            "printedName": "loadPlayer(withName:withFolderName:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Connect4Core.Player?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Player",
-                    "printedName": "Connect4Core.Player",
-                    "usr": "s:12Connect4Core6PlayerC"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:19Connect4Persistance0B0V10loadPlayer8withName0e6FolderF00A4Core0D0CSgSS_SSSgtYaKFZ",
-            "mangledName": "$s19Connect4Persistance0B0V10loadPlayer8withName0e6FolderF00A4Core0D0CSgSS_SSSgtYaKFZ",
-            "moduleName": "Connect4Persistance",
-            "static": true,
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "saveGame",
             "printedName": "saveGame(withName:andGame:withFolderName:)",
             "children": [
@@ -1101,6 +798,116 @@
             "declKind": "Func",
             "usr": "s:19Connect4Persistance0B0V15loadGameResults8withName0f6FolderG0SayAA0D6ResultVGSgSS_SSSgtYaKFZ",
             "mangledName": "$s19Connect4Persistance0B0V15loadGameResults8withName0f6FolderG0SayAA0D6ResultVGSgSS_SSSgtYaKFZ",
+            "moduleName": "Connect4Persistance",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addPlayer",
+            "printedName": "addPlayer(withName:andPlayer:withFolderName:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Player",
+                "printedName": "Connect4Core.Player",
+                "usr": "s:12Connect4Core6PlayerC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19Connect4Persistance0B0V9addPlayer8withName03andD00e6FolderF0SbSS_0A4Core0D0CSSSgtYaKFZ",
+            "mangledName": "$s19Connect4Persistance0B0V9addPlayer8withName03andD00e6FolderF0SbSS_0A4Core0D0CSSSgtYaKFZ",
+            "moduleName": "Connect4Persistance",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getPlayers",
+            "printedName": "getPlayers(withName:withFolderName:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Connect4Core.Player]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Connect4Core.Player]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Player",
+                        "printedName": "Connect4Core.Player",
+                        "usr": "s:12Connect4Core6PlayerC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19Connect4Persistance0B0V10getPlayers8withName0e6FolderF0Say0A4Core6PlayerCGSgSS_SSSgtYaKFZ",
+            "mangledName": "$s19Connect4Persistance0B0V10getPlayers8withName0e6FolderF0Say0A4Core6PlayerCGSgSS_SSSgtYaKFZ",
             "moduleName": "Connect4Persistance",
             "static": true,
             "declAttributes": [

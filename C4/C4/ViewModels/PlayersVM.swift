@@ -14,69 +14,48 @@ public class PlayersVM : ObservableObject {
         self.init(players: [])
     }
     
-    public static func loadAllPlayers() async -> [PlayerVM] {
-        var players : [PlayerVM] = []
-        players.append(contentsOf: await loadAIs())
-        players.append(contentsOf: await loadHumanPlayers())
-        return players
-    }
-    
-    private static func loadHumanPlayers() async -> [PlayerVM] {
-        var players : [PlayerVM] = []
-        // TODO: Get all players and append them to players
-        for player in PlayerStub().getPlayersVM() {
-            do {
-                let loaded = try await Persistance.loadImage(withName: player.name, withFolderName: "images")
-                player.image = loaded.image ?? Image("DefaultPlayerImage")
-                player.imagePath = loaded.path
-            } catch {
-                player.image = Image("DefaultPlayerImage")
-            }
-            players.append(player)
-        }
-        
-        return players
-    }
-    
-    // Allows to create default AIs when they don't exist
-    private static func loadAIs() async -> [PlayerVM] {
-        var players : [PlayerVM] = []
-        let ais = ["\(RandomPlayer.self)" : RandomPlayer(withName: "\(RandomPlayer.self)", andId: .player1), "\(FinnishHimPlayer.self)" : FinnishHimPlayer(withName: "\(FinnishHimPlayer.self)", andId: .player1), "\(SimpleNegaMaxPlayer.self)" : SimpleNegaMaxPlayer(withName: "\(SimpleNegaMaxPlayer.self)", andId: .player1)]
-        
+    public func loadAllPlayers() async {
         do {
-            // Fetching each default AI
-            for ai in ais {
-                do {
-                    if let loadedPlayer = try await Persistance.loadPlayer(withName: ai.key, withFolderName: "aiPlayers") {
-                        // Correctly loaded player
-                        players.append(PlayerVM(name: loadedPlayer.name, owner: loadedPlayer.id, image: Image("DefaultPlayerImage"), type: ai.key))
-                    } else {
-                        // Corrupted player
-                        players.append(contentsOf: await loadAndSavePlayer(with: ai))
-                    }
-                } catch {
-                    // Not existing player
-                    players.append(contentsOf: await loadAndSavePlayer(with: ai))
+            let playersLoaded = try await Persistance.getPlayers(withName: "players")
+            if let playersLoaded {
+                DispatchQueue.main.async {
+                    self.players.removeAll()
                 }
-            }
-        }
-        return players
-    }
-    
-    private static func loadAndSavePlayer(with keyValue: (key: String, value: Player?)) async -> [PlayerVM] {
-        var players : [PlayerVM] = []
-        do {
-            if let value = keyValue.value {
-                try await Persistance.savePlayer(withName: keyValue.key, andPlayer: value, withFolderName: "aiPlayers")
-                if let player = try await Persistance.loadPlayer(withName: keyValue.key, withFolderName: "aiPlayers") {
-                    players.append(PlayerVM(name: player.name, owner: player.id, image: Image("DefaultPlayerImage"), type: keyValue.key))
-                } else {
-                    print("Error when fetching back the just saved player!")
+                for player in playersLoaded {
+                    let loaded = try await Persistance.loadImage(withName: player.name, withFolderName: "images")
+                    let playerImage = loaded.image ?? Image("DefaultPlayerImage")
+                    let playerImagePath = loaded.path
+                    let playerVM = PlayerVM(name: player.name, owner: player.id, image: playerImage, type: "\(HumanPlayer.self)", imagePath: playerImagePath)
+                    DispatchQueue.main.async {
+                        self.players.append(playerVM)
+                    }
                 }
             }
         } catch {
-            print(error.localizedDescription)
+            print("No players found")
         }
-        return players
     }
+    
+    // May not be useful, waiting to see... TODO: remove it
+//    // Allows to create default AIs when they don't exist
+//    private static func loadAIs() async -> [PlayerVM] {
+//        var players : [PlayerVM] = []
+//        let ais = ["\(RandomPlayer.self)" : RandomPlayer(withName: "\(RandomPlayer.self)", andId: .player1), "\(FinnishHimPlayer.self)" : FinnishHimPlayer(withName: "\(FinnishHimPlayer.self)", andId: .player1), "\(SimpleNegaMaxPlayer.self)" : SimpleNegaMaxPlayer(withName: "\(SimpleNegaMaxPlayer.self)", andId: .player1)]
+//        
+//        do {
+//            // Fetching each default AI
+//            for ai in ais {
+//                do {
+//                    if let aiPlayer = ai.value {
+//                        _ = try await Persistance.addPlayer(withName: "players", andPlayer: aiPlayer)
+//                        players.append(PlayerVM(name: aiPlayer.name, owner: aiPlayer.id, image: Image("DefaultPlayerImage"), type: aiPlayer.type))
+//                    }
+//                } catch {
+//                    // Not existing player
+//                    print("Error: Can't save an AI.")
+//                }
+//            }
+//        }
+//        return players
+//    }
 }
