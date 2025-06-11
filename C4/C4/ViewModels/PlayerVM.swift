@@ -3,15 +3,32 @@ import Connect4Core
 import Connect4Persistance
 import Connect4Players
 
-public class PlayerVM : Identifiable, ObservableObject, Hashable {
-    public let id : UUID // Only to be identifiable in a list
-    @Published public var name : String
-    @Published public var image: Image
-    @Published public var imagePath: String?
-    @Published public var type : String // Not only useful when displaying all the players, to know which one is an AI, also when choosing a player type when launching a game
-    @Published var isEditing: Bool = false // For the modal view
+extension PlayerModel {
+    struct Data: Identifiable {
+        public let id: UUID
+        public var name: String
+        public var owner: Connect4Core.Owner
+        public var type: String
+        public var image: Image
+        public var imagePath: String
+    }
     
-    public var model : Player? {
+    var data: Data {
+        Data(id: self.id, name: self.name, owner: self.owner, type: self.type, image: self.image, imagePath: self.imagePath)
+    }
+    
+    mutating func update(from data: Data) async {
+        guard data.id == id else { return }
+        self.name = data.name
+        self.owner = data.owner
+        self.type = data.type
+        self.image = data.image
+        self.imagePath = data.imagePath
+        await savePlayer()
+        await savePlayerImage()
+    }
+    
+    public var toC4Model : Player? {
         switch (type) {
         case "\(HumanPlayer.self)":
             return HumanPlayer(withName: self.name, andId: .player1)
@@ -24,57 +41,20 @@ public class PlayerVM : Identifiable, ObservableObject, Hashable {
         }
     }
     
-    public init(name : String, owner: Owner, image: Image, type: String, imagePath: String? = "") {
-        self.id = UUID()
-        self.name = name
-        self.image = image
-        self.type = type
-        self.imagePath = imagePath
-    }
-    
-    public static func == (lhs: PlayerVM, rhs: PlayerVM) -> Bool {
-        lhs.id == rhs.id
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    public func onEditing() {
-        self.isEditing = true
-    }
-    
-    public func onEdited(isCancelled: Bool = true) async {
-        if !isCancelled {
-            await savePlayer()
-            await savePlayerImage()
-        }
-        await MainActor.run {
-            self.isEditing = false
-        }
-        self.name = ""
-        self.image = Image("DefaultPlayerImage")
-    }
-    
-    public static func getLocalizedType(from type: String) -> String {
-        switch (type) {
-        case "\(HumanPlayer.self)":
-            return String(localized: "Human")
-        case "\(RandomPlayer.self)":
-            return String(localized: "Random")
-        case "\(FinnishHimPlayer.self)":
-            return String(localized: "FinishHim")
-        case "\(SimpleNegaMaxPlayer.self)":
-            return String(localized: "Negamax")
-        default:
-            return "Unknown"
-        }
-    }
-    
     // Public to allow image updates
-    public func savePlayerImage() async {
+    public mutating func savePlayerImage() async {
         do {
-            self.imagePath = try await Persistance.saveImage(self.image, withName: self.name, withFolderName: "images")
+            // Allows to store lighter images
+            let maxSize = CGSize(width: 82, height: 82)
+            
+            if let uiImage = try? self.image.asUIImage() {
+                print("oui")
+                let resizedImage = Image(uiImage: ImageHelper.resizeImage(image: uiImage, targetSize: maxSize) ?? uiImage)
+                
+                self.imagePath = try await Persistance.saveImage(resizedImage, withName: self.name, withFolderName: "images") ?? ""
+            } else {
+                print("non")
+            }
         } catch {
             print(error.localizedDescription)
         }
@@ -86,10 +66,74 @@ public class PlayerVM : Identifiable, ObservableObject, Hashable {
         if let player {
             do {
                 // Saving as a HumanPlayer because we can't create AI Players
-                _ = try await Persistance.addPlayer(withName: "players", andPlayer: player)
+                _ = try await Persistance.addPlayer(withName: "players22", andPlayer: player)
             } catch {
                 print(error.localizedDescription)
             }
+        }
+    }
+}
+
+public class PlayerVM : Identifiable, ObservableObject, Hashable {
+    var original: PlayerModel
+    @Published var model: PlayerModel.Data
+    @Published var isEditing: Bool = false // For the modal view
+    
+    init(with player: PlayerModel) {
+        original = player
+        model = original.data
+    }
+    
+    public static func == (lhs: PlayerVM, rhs: PlayerVM) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    public func toModel() -> PlayerModel {
+        return original
+    }
+    
+    // When updating a player (or creating it)
+    public func onEditing() {
+        self.isEditing = true
+    }
+    
+    public func onEdited() {
+        self.isEditing = false
+    }
+    
+    // When selecting the player to play with
+    public func onSelecting() {
+        model = original.data
+        // No self.isEditing = true because it's used for the .sheet, and we use onEditing only after chosen the player, it's not the modification of the player but the choice of the player
+    }
+    
+    public func onSelected(isCancelled: Bool = true) async {
+        if !isCancelled {
+            await original.update(from: model)
+        }
+        self.model = self.original.data
+    }
+    
+    // Public to allow image updates
+    public func savePlayerImage() async {
+        do {
+            // Allows to store lighter images
+            let maxSize = CGSize(width: 82, height: 82)
+            
+            if let uiImage = try? self.model.image.asUIImage() {
+                print("oui")
+                let resizedImage = Image(uiImage: ImageHelper.resizeImage(image: uiImage, targetSize: maxSize) ?? uiImage)
+                
+                self.model.imagePath = try await Persistance.saveImage(resizedImage, withName: self.model.name, withFolderName: "images") ?? ""
+            } else {
+                print("non")
+            }
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }

@@ -6,94 +6,92 @@ import Connect4Persistance
 
 struct ChoosePlayerComponent: View {
     @ObservedObject public var playerVM : PlayerVM
-    @ObservedObject public var newPlayerVM : PlayerVM
+    @ObservedObject var playersVM: PlayersVM
+    @StateObject var newPlayerVM: PlayerVM = PlayerVM(with: PlayerModel(name: "", owner: .noOne, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)"))
     @State private var avatarItem: PhotosPickerItem?
-    
+    @State private var originalName: String = ""
     
     var playerText: String
     var playersType: [String] = ["\(HumanPlayer.self)", "\(RandomPlayer.self)", "\(FinnishHimPlayer.self)", "\(SimpleNegaMaxPlayer.self)"]
-    @ObservedObject var players: PlayersVM
+    
     var body: some View {
         VStack {
-            Text(playerText)
-            Picker("Player type", selection: $playerVM.type) {
+            Picker("Player type", selection: $playerVM.model.type) {
                 ForEach(playersType, id: \.self) { player in
-                    Text(PlayerVM.getLocalizedType(from: player))
+                    Text(PlayerModel.getLocalizedType(from: player))
                 }
             }
             .tint(.primaryAccentBackground)
-            .onChange(of: playerVM.type) {
-                if playerVM.type == "\(HumanPlayer.self)" {
-                    playerVM.name = players.players.first { $0.type == "\(HumanPlayer.self)" }?.name ?? "Unknown" // Updating the name when passing to human player
+            .onChange(of: playerVM.model.type) {
+                if playerVM.model.type == "\(HumanPlayer.self)" {
+                    playerVM.model.name = playersVM.players.first { $0.model.type == "\(HumanPlayer.self)" }?.model.name ?? "" // Updating the name when passing to human player
                 } else {
-                    playerVM.name = playerVM.type
-                }
-                Task {
-                    await playerVM.savePlayerImage() // Save for sync
+                    playerVM.model.name = playerVM.model.type
                 }
             }
-            if (playerVM.type == "\(HumanPlayer.self)") {
+            if (playerVM.model.type == "\(HumanPlayer.self)") {
                 HStack {
-                    Picker("Player", selection: $playerVM.name) {
-                        ForEach(players.players.filter { $0.type == "\(HumanPlayer.self)" }.map { $0.name }, id: \.self) { name in
+                    Picker("Player", selection: $playerVM.model.name) {
+                        ForEach(playersVM.players.filter { $0.model.type == "\(HumanPlayer.self)" }.map { $0.model.name }, id: \.self) { name in
                             Text(name)
                         }
                     }
                     .tint(Color(.primaryAccentBackground))
-                    .onChange(of: playerVM.name) {
+                    .onChange(of: playerVM.model.name) {
                         Task {
                             do {
-                                let loaded = try await Persistance.loadImage(withName: playerVM.name, withFolderName: "images")
+                                let loaded = try await Persistance.loadImage(withName: playerVM.model.name, withFolderName: "images")
                                 
                                 if let loadedImage = loaded.image {
-                                    playerVM.image = loadedImage
-                                    playerVM.imagePath = loaded.path
+                                    playerVM.model.image = loadedImage
+                                    playerVM.model.imagePath = loaded.path
                                 } else {
-                                    playerVM.image = Image("DefaultPlayerImage")
+                                    playerVM.model.image = Image("DefaultPlayerImage")
                                     await playerVM.savePlayerImage() // Save for sync
                                 }
                             } catch {
-                                playerVM.image = Image("DefaultPlayerImage")
+                                playerVM.model.image = Image("DefaultPlayerImage")
                                 await playerVM.savePlayerImage() // Save for sync
                             }
                         }
                     }
                     Button("", systemImage: "plus") {
-                        newPlayerVM.onEditing()
+                        newPlayerVM.model.name = ""
+                        newPlayerVM.model.image = Image("DefaultPlayerImage")
+                        newPlayerVM.isEditing = true
+                        originalName = newPlayerVM.model.name
                     }
                     .tint(Color(.primaryAccentBackground))
                 }
             } else {
-                Text(PlayerVM.getLocalizedType(from: playerVM.type))
+                Text(PlayerModel.getLocalizedType(from: playerVM.model.type))
             }
-            playerVM.image
+            playerVM.model.image
                 .resizable()
                 .frame(width: 100, height: 100)
-            if (playerVM.type == "\(HumanPlayer.self)") {
+            if (playerVM.model.type == "\(HumanPlayer.self)") {
                 HStack {
-                    PhotosPicker(selection: $avatarItem, matching: .images) {
-                        HStack {
-                            Image(systemName: "photo.artframe")
-                            Text(String(localized: "Modify"))
-                        }
+                    Button(String(localized: "Modify"), systemImage: "photo.artframe") {
+                        newPlayerVM.model.name = playerVM.model.name
+                        newPlayerVM.model.image = playerVM.model.image
+                        newPlayerVM.isEditing = true
+                        originalName = newPlayerVM.model.name
                     }
                     .tint(Color(.primaryAccentBackground))
-                }
-                .onChange(of: avatarItem) {
-                    Task {
-                        if let loaded = try? await avatarItem?.loadTransferable(type: Image.self) {
-                            playerVM.image = loaded
-                            await playerVM.savePlayerImage()
-                        } else {
-                            print("Failed")
-                        }
-                    }
                 }
             }
         }
         .padding()
-        .task {
-            await playerVM.savePlayerImage() // Saving default images to have a more consistent state with images, not half images as ImageSet and the other half saved in the storage.
+        .sheet(isPresented: $newPlayerVM.isEditing) {
+            NavigationStack {
+                AddPlayerComponent(playerVM: newPlayerVM, playersVM: playersVM, originalName: originalName)
+                    .onDisappear {
+                        Task {
+                            // Update the available human player list
+                            await playersVM.loadAllPlayers()
+                        }
+                    }
+            }
         }
     }
 }
@@ -103,15 +101,13 @@ struct ChoosePlayerComponent: View {
 }
 
 private struct ChoosePlayerComponentPreview : View {
-    @State var player1VM = PlayerVM(name: "Player 1", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
-    @State var player2VM = PlayerVM(name: "Player 2", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")
-    @State var newPlayerVM = PlayerVM(name: "", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
+    @State var player1VM = PlayerVM(with: PlayerModel(name: "Player 1", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)"))
+    @State var player2VM = PlayerVM(with: PlayerModel(name: "Player 2", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)"))
     @State public var players = PlayersVM()
     var body: some View {
         HStack{
-            ChoosePlayerComponent(playerVM: player1VM, newPlayerVM: newPlayerVM, playerText: "Player 1", players: players)
-            ChoosePlayerComponent(playerVM: player2VM, newPlayerVM: newPlayerVM, playerText: "Player 2", players: players
-            )
+            ChoosePlayerComponent(playerVM: player1VM, playersVM: players, playerText: "Player 1")
+            ChoosePlayerComponent(playerVM: player2VM, playersVM: players, playerText: "Player 2")
         }
         Spacer()
     }

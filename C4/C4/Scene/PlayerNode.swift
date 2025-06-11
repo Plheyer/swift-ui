@@ -20,7 +20,7 @@ public class PlayerNode : SKNode {
         
         let sprite : SKSpriteNode
         if let image = UIImage(contentsOfFile: imagePath) {
-            let maxSize = CGSize(width: 819, height: 819) // max is 8192 but it would make the app lag so I divided by 10
+            let maxSize = CGSize(width: 82, height: 82) // max is 8192 but it would make the app lag so I divided by 100
             let resizedImage = ImageHelper.resizeImage(image: image, targetSize: maxSize) ?? image // Having a bug/crash when there's not this call because the image is too big for the Texture
             let texture = SKTexture(image: resizedImage)
             

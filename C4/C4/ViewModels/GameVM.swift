@@ -21,7 +21,7 @@ public class GameVM : ObservableObject {
     public func onEdited(isCancelled: Bool = true) async -> Bool {
         self.isEditing = false
         if !isCancelled {
-            if let rules = self.rules.model, players.count == 2, let player1 = players.values.first?.model, let player2 = players.values.dropFirst().first?.model {
+            if let rules = self.rules.model, players.count == 2, let player1 = players.values.first?.toModel().toC4Model, let player2 = players.values.dropFirst().first?.toModel().toC4Model {
                 do {
                     let game = try? Game(withBoard: board, withRules: rules, andPlayer1: player1, andPlayer2: player2)
                     if let game {

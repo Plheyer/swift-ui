@@ -4,8 +4,8 @@ import Connect4Persistance
 import Charts
 
 struct FaceToFace: View {
-    @State public var player1Name : String = PlayerStub().getPlayersVM()[0].name
-    @State public var player2Name : String = PlayerStub().getPlayersVM()[1].name
+    @State public var player1Name : String = PlayerStub().getPlayersVM()[0].model.name
+    @State public var player2Name : String = PlayerStub().getPlayersVM()[1].model.name
     @StateObject public var players : PlayersVM = PlayersVM(players: PlayerStub().getPlayersVM())
     @StateObject var results: GameResultsVM = GameResultsVM()
     @State private var debug: String = ""
@@ -62,12 +62,12 @@ private struct FaceToFacePreview : View {
             HStack {
                 Picker("Player", selection: $selectedPlayer1) {
                     ForEach(players, id: \.self) { player in
-                        Text(player.name)
+                        Text(player.model.name)
                     }
                 }
                 Picker("Player", selection: $selectedPlayer2) {
                     ForEach(players, id: \.self) { player in
-                        Text(player.name)
+                        Text(player.model.name)
                     }
                 }
                 Picker("State", selection: $state) {
@@ -77,10 +77,10 @@ private struct FaceToFacePreview : View {
                 }
                 Button(action: {
                     Task {
-                        let player1 = HumanPlayer(withName: selectedPlayer1.name, andId: .player1)!
-                        let player2 = HumanPlayer(withName: selectedPlayer2.name, andId: .player2)!
-                        _ = try await Persistance.addPlayer(withName: "players", andPlayer: player1)
-                        _ = try await Persistance.addPlayer(withName: "players", andPlayer: player2)
+                        let player1 = HumanPlayer(withName: selectedPlayer1.model.name, andId: .player1)!
+                        let player2 = HumanPlayer(withName: selectedPlayer2.model.name, andId: .player2)!
+                        _ = try await Persistance.addPlayer(withName: "players22", andPlayer: player1)
+                        _ = try await Persistance.addPlayer(withName: "players22", andPlayer: player2)
                         
                         let game = try Game(withBoard: BoardStub().getBoards()[0], withRules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, andPlayer1: player1, andPlayer2: player2)
                         _ = try await Persistance.saveGameResult(withName: "GameResults", andGame: game, andResult: Result.winner(winner: state, alignment: []))

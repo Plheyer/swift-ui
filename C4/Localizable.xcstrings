@@ -11,6 +11,9 @@
         }
       }
     },
+    "%@" : {
+
+    },
     "%@ : %@" : {
       "localizations" : {
         "en" : {
@@ -153,9 +156,6 @@
         }
       }
     },
-    "count: %lld" : {
-
-    },
     "Date" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -261,6 +261,9 @@
         }
       }
     },
+    "Key" : {
+      "extractionState" : "manual"
+    },
     "LaunchGameTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -345,6 +348,50 @@
         }
       }
     },
+    "Name changed" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changement de nom"
+          }
+        }
+      }
+    },
+    "NameChangedAlertDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This will create a new player."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un nouveau joueur sera créé."
+          }
+        }
+      }
+    },
+    "NameChangedAlertTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name changed"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changement de nom"
+          }
+        }
+      }
+    },
     "nb Columns %lld" : {
 
     },
@@ -395,7 +442,20 @@
       }
     },
     "OK" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
     },
     "p1 image" : {
 
@@ -516,7 +576,14 @@
       }
     },
     "Players have not been set correctly" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les joueurs n'ont pas été chargés correctement."
+          }
+        }
+      }
     },
     "Random" : {
       "localizations" : {
@@ -579,6 +646,40 @@
         }
       }
     },
+    "SameNameAlertDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This player name is already taken. Choose another one."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce nom de joueur est déjà pris. Prenez-en un autre."
+          }
+        }
+      }
+    },
+    "SameNameAlertTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name already exists"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce nom existe déjà"
+          }
+        }
+      }
+    },
     "Save" : {
       "localizations" : {
         "fr" : {
@@ -626,6 +727,16 @@
     "State" : {
 
     },
+    "This will create a new player." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un nouveau joueur sera créé."
+          }
+        }
+      }
+    },
     "timer minutes %@" : {
 
     },
@@ -653,7 +764,14 @@
       }
     },
     "Try again later." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Essayez plus tard."
+          }
+        }
+      }
     },
     "Type" : {
       "localizations" : {

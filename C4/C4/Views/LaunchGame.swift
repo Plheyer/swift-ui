@@ -8,12 +8,10 @@ struct LaunchGame: View {
     @Binding public var idiom: UIUserInterfaceIdiom?
     
     // Game
-    private let defaultPlayer1: PlayerVM = PlayerVM(name: "\(RandomPlayer.self)", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")
-    private let defaultPlayer2: PlayerVM = PlayerVM(name: "\(RandomPlayer.self)", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")
+    private let defaultPlayer1: PlayerVM = PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)"))
+    private let defaultPlayer2: PlayerVM = PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)"))
     
-    @StateObject public var gameVM : GameVM = GameVM(with: PlayerVM(name: "\(RandomPlayer.self)", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)"), andWith: PlayerVM(name: "\(RandomPlayer.self)", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)"), board: Board(withNbRows: 6, andNbColumns: 7)!)
-    
-    @StateObject public var newPlayerVM : PlayerVM = PlayerVM(name: "", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)")
+    @StateObject public var gameVM : GameVM = GameVM(with: PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")), andWith: PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")), board: Board(withNbRows: 6, andNbColumns: 7)!)
     
     @State public var players = PlayersVM() // Have to fetch all players from persistance
     
@@ -23,8 +21,8 @@ struct LaunchGame: View {
     var body: some View {
         ScrollView {
             HStack {
-                ChoosePlayerComponent(playerVM: gameVM.players[.player1] ?? defaultPlayer1, newPlayerVM: newPlayerVM, playerText: String(localized: "Player1"), players: players)
-                ChoosePlayerComponent(playerVM: gameVM.players[.player2] ?? defaultPlayer2, newPlayerVM: newPlayerVM, playerText: String(localized: "Player2"), players: players)
+                ChoosePlayerComponent(playerVM: gameVM.players[.player1] ?? defaultPlayer1, playersVM: players, playerText: String(localized: "Player1"))
+                ChoosePlayerComponent(playerVM: gameVM.players[.player2] ?? defaultPlayer2, playersVM: players, playerText: String(localized: "Player2"))
             }
             Divider()
             ChooseRulesComponent(rule: gameVM.rules, timer: timerVM)
@@ -37,6 +35,14 @@ struct LaunchGame: View {
             .background(Color(.primaryAccentBackground))
             .foregroundColor(.primaryBackground)
             .cornerRadius(5)
+            .onTapGesture {
+                let p1 = gameVM.players[.player1] ?? defaultPlayer1
+                let p2 = gameVM.players[.player2] ?? defaultPlayer2
+                Task {
+                    await p1.onSelected(isCancelled: false)
+                    await p2.onSelected(isCancelled: false)
+                }
+            }
         }
         .padding()
         .background(Color(.primaryBackground))
@@ -45,36 +51,10 @@ struct LaunchGame: View {
         .onAppear() {
             Task {
                 await players.loadAllPlayers()
-            }
-        }
-        .sheet(isPresented: $newPlayerVM.isEditing) {
-            NavigationStack {
-                AddPlayerComponent(playerVM: newPlayerVM)
-                .toolbar {
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Save") {
-                            Task {
-                                await newPlayerVM.onEdited(isCancelled: false)
-                                await players.loadAllPlayers()
-                            }
-                        }
-                        .padding(.horizontal, 15)
-                        .padding(.vertical, 8)
-                        .foregroundColor(.primaryAccentBackground)
-                        .cornerRadius(5)
-                    }
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel") {
-                            Task {
-                                await newPlayerVM.onEdited(isCancelled: true)
-                            }
-                        }
-                        .padding(.horizontal, 15)
-                        .padding(.vertical, 8)
-                        .foregroundColor(.secondaryBackground)
-                        .cornerRadius(5)
-                    }
-                }
+                let p1 = gameVM.players[.player1] ?? defaultPlayer1
+                let p2 = gameVM.players[.player2] ?? defaultPlayer2
+                p1.onSelecting()
+                p2.onSelecting()
             }
         }
     }

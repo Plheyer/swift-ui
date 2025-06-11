@@ -17,6 +17,8 @@
 		EC328B1E2DD470A200CB402A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC328B1D2DD470A200CB402A /* Colors.xcassets */; };
 		EC328B202DD470D500CB402A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC328B1F2DD470D500CB402A /* Images.xcassets */; };
 		EC3E6C252DD4766E00D798E5 /* LaunchGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E6C242DD4766E00D798E5 /* LaunchGame.swift */; };
+		EC4A12132DF60FF5009E83E7 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A12122DF60FF5009E83E7 /* PlayerModel.swift */; };
+		EC4A12152DF8BAAE009E83E7 /* ChoosePlayerSheetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A12142DF8BAAE009E83E7 /* ChoosePlayerSheetComponent.swift */; };
 		EC58CA532DE8C156008953B9 /* PersistanceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58CA522DE8C156008953B9 /* PersistanceExtensions.swift */; };
 		EC58CA552DE8C35A008953B9 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58CA542DE8C35A008953B9 /* ViewExtensions.swift */; };
 		EC6A4E1F2DDBBD1700D7E398 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E1E2DDBBD1700D7E398 /* NavigationView.swift */; };
@@ -91,6 +93,8 @@
 		EC328B1D2DD470A200CB402A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EC328B1F2DD470D500CB402A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC3E6C242DD4766E00D798E5 /* LaunchGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchGame.swift; sourceTree = "<group>"; };
+		EC4A12122DF60FF5009E83E7 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		EC4A12142DF8BAAE009E83E7 /* ChoosePlayerSheetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlayerSheetComponent.swift; sourceTree = "<group>"; };
 		EC58CA522DE8C156008953B9 /* PersistanceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceExtensions.swift; sourceTree = "<group>"; };
 		EC58CA542DE8C35A008953B9 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		EC6A4E1E2DDBBD1700D7E398 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
@@ -170,6 +174,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC4A12112DF60FE9009E83E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC4A12122DF60FF5009E83E7 /* PlayerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EC6A4E212DDCFECE00D7E398 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +212,7 @@
 				EC2F81D92DE1127D000D4514 /* GamePortraitView.swift */,
 				EC2F81DB2DE112A9000D4514 /* GameLandscapeView.swift */,
 				ECEFC0F72DE1B67500237068 /* AddPlayerComponent.swift */,
+				EC4A12142DF8BAAE009E83E7 /* ChoosePlayerSheetComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -287,6 +300,7 @@
 		ECB94EDE2DD46EE200D13E5A /* C4 */ = {
 			isa = PBXGroup;
 			children = (
+				EC4A12112DF60FE9009E83E7 /* Model */,
 				ECE6A91F2DF478800055066D /* Utils */,
 				ECE6A9162DF036F00055066D /* Scene */,
 				EC73FD692DDDE90300B28CE2 /* Extensions */,
@@ -512,6 +526,7 @@
 				EC73FD7B2DDF476D00B28CE2 /* FaceToFaceListComponent.swift in Sources */,
 				ECE6A9182DF037220055066D /* GameScene.swift in Sources */,
 				EC2F81DC2DE112A9000D4514 /* GameLandscapeView.swift in Sources */,
+				EC4A12132DF60FF5009E83E7 /* PlayerModel.swift in Sources */,
 				EC73FD682DDDE44600B28CE2 /* FaceToFace.swift in Sources */,
 				EC73FD792DDF45A700B28CE2 /* PlayerStub.swift in Sources */,
 				EC58CA532DE8C156008953B9 /* PersistanceExtensions.swift in Sources */,
@@ -522,6 +537,7 @@
 				ECEFC0FA2DE1D03300237068 /* GameResultsVM.swift in Sources */,
 				ECB94EE02DD46EE200D13E5A /* C4App.swift in Sources */,
 				ECE6A9212DF4788C0055066D /* ImageHelper.swift in Sources */,
+				EC4A12152DF8BAAE009E83E7 /* ChoosePlayerSheetComponent.swift in Sources */,
 				EC73FD732DDF42B500B28CE2 /* FaceToFaceChartComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

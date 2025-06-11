@@ -29,16 +29,16 @@ struct GameView: View {
             Text("nb Columns \(game.rules.nbColumns)")
             Text("tokens to align \(game.rules.tokensToAlign)")
             Text("type rules \(game.rules.type)")
-            Text("p1 name \(game.players[.player1]?.name ?? "BUG")")
-            Text("p1 type \(game.players[.player1]?.type ?? "BUG")")
-            Text("p2 name \(game.players[.player2]?.name ?? "BUG")")
-            Text("p2 type \(game.players[.player2]?.type ?? "BUG")")
+            Text("p1 name \(game.players[.player1]?.model.name ?? "BUG")")
+            Text("p1 type \(game.players[.player1]?.model.type ?? "BUG")")
+            Text("p2 name \(game.players[.player2]?.model.name ?? "BUG")")
+            Text("p2 type \(game.players[.player2]?.model.type ?? "BUG")")
             Text("p1 image")
-            game.players[.player1]!.image
+            game.players[.player1]!.model.image
                 .resizable()
                 .frame(width: 100, height: 100)
             Text("p2 image")
-            game.players[.player2]!.image
+            game.players[.player2]!.model.image
                 .resizable()
                 .frame(width: 100, height: 100)
             Text("timer limited? \(timer.isLimitedTime)")

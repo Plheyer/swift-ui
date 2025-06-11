@@ -12,7 +12,7 @@ struct FaceToFacePlayerComponent: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             Picker("Player", selection: $selectedPlayer) {
-                ForEach(playersVM.players.map { $0.name }, id: \.self) { name in
+                ForEach(playersVM.players.map { $0.model.name }, id: \.self) { name in
                     Text(name)
                 }
             }

@@ -17,7 +17,7 @@ struct GamePlayerComponent: View {
         VStack {
             HStack {
                 ZStack {
-                    player.image
+                    player.model.image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .clipShape(.circle)
@@ -38,8 +38,8 @@ struct GamePlayerComponent: View {
                         
                 }
                 VStack(alignment: .leading) {
-                    Text(player.name)
-                    Text(player.type)
+                    Text(player.model.name)
+                    Text(player.model.type)
                         .font(.caption)
                 }
                 Spacer()
@@ -67,8 +67,8 @@ struct GamePlayerComponent: View {
 private struct GamePlayerComponentPreview : View {
     @State var isPlayer1Turn = false
     @State var isPlayer2Turn = true
-    @State var player1VM = PlayerVM(name: "player1", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)", imagePath: "/Users/etudiant/Downloads/anonymous.png")
-    @State var player2VM = PlayerVM(name: "player2", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)", imagePath: "/Users/etudiant/Downloads/larry.webp")
+    @State var player1VM = PlayerVM(with: PlayerModel(name: "player1", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)", imagePath: "/Users/etudiant/Downloads/anonymous.png"))
+    @State var player2VM = PlayerVM(with: PlayerModel(name: "player2", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)", imagePath: "/Users/etudiant/Downloads/larry.webp"))
     var body : some View {
         VStack {
             HStack {

@@ -6,14 +6,14 @@ public struct PlayerStub {
     public func getPlayersVM() -> [PlayerVM]
     {
         return [
-            PlayerVM(name: "Erwan", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "anonymous.png")),
-            PlayerVM(name: "Clément", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "larry.webp")),
-            PlayerVM(name: "Mathis", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "anonymous.png")),
-            PlayerVM(name: "Renaud", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "larry.webp")),
-            PlayerVM(name: "Emma", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "anonymous.png")),
-            PlayerVM(name: "M. Chevaldonne", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "larry.webp")),
-            PlayerVM(name: "Corentin", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "anonymous.png")),
-            PlayerVM(name: "Géraldine Tulipe", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "larry.webp")),
+            PlayerVM(with: PlayerModel(name: "Erwan", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "anonymous.png"))),
+            PlayerVM(with: PlayerModel(name: "Clément", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "larry.webp"))),
+            PlayerVM(with: PlayerModel(name: "Mathis", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "anonymous.png"))),
+            PlayerVM(with: PlayerModel(name: "Renaud", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "larry.webp"))),
+            PlayerVM(with: PlayerModel(name: "Emma", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "anonymous.png"))),
+            PlayerVM(with: PlayerModel(name: "M. Chevaldonne", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "larry.webp"))),
+            PlayerVM(with: PlayerModel(name: "Corentin", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "anonymous.png"))),
+            PlayerVM(with: PlayerModel(name: "Géraldine Tulipe", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "larry.webp"))),
         ]
     }
     
