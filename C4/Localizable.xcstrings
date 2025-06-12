@@ -264,6 +264,12 @@
     "Key" : {
       "extractionState" : "manual"
     },
+    "LaunchGameErrorDescription" : {
+
+    },
+    "LaunchGameErrorTitle" : {
+
+    },
     "LaunchGameTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -349,6 +355,7 @@
       }
     },
     "Name changed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -409,6 +416,7 @@
       }
     },
     "New grid" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -576,6 +584,7 @@
       }
     },
     "Players have not been set correctly" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -728,6 +737,7 @@
 
     },
     "This will create a new player." : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -764,6 +774,7 @@
       }
     },
     "Try again later." : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {

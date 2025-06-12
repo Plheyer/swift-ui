@@ -9,7 +9,7 @@ import Connect4Core
 import SwiftUI
 
 struct GamePlayerComponent: View {
-    @ObservedObject public var player : PlayerVM
+    public var player : PlayerVM
     @Binding var isPlayerTurn : Bool
     var timer = "00:00:00"
     var color : Color

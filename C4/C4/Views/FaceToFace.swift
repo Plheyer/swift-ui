@@ -4,9 +4,9 @@ import Connect4Persistance
 import Charts
 
 struct FaceToFace: View {
-    @State public var player1Name : String = PlayerStub().getPlayersVM()[0].model.name
-    @State public var player2Name : String = PlayerStub().getPlayersVM()[1].model.name
-    @StateObject public var players : PlayersVM = PlayersVM(players: PlayerStub().getPlayersVM())
+    @State public var player1Name : String = PlayerVM(with: PlayerStub().getPlayersModel()[0]).model.name
+    @State public var player2Name : String = PlayerVM(with: PlayerStub().getPlayersModel()[1]).model.name
+    @StateObject public var players : PlayersVM = PlayersVM(players: PlayerStub().getPlayersModel().map { PlayerVM(with: $0) })
     @StateObject var results: GameResultsVM = GameResultsVM()
     @State private var debug: String = ""
     
@@ -50,11 +50,11 @@ struct FaceToFace: View {
 }
 
 private struct FaceToFacePreview : View {
-    @State var selectedPlayer1: PlayerVM = PlayerStub().getPlayersVM()[0]
-    @State var selectedPlayer2: PlayerVM = PlayerStub().getPlayersVM()[0]
+    @State var selectedPlayer1: PlayerVM = PlayerVM(with: PlayerStub().getPlayersModel()[0])
+    @State var selectedPlayer2: PlayerVM = PlayerVM(with: PlayerStub().getPlayersModel()[0])
     var states: [Owner] = [.noOne, .player1, .player2]
     @State var state: Owner = .player1
-    var players: [PlayerVM] = PlayerStub().getPlayersVM()
+    var players: [PlayerVM] = PlayerStub().getPlayersModel().map { PlayerVM(with: $0) }
     @State var debug: String = ""
     var body : some View {
         VStack {

@@ -48,12 +48,9 @@ extension PlayerModel {
             let maxSize = CGSize(width: 82, height: 82)
             
             if let uiImage = try? self.image.asUIImage() {
-                print("oui")
                 let resizedImage = Image(uiImage: ImageHelper.resizeImage(image: uiImage, targetSize: maxSize) ?? uiImage)
                 
                 self.imagePath = try await Persistance.saveImage(resizedImage, withName: self.name, withFolderName: "images") ?? ""
-            } else {
-                print("non")
             }
         } catch {
             print(error.localizedDescription)
@@ -125,12 +122,9 @@ public class PlayerVM : Identifiable, ObservableObject, Hashable {
             let maxSize = CGSize(width: 82, height: 82)
             
             if let uiImage = try? self.model.image.asUIImage() {
-                print("oui")
                 let resizedImage = Image(uiImage: ImageHelper.resizeImage(image: uiImage, targetSize: maxSize) ?? uiImage)
                 
                 self.model.imagePath = try await Persistance.saveImage(resizedImage, withName: self.model.name, withFolderName: "images") ?? ""
-            } else {
-                print("non")
             }
         } catch {
             print(error.localizedDescription)

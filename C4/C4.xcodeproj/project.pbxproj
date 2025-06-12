@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC2568822DFB20F4002ABA92 /* GameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2568812DFB20F4002ABA92 /* GameVM.swift */; };
 		EC2F81D22DE0BB39000D4514 /* RulesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F81D12DE0BB39000D4514 /* RulesExtensions.swift */; };
 		EC2F81D42DE0BE18000D4514 /* PlayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F81D32DE0BE18000D4514 /* PlayerExtensions.swift */; };
 		EC2F81D62DE10B12000D4514 /* HomePortraitComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F81D52DE10B12000D4514 /* HomePortraitComponent.swift */; };
@@ -42,8 +43,7 @@
 		EC73FD7F2DDFAB8600B28CE2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD7E2DDFAB8600B28CE2 /* GameView.swift */; };
 		EC73FD812DDFB8E100B28CE2 /* GridBoardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD802DDFB8E100B28CE2 /* GridBoardComponent.swift */; };
 		EC73FD832DE0B23E00B28CE2 /* GamePlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD822DE0B23E00B28CE2 /* GamePlayerComponent.swift */; };
-		ECAA52EB2DE84B2100EBA2E0 /* GameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA52EA2DE84B2100EBA2E0 /* GameVM.swift */; };
-		ECAA52ED2DE8504E00EBA2E0 /* RuleVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA52EC2DE8504E00EBA2E0 /* RuleVM.swift */; };
+		ECAA52EB2DE84B2100EBA2E0 /* NewGameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA52EA2DE84B2100EBA2E0 /* NewGameVM.swift */; };
 		ECAA52EF2DE852B500EBA2E0 /* TimerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA52EE2DE852B500EBA2E0 /* TimerVM.swift */; };
 		ECAE6A212DE7228400A3EA02 /* PlayersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAE6A202DE7228400A3EA02 /* PlayersVM.swift */; };
 		ECB94EE02DD46EE200D13E5A /* C4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB94EDF2DD46EE200D13E5A /* C4App.swift */; };
@@ -83,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC2568812DFB20F4002ABA92 /* GameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
 		EC2F81D12DE0BB39000D4514 /* RulesExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesExtensions.swift; sourceTree = "<group>"; };
 		EC2F81D32DE0BE18000D4514 /* PlayerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerExtensions.swift; sourceTree = "<group>"; };
 		EC2F81D52DE10B12000D4514 /* HomePortraitComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePortraitComponent.swift; sourceTree = "<group>"; };
@@ -118,8 +119,7 @@
 		EC73FD7E2DDFAB8600B28CE2 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		EC73FD802DDFB8E100B28CE2 /* GridBoardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBoardComponent.swift; sourceTree = "<group>"; };
 		EC73FD822DE0B23E00B28CE2 /* GamePlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerComponent.swift; sourceTree = "<group>"; };
-		ECAA52EA2DE84B2100EBA2E0 /* GameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
-		ECAA52EC2DE8504E00EBA2E0 /* RuleVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleVM.swift; sourceTree = "<group>"; };
+		ECAA52EA2DE84B2100EBA2E0 /* NewGameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameVM.swift; sourceTree = "<group>"; };
 		ECAA52EE2DE852B500EBA2E0 /* TimerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVM.swift; sourceTree = "<group>"; };
 		ECAE6A202DE7228400A3EA02 /* PlayersVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersVM.swift; sourceTree = "<group>"; };
 		ECB94EDC2DD46EE200D13E5A /* C4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C4.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,9 +244,9 @@
 				ECEFC0FD2DE1D3C100237068 /* GameResultVM.swift */,
 				EC73FD762DDF448100B28CE2 /* PlayerVM.swift */,
 				ECAE6A202DE7228400A3EA02 /* PlayersVM.swift */,
-				ECAA52EA2DE84B2100EBA2E0 /* GameVM.swift */,
-				ECAA52EC2DE8504E00EBA2E0 /* RuleVM.swift */,
+				ECAA52EA2DE84B2100EBA2E0 /* NewGameVM.swift */,
 				ECAA52EE2DE852B500EBA2E0 /* TimerVM.swift */,
+				EC2568812DFB20F4002ABA92 /* GameVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -499,11 +499,10 @@
 				EC2F81D62DE10B12000D4514 /* HomePortraitComponent.swift in Sources */,
 				EC73FD752DDF43B500B28CE2 /* FaceToFacePlayerComponent.swift in Sources */,
 				ECB94EE22DD46EE200D13E5A /* HomePage.swift in Sources */,
-				ECAA52EB2DE84B2100EBA2E0 /* GameVM.swift in Sources */,
+				ECAA52EB2DE84B2100EBA2E0 /* NewGameVM.swift in Sources */,
 				EC2F81D22DE0BB39000D4514 /* RulesExtensions.swift in Sources */,
 				EC6A4E272DDD040900D7E398 /* ChooseRulesComponent.swift in Sources */,
 				ECAE6A212DE7228400A3EA02 /* PlayersVM.swift in Sources */,
-				ECAA52ED2DE8504E00EBA2E0 /* RuleVM.swift in Sources */,
 				ECE6A9232DF484280055066D /* NodeHelper.swift in Sources */,
 				EC6A4E3E2DDDA72600D7E398 /* GameListComponent.swift in Sources */,
 				EC2F81DA2DE1127D000D4514 /* GamePortraitView.swift in Sources */,
@@ -532,6 +531,7 @@
 				EC58CA532DE8C156008953B9 /* PersistanceExtensions.swift in Sources */,
 				EC2F81D42DE0BE18000D4514 /* PlayerExtensions.swift in Sources */,
 				EC6A4E1F2DDBBD1700D7E398 /* NavigationView.swift in Sources */,
+				EC2568822DFB20F4002ABA92 /* GameVM.swift in Sources */,
 				EC2F81D82DE10B43000D4514 /* HomeLandscapeComponent.swift in Sources */,
 				ECEFC0F82DE1B67500237068 /* AddPlayerComponent.swift in Sources */,
 				ECEFC0FA2DE1D03300237068 /* GameResultsVM.swift in Sources */,

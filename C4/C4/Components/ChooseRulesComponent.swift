@@ -4,16 +4,19 @@ import Connect4Rules
 
 struct ChooseRulesComponent: View {
     public var rules = ["\(Connect4Rules.self)", "\(TicTacToeRules.self)", "\(PopOutRules.self)"]
-    @ObservedObject public var rule: RuleVM
-    @ObservedObject public var timer : TimerVM
-    let range = 4...20
+    @Binding public var rulesName: String
+    @Binding public var nbRows: Int
+    @Binding public var nbColumns: Int
+    @Binding public var nbTokensToAlign: Int
+    @ObservedObject public var timer: TimerVM
+    let range = -1...20
     
     var body: some View {
         VStack {
             HStack {
                 Image(systemName: "list.bullet.clipboard")
                 Text(String(localized: "Rules"))
-                Picker("Rules", selection: $rule.type) {
+                Picker("Rules", selection: $rulesName) {
                     ForEach(rules, id: \.self) { rule in
                         Text(rule)
                     }
@@ -31,24 +34,24 @@ struct ChooseRulesComponent: View {
                         Text(String(localized: "Rows"))
                             .lineLimit(nil)
                             .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                        Stepper(value: $rule.nbRows, in: range, step: 1) {
-                            Text(rule.nbRows.description)
+                        Stepper(value: $nbRows, in: range, step: 1) {
+                            Text(nbRows.description)
                         }
                     }
                     GridRow {
                         Text(String(localized: "Columns"))
                             .lineLimit(nil)
                             .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                        Stepper(value: $rule.nbColumns, in: range, step: 1) {
-                            Text(rule.nbColumns.description)
+                        Stepper(value: $nbColumns, in: range, step: 1) {
+                            Text(nbColumns.description)
                         }
                     }
                     GridRow {
                         Text(String(localized: "TokensToAlign"))
                         .lineLimit(nil)
                         .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                        Stepper(value: $rule.tokensToAlign, in: range, step: 1) {
-                            Text(rule.tokensToAlign.description)
+                        Stepper(value: $nbTokensToAlign, in: range, step: 1) {
+                            Text(nbTokensToAlign.description)
                         }
                     }
                 }

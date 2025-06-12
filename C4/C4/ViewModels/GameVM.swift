@@ -3,37 +3,19 @@ import Connect4Core
 import Connect4Persistance
 
 public class GameVM : ObservableObject {
-    @Published public var board : Board
-    @Published public var rules: RuleVM
-    @Published public var players: [Connect4Core.Owner : PlayerVM]
-    @Published var isEditing: Bool = false // For the modal view
+    @Published public var player1 : PlayerVM
+    @Published public var player2 : PlayerVM
+    @Published public var rules: any Rules
+    @Published public var board: Board
     
-    public init(with player1: PlayerVM, andWith player2: PlayerVM, board: Board) {
+    // TODO: Possess a GameScene. When init, will also create the game scene at the same time to create the GameScene as a member of GameVM, and also provide the reference (because a class is a reference type) of the GameVM (itself) when init the GameScene. This will allow them to communicate easily.
+    // Example: GameVM receives a callback from Game, it must update the GameScene, it must communicate with the GameScene, and have it.
+    // Moreover, when the user do the drag and drop, the view updates the game scene, which will send the position chosen by the user to place the token in. So the GameScene must be able to communicate with the GameVM, and thus have a reference to it.
+    
+    public init(with player1: PlayerVM, andWith player2: PlayerVM, rules: Rules, board: Board) {
+        self.player1 = player1
+        self.player2 = player2
+        self.rules = rules
         self.board = board
-        self.rules = RuleVM(nbRows: 6, nbColumns: 7, tokensToAlign: 4, type: "\(Connect4Rules.self)") // Default rules
-        self.players = [.player1:player1, .player2:player2]
-    }
-    
-    public func onEditing() {
-        self.isEditing = true
-    }
-    
-    public func onEdited(isCancelled: Bool = true) async -> Bool {
-        self.isEditing = false
-        if !isCancelled {
-            if let rules = self.rules.model, players.count == 2, let player1 = players.values.first?.toModel().toC4Model, let player2 = players.values.dropFirst().first?.toModel().toC4Model {
-                do {
-                    let game = try? Game(withBoard: board, withRules: rules, andPlayer1: player1, andPlayer2: player2)
-                    if let game {
-                        return try await Persistance.saveGame(withName: "Games", andGame: game)
-                    }
-                    return false
-                } catch {
-                    print(error.localizedDescription)
-                    return false
-                }
-            }
-        }
-        return false
     }
 }

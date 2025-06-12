@@ -1,50 +1,33 @@
-//
-//  ContentView.swift
-//  C4
-//
-//  Created by etudiant on 14/05/2025.
-//
-
 import Connect4Core
+import Connect4Rules
 import SwiftUI
 
 struct GamePortraitView: View {
-    @ObservedObject public var game: GameVM
+    public let gameVM: GameVM
+    public let board: Board?
+    public let rules: (any Rules)?
     
-    @State var isPaused : Bool = false
-    
+    @Binding var isPaused : Bool
     @Binding var isPlayer1Turn : Bool
     @Binding var isPlayer2Turn : Bool
-    @State private var errorShowing = false
+    
     var body: some View {
         VStack {
-            if let player1 = game.players[.player1], let player2 = game.players[.player2] {
-                HStack {
-                    GamePlayerComponent(player: player1, isPlayerTurn: $isPlayer1Turn, color: Color(red: 255, green: 0, blue: 0, opacity: 0.3))
-                    Spacer()
-                    GamePlayerComponent(player: player2, isPlayerTurn: $isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.3))
-                }
-                
-                GridBoardComponent(board: $game.board, player1ImagePath: player1.model.imagePath, player2ImagePath: player2.model.imagePath)
-                Button("", systemImage: isPaused ? "play.circle" : "pause.circle") {
-                    isPaused.toggle()
-                }
-                .foregroundColor(.primaryAccentBackground)
-                .font(.largeTitle)
-                .padding(.top, 10)
-                
-                Text("\(String(localized: "Rules")) : \(game.rules.model?.shortName ?? "Unknown rules")")
-            } else {
-                Text(String("Error"))
-                .onAppear() {
-                    errorShowing = true
-                }
-                .alert("Players have not been set correctly", isPresented: $errorShowing) {
-                        Button("OK", role: .destructive) { }
-                    } message: {
-                           Text("Try again later.")
-                    }
+            HStack {
+                GamePlayerComponent(player: gameVM.player1, isPlayerTurn: $isPlayer1Turn, color: Color(red: 255, green: 0, blue: 0, opacity: 0.3))
+                Spacer()
+                GamePlayerComponent(player: gameVM.player2, isPlayerTurn: $isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.3))
             }
+                
+            GridBoardComponent(board: board ?? BoardStub().getBoards()[0], player1ImagePath: gameVM.player1.model.imagePath, player2ImagePath: gameVM.player2.model.imagePath)
+            Button("", systemImage: isPaused ? "play.circle" : "pause.circle") {
+                isPaused.toggle()
+            }
+            .foregroundColor(.primaryAccentBackground)
+            .font(.largeTitle)
+            .padding(.top, 10)
+                
+            Text("\(String(localized: "Rules")) : \(rules?.name ?? "Unknown rules")")
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(.primaryBackground))
@@ -56,25 +39,16 @@ struct GamePortraitView: View {
 }
 
 private struct GamePortraitViewPreview: View {
-    @StateObject public var game = GameVM(with: PlayerStub().getPlayersVM()[0], andWith: PlayerStub().getPlayersVM()[1], board: Board(withNbRows: 6, andNbColumns: 7)!)
+    public var gameVM = GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0])
     
     @State private var index = 0
     @State var isPlayer1Turn = false
     @State var isPlayer2Turn = true
+    @State var isPaused = false
 
     var body: some View {
         VStack {
-            GamePortraitView(game: game, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
-            Button("New grid") {
-                index = (index + 1) % 7
-                game.board = BoardStub().getBoards()[index]
-            }
-            .padding(.horizontal, 15)
-            .padding(.vertical, 8)
-            .background(Color(.primaryAccentBackground))
-            .foregroundColor(.primaryBackground)
-            .cornerRadius(5)
-            
+            GamePortraitView(gameVM: gameVM, board: BoardStub().getBoards()[0], rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, isPaused: $isPaused, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
             Button(action: {
                 isPlayer1Turn.toggle()
                 isPlayer2Turn.toggle()

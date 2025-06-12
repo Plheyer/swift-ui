@@ -8,12 +8,13 @@ struct LaunchGame: View {
     @Binding public var idiom: UIUserInterfaceIdiom?
     
     // Game
-    private let defaultPlayer1: PlayerVM = PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)"))
-    private let defaultPlayer2: PlayerVM = PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)"))
+    @StateObject public var newGameVM : NewGameVM = NewGameVM(with: PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")), andWith: PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")), rulesName: "\(Connect4Rules.self)", nbRows: 6, nbColumns: 7, nbTokensToAlign: 4)
     
-    @StateObject public var gameVM : GameVM = GameVM(with: PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")), andWith: PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")), board: Board(withNbRows: 6, andNbColumns: 7)!)
-    
-    @State public var players = PlayersVM() // Have to fetch all players from persistance
+    @State public var players = PlayersVM()
+    @State public var isPlayer1Turn = false
+    @State public var isPlayer2Turn = false
+    @State public var showErrorAlert = false
+    @State public var isFormValid = false
     
     // Timer
     @StateObject public var timerVM = TimerVM()
@@ -21,28 +22,32 @@ struct LaunchGame: View {
     var body: some View {
         ScrollView {
             HStack {
-                ChoosePlayerComponent(playerVM: gameVM.players[.player1] ?? defaultPlayer1, playersVM: players, playerText: String(localized: "Player1"))
-                ChoosePlayerComponent(playerVM: gameVM.players[.player2] ?? defaultPlayer2, playersVM: players, playerText: String(localized: "Player2"))
+                ChoosePlayerComponent(playerVM: newGameVM.player1, playersVM: players, playerText: String(localized: "Player1"))
+                ChoosePlayerComponent(playerVM: newGameVM.player2, playersVM: players, playerText: String(localized: "Player2"))
             }
             Divider()
-            ChooseRulesComponent(rule: gameVM.rules, timer: timerVM)
-
-            NavigationLink(destination: GameView(game: gameVM, timer: timerVM, orientation: $orientation, idiom: $idiom)) {
-                Text(String(localized: "Play"))
+            ChooseRulesComponent(rulesName: $newGameVM.rulesName, nbRows: $newGameVM.nbRows, nbColumns: $newGameVM.nbColumns, nbTokensToAlign: $newGameVM.nbTokensToAlign, timer: timerVM)
+            
+            VStack {
+                Button(String(localized: "Play")) {
+                    Task {
+                        showErrorAlert = !newGameVM.createGame()
+                        if !showErrorAlert {
+                            isFormValid = true
+                            await newGameVM.player1.onSelected(isCancelled: false)
+                            await newGameVM.player2.onSelected(isCancelled: false)
+                        }
+                    }
+                }
                 .padding(.horizontal, 15)
                 .padding(.vertical, 8)
+            }
+            .navigationDestination(isPresented: $isFormValid) {
+                GameView(gameVM: newGameVM.gameVM, timer: timerVM, orientation: $orientation, idiom: $idiom, isPlayer1Turn: isPlayer1Turn, isPlayer2Turn: isPlayer2Turn)
             }
             .background(Color(.primaryAccentBackground))
             .foregroundColor(.primaryBackground)
             .cornerRadius(5)
-            .onTapGesture {
-                let p1 = gameVM.players[.player1] ?? defaultPlayer1
-                let p2 = gameVM.players[.player2] ?? defaultPlayer2
-                Task {
-                    await p1.onSelected(isCancelled: false)
-                    await p2.onSelected(isCancelled: false)
-                }
-            }
         }
         .padding()
         .background(Color(.primaryBackground))
@@ -51,11 +56,14 @@ struct LaunchGame: View {
         .onAppear() {
             Task {
                 await players.loadAllPlayers()
-                let p1 = gameVM.players[.player1] ?? defaultPlayer1
-                let p2 = gameVM.players[.player2] ?? defaultPlayer2
-                p1.onSelecting()
-                p2.onSelecting()
+                newGameVM.player1.onSelecting()
+                newGameVM.player2.onSelecting()
             }
+        }
+        .alert("LaunchGameErrorTitle", isPresented: $showErrorAlert) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text(String(localized: "LaunchGameErrorDescription"))
         }
     }
 }

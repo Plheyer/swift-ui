@@ -5,6 +5,9 @@ public class GameScene : SKScene {
     var boardNode : BoardNode?
     var player1ImagePath: String = ""
     var player2ImagePath: String = ""
+    
+    // TODO: Possess a GameVM
+    
     override public init(size: CGSize) {
         super.init(size: size)
         self.scaleMode = .aspectFit
