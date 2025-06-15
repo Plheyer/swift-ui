@@ -22,7 +22,7 @@ struct GameView: View {
     @State var isPlayer1Turn = true
     @State var isPlayer2Turn = false
     
-    let debug = true
+    let debug = false
     
     public init(gameVM: GameVM, timer: TimerVM, orientation: Binding<UIDeviceOrientation?>, idiom: Binding<UIUserInterfaceIdiom?>, isPlayer1Turn: Bool, isPlayer2Turn: Bool) {
         self.gameVM = gameVM
@@ -83,7 +83,7 @@ struct GameView: View {
 }
 
 private struct GameViewPreview : View {
-    @StateObject public var gameVM = GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0])
+    @StateObject public var gameVM = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0])
     @StateObject public var timerVM = TimerVM()
     
     @State var orientation: UIDeviceOrientation?

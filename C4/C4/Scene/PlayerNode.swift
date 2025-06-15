@@ -1,21 +1,21 @@
 import Foundation
 import SpriteKit
+import Connect4Core
 
 public class PlayerNode : SKNode {
     let width: CGFloat
     let height: CGFloat
     let imagePath : String
+    let owner: Owner
     var crop : SKCropNode?
-    
-    let droppedAction: (CGPoint, String?, SKCropNode?) -> ()
     
     var ghost : PlayerNode?
     
-    public init(width: CGFloat, height: CGFloat, imagePath: String, droppedAction: @escaping (CGPoint, String?, SKCropNode?) -> ()) {
+    public init(width: CGFloat, height: CGFloat, imagePath: String, owner: Owner) {
         self.width = width
         self.height = height
         self.imagePath = imagePath
-        self.droppedAction = droppedAction
+        self.owner = owner
         super.init()
         
         let sprite : SKSpriteNode
@@ -43,11 +43,11 @@ public class PlayerNode : SKNode {
         self.addChild(crop)
     }
     
-    public init(width: CGFloat, height: CGFloat, crop: SKCropNode?, droppedAction: @escaping (CGPoint, String?, SKCropNode?) -> ()) {
+    public init(width: CGFloat, height: CGFloat, crop: SKCropNode?, owner: Owner) {
         self.width = width
         self.height = height
         self.crop = crop
-        self.droppedAction = droppedAction
+        self.owner = owner
         self.imagePath = "" // Useless
         super.init()
         
@@ -80,14 +80,19 @@ public class PlayerNode : SKNode {
     }
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let gameScene = self.parent?.parent as? GameScene else { return }
+        guard let touch = touches.first else { return }
+        
+        let touchPosition = touch.location(in: gameScene)
         let dragged: PlayerNode
         if let nodeCopy = crop?.copy(), let cropCopy = nodeCopy as? SKCropNode {
-            dragged = PlayerNode(width: width, height: height, crop: cropCopy, droppedAction: droppedAction) // More opti, but can fail
+            dragged = PlayerNode(width: width, height: height, crop: cropCopy, owner: owner) // More opti, but can fail
         } else {
-            dragged = PlayerNode(width: width, height: height, imagePath: imagePath, droppedAction: droppedAction)
+            dragged = PlayerNode(width: width, height: height, imagePath: imagePath, owner: owner)
         }
+        dragged.position = CGPoint(x: touchPosition.x - self.width / 2, y: touchPosition.y - self.height / 2)
         ghost = dragged
-        self.parent?.parent?.addChild(dragged)
+        gameScene.addChild(dragged)
     }
     
     override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -100,19 +105,31 @@ public class PlayerNode : SKNode {
     
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let dropped = ghost else { return }
-        dropped.removeFromParent()
-        ghost = nil
-        if let parent = self.parent, let gameScene = parent.parent as? GameScene {
-            let sceneWidth: CGFloat = CGFloat((gameScene.boardNode?.nbColumns ?? 0) * 100)
-            let sceneHeight: CGFloat = CGFloat((gameScene.boardNode?.nbRows ?? 0) * 100)
-            
-            let correctedPosition = CGPoint(x: dropped.position.x + width / 2 + sceneWidth / 2, y: dropped.position.y + height / 2 + 75 + sceneHeight / 2) // This +75 is to have the correct x,y for the board, and thus excluding the playerNode part
-            
-            if let copy = NodeHelper.deepCopyCropNode(self.crop) {
-                droppedAction(correctedPosition, nil, copy) // More opti, but can fail (to copy)
-            } else {
-                droppedAction(correctedPosition, self.imagePath, nil)
+        guard let gameScene = self.parent?.parent as? GameScene else { return }
+        guard let touch = touches.first else { return }
+        
+        let boardNode = gameScene.boardNode
+        let (row, col) = getCellCoordinates(from: touch, in: boardNode)
+        if row >= 0, row < boardNode.nbRows, col >= 0, col < boardNode.nbColumns {
+            if let gameVM = gameScene.gameVM, let playMoveFunc = gameVM.rules.playMoveFunc {
+                let (boardResult, row, col) = playMoveFunc(&gameVM.board, Connect4Core.Move(of: owner, toRow: row, toColumn: col))
+                if boardResult == .ok, let row, let col {
+                    if let crop = self.crop, let copy = NodeHelper.deepCopyCropNode(crop) {
+                        boardNode.cellMatrix[row][col].cropNode = copy
+                    } else {
+                        boardNode.cellMatrix[row][col].imagePath = dropped.imagePath
+                    }
+                }
             }
         }
+        dropped.removeFromParent()
+        ghost = nil
+    }
+    
+    public func getCellCoordinates(from touch : UITouch, in board : BoardNode) -> (row: Int, col: Int) {
+        let touchPoint = touch.location(in: board)
+        let col = Int(floor(touchPoint.x / (board.width / CGFloat(board.nbColumns))))
+        let row = Int(floor(touchPoint.y / (board.height / CGFloat(board.nbRows))))
+        return (row, col)
     }
 }

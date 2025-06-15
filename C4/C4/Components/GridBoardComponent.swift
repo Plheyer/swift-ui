@@ -10,28 +10,22 @@ import SwiftUI
 import SpriteKit
 
 struct GridBoardComponent: View {
-    var board : Board
-    let player1ImagePath: String
-    let player2ImagePath: String
-    @State var scene: GameScene
-    
-    public init(board: Board, player1ImagePath: String, player2ImagePath: String) {
-        self.board = board
-        self.player1ImagePath = player1ImagePath
-        self.player2ImagePath = player2ImagePath
-        scene = GameScene(nbRows: board.nbRows, nbColumns: board.nbColumns, player1ImagePath: player1ImagePath, player2ImagePath: player2ImagePath)
-    }
+    public var gameVM: GameVM
     
     var body: some View {
         VStack {
-            GeometryReader { geometry in
-                let s = findSize(geometry.size, scene.size)
-                SpriteView(scene: scene, options: [.allowsTransparency])
-                    .frame(width: s.width, height: s.height, alignment: .center)
-                    .scaledToFit()
-                    .position(CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)) // This position enables the scene to be centered in the geometry reader
+            if let scene = gameVM.gameScene {
+                GeometryReader { geometry in
+                    let s = findSize(geometry.size, scene.size)
+                    SpriteView(scene: scene, options: [.allowsTransparency])
+                        .frame(width: s.width, height: s.height, alignment: .center)
+                        .scaledToFit()
+                        .position(CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)) // This position enables the scene to be centered in the geometry reader
+                }
+                .frame(alignment: .center)
+            } else {
+                Text(String(localized: "ErrorLoadingGameScene"))
             }
-            .frame(alignment: .center)
         }
         .ignoresSafeArea()
     }
@@ -52,10 +46,8 @@ struct GridBoardComponent: View {
 }
 
 private struct GridBoardComponentPreview : View {
-    var board = BoardStub().getBoards()[5]
-    let player1ImagePath = "/Users/etudiant/Downloads/anonymous.png"
-    let player2ImagePath = "/Users/etudiant/Downloads/larry.webp"
+    var gameVM: GameVM = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0])
     var body : some View {
-        GridBoardComponent(board: board, player1ImagePath: player1ImagePath, player2ImagePath: player2ImagePath)
+        GridBoardComponent(gameVM: gameVM)
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC2568822DFB20F4002ABA92 /* GameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2568812DFB20F4002ABA92 /* GameVM.swift */; };
+		EC2568842DFB7538002ABA92 /* GameErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2568832DFB7538002ABA92 /* GameErrors.swift */; };
 		EC2F81D22DE0BB39000D4514 /* RulesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F81D12DE0BB39000D4514 /* RulesExtensions.swift */; };
 		EC2F81D42DE0BE18000D4514 /* PlayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F81D32DE0BE18000D4514 /* PlayerExtensions.swift */; };
 		EC2F81D62DE10B12000D4514 /* HomePortraitComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F81D52DE10B12000D4514 /* HomePortraitComponent.swift */; };
@@ -84,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		EC2568812DFB20F4002ABA92 /* GameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
+		EC2568832DFB7538002ABA92 /* GameErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameErrors.swift; sourceTree = "<group>"; };
 		EC2F81D12DE0BB39000D4514 /* RulesExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesExtensions.swift; sourceTree = "<group>"; };
 		EC2F81D32DE0BE18000D4514 /* PlayerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerExtensions.swift; sourceTree = "<group>"; };
 		EC2F81D52DE10B12000D4514 /* HomePortraitComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePortraitComponent.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 			children = (
 				ECE6A9202DF4788C0055066D /* ImageHelper.swift */,
 				ECE6A9222DF484280055066D /* NodeHelper.swift */,
+				EC2568832DFB7538002ABA92 /* GameErrors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				EC2F81DA2DE1127D000D4514 /* GamePortraitView.swift in Sources */,
 				EC73FD832DE0B23E00B28CE2 /* GamePlayerComponent.swift in Sources */,
 				ECAA52EF2DE852B500EBA2E0 /* TimerVM.swift in Sources */,
+				EC2568842DFB7538002ABA92 /* GameErrors.swift in Sources */,
 				EC73FD7D2DDF74F700B28CE2 /* SideMenu.swift in Sources */,
 				ECE6A91E2DF04CA90055066D /* PlayerNode.swift in Sources */,
 				EC73FD6D2DDE5BD300B28CE2 /* ResultExtensions.swift in Sources */,

@@ -40,7 +40,7 @@ struct GameLandscapeView: View {
                 
                 Spacer()
                 
-                GridBoardComponent(board: board, player1ImagePath: gameVM.player1.model.imagePath, player2ImagePath: gameVM.player2.model.imagePath)
+                GridBoardComponent(gameVM: gameVM)
                 
                 Spacer()
             }
@@ -56,7 +56,7 @@ struct GameLandscapeView: View {
 }
 
 private struct GameLandscapeViewPreview: View {
-    public var game = GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0])
+    public var game = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0])
     
     @State private var index = 0
     @State var isPlayer1Turn = false

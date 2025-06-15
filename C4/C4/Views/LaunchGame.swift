@@ -8,7 +8,7 @@ struct LaunchGame: View {
     @Binding public var idiom: UIUserInterfaceIdiom?
     
     // Game
-    @StateObject public var newGameVM : NewGameVM = NewGameVM(with: PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")), andWith: PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")), rulesName: "\(Connect4Rules.self)", nbRows: 6, nbColumns: 7, nbTokensToAlign: 4)
+    @StateObject public var newGameVM : NewGameVM = NewGameVM(with: PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player1, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")), andWith: PlayerVM(with: PlayerModel(name: "\(RandomPlayer.self)", owner: .player2, image: Image("DefaultPlayerImage"), type: "\(RandomPlayer.self)")), rulesName: "\(Connect4Rules.self)", nbRows: 6, nbColumns: 7, nbTokensToAlign: 4)
     
     @State public var players = PlayersVM()
     @State public var isPlayer1Turn = false

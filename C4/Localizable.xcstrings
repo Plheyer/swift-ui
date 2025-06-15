@@ -190,6 +190,23 @@
         }
       }
     },
+    "ErrorLoadingGameScene" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error while loading the game. Try again later."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur lors du chargement de la partie. Veuillez essayer plus tard."
+          }
+        }
+      }
+    },
     "FaceToFace" : {
       "extractionState" : "manual",
       "localizations" : {

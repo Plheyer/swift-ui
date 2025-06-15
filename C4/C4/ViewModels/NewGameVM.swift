@@ -19,7 +19,7 @@ public class NewGameVM : ObservableObject {
         self.nbRows = nbRows
         self.nbColumns = nbColumns
         self.nbTokensToAlign = nbTokensToAlign
-        self.gameVM = GameVM(with: player1, andWith: player2, rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: Board(withNbRows: 6, andNbColumns: 7)!) // Default game
+        self.gameVM = try! GameVM(with: player1, andWith: player2, rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: Board(withNbRows: 6, andNbColumns: 7)!) // Default game
     }
     
     // Returns if it succeed or not
@@ -35,8 +35,11 @@ public class NewGameVM : ObservableObject {
             default: nil
         }
         if let board, let rules {
-            self.gameVM = GameVM(with: player1, andWith: player2, rules: rules, board: board)
-            return true
+            let game = try? GameVM(with: player1, andWith: player2, rules: rules, board: board)
+            if let game {
+                self.gameVM = game
+                return true
+            }
         }
         return false
     }

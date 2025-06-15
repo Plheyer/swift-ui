@@ -31,11 +31,13 @@ extension PlayerModel {
     public var toC4Model : Player? {
         switch (type) {
         case "\(HumanPlayer.self)":
-            return HumanPlayer(withName: self.name, andId: .player1)
+            return HumanPlayer(withName: self.name, andId: self.owner)
+        case "\(RandomPlayer.self)":
+            return RandomPlayer(withName: self.name, andId: self.owner)
         case "\(FinnishHimPlayer.self)":
-            return FinnishHimPlayer(withName: self.name, andId: .player1)
+            return FinnishHimPlayer(withName: self.name, andId: self.owner)
         case "\(SimpleNegaMaxPlayer.self)":
-            return SimpleNegaMaxPlayer(withName: self.name, andId: .player1)
+            return SimpleNegaMaxPlayer(withName: self.name, andId: self.owner)
         default:
             return nil
         }

@@ -19,7 +19,7 @@ struct GamePortraitView: View {
                 GamePlayerComponent(player: gameVM.player2, isPlayerTurn: $isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.3))
             }
                 
-            GridBoardComponent(board: board ?? BoardStub().getBoards()[0], player1ImagePath: gameVM.player1.model.imagePath, player2ImagePath: gameVM.player2.model.imagePath)
+            GridBoardComponent(gameVM: gameVM)
             Button("", systemImage: isPaused ? "play.circle" : "pause.circle") {
                 isPaused.toggle()
             }
@@ -39,7 +39,7 @@ struct GamePortraitView: View {
 }
 
 private struct GamePortraitViewPreview: View {
-    public var gameVM = GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0])
+    public var gameVM = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0])
     
     @State private var index = 0
     @State var isPlayer1Turn = false
