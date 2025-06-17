@@ -111,19 +111,37 @@ public class PlayerNode : SKNode {
         let boardNode = gameScene.boardNode
         let (row, col) = getCellCoordinates(from: touch, in: boardNode)
         if row >= 0, row < boardNode.nbRows, col >= 0, col < boardNode.nbColumns {
-            if let gameVM = gameScene.gameVM, let playMoveFunc = gameVM.rules.playMoveFunc {
-                let (boardResult, row, col) = playMoveFunc(&gameVM.board, Connect4Core.Move(of: owner, toRow: row, toColumn: col))
-                if boardResult == .ok, let row, let col {
-                    if let crop = self.crop, let copy = NodeHelper.deepCopyCropNode(crop) {
-                        boardNode.cellMatrix[row][col].cropNode = copy
-                    } else {
-                        boardNode.cellMatrix[row][col].imagePath = dropped.imagePath
-                    }
+            if let gameVM = gameScene.gameVM {
+                let move = Move(of: owner, toRow: row, toColumn: col)
+                Task {
+                    await gameVM.playMove(move: move)
                 }
+                print(gameVM.board.countPieces())
+                let moveAction = SKAction.move(to: self.position, duration: 0.2)
+                dropped.run(moveAction) {
+                    dropped.removeFromParent()
+                }
+            } else {
+                dropped.removeFromParent()
             }
+        } else {
+            dropped.removeFromParent()
         }
-        dropped.removeFromParent()
         ghost = nil
+    }
+    
+    public func placeToken(row: Int, col: Int) {
+        guard let dropped = ghost else { return }
+        guard let gameScene = self.parent?.parent as? GameScene else { return }
+        
+        if let gameVM = gameScene.gameVM {
+            if let crop = self.crop, let copy = NodeHelper.deepCopyCropNode(crop) {
+                gameScene.boardNode.cellMatrix[row][col].cropNode = copy
+            } else {
+                gameScene.boardNode.cellMatrix[row][col].imagePath = dropped.imagePath
+            }
+            _ = gameVM.board.insert(piece: Piece(withOwner: owner), atRow: row, andColumn: col)
+        }
     }
     
     public func getCellCoordinates(from touch : UITouch, in board : BoardNode) -> (row: Int, col: Int) {

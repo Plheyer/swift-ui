@@ -66,6 +66,11 @@ struct GameView: View {
                 GameLandscapeView(gameVM: gameVM, board: gameVM.board, rules: gameVM.rules, isPaused: $isPaused, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
             }
         }
+        .onAppear() {
+            Task {
+                await gameVM.startGame()
+            }
+        }
     }
 }
 

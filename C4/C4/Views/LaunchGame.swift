@@ -33,9 +33,14 @@ struct LaunchGame: View {
                     Task {
                         showErrorAlert = !newGameVM.createGame()
                         if !showErrorAlert {
-                            isFormValid = true
-                            await newGameVM.player1.onSelected(isCancelled: false)
-                            await newGameVM.player2.onSelected(isCancelled: false)
+                            DispatchQueue.main.async {
+                                Task {
+                                    await newGameVM.player1.onSelected(isCancelled: false)
+                                    await newGameVM.player2.onSelected(isCancelled: false)
+                                    _ = newGameVM.createGame()
+                                    isFormValid = true
+                                }
+                            }
                         }
                     }
                 }

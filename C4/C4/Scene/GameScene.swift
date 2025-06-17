@@ -5,6 +5,8 @@ public class GameScene : SKScene {
     var boardNode : BoardNode
     var player1ImagePath: String = ""
     var player2ImagePath: String = ""
+    var playerNode1: PlayerNode?
+    var playerNode2: PlayerNode?
     var gameVM: GameVM?
     
     override public init(size: CGSize) {
@@ -36,10 +38,12 @@ public class GameScene : SKScene {
         let toolbarNode = SKNode()
         self.addChild(toolbarNode)
         let p1 = PlayerNode(width: 80, height: 80, imagePath: self.player1ImagePath, owner: .player1)
+        playerNode1 = p1
         toolbarNode.addChild(p1)
         p1.position.x = -self.size.width/3
         p1.position.y = self.size.height/2 - 115
         let p2 = PlayerNode(width: 80, height: 80, imagePath: self.player2ImagePath, owner: .player2)
+        playerNode2 = p2
         toolbarNode.addChild(p2)
         p2.position.x = self.size.width/3 - 80
         p2.position.y = self.size.height/2 - 115
