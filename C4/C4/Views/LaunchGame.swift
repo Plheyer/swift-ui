@@ -48,7 +48,7 @@ struct LaunchGame: View {
                 .padding(.vertical, 8)
             }
             .navigationDestination(isPresented: $isFormValid) {
-                GameView(gameVM: newGameVM.gameVM, timer: timerVM, orientation: $orientation, idiom: $idiom, isPlayer1Turn: isPlayer1Turn, isPlayer2Turn: isPlayer2Turn)
+                GameView(gameVM: newGameVM.gameVM, timer: timerVM, orientation: $orientation, idiom: $idiom)
             }
             .background(Color(.primaryAccentBackground))
             .foregroundColor(.primaryBackground)

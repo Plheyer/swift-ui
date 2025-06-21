@@ -10,7 +10,7 @@ import SwiftUI
 import SpriteKit
 
 struct GridBoardComponent: View {
-    public var gameVM: GameVM
+    @StateObject public var gameVM: GameVM
     
     var body: some View {
         VStack {

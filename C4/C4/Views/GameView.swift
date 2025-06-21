@@ -11,7 +11,7 @@ import SwiftUI
 
 struct GameView: View {
     @ObservedObject public var timer: TimerVM
-    public let gameVM: GameVM
+    @ObservedObject public var gameVM: GameVM
     
     // Orientation
     @Binding var orientation: UIDeviceOrientation?
@@ -19,15 +19,11 @@ struct GameView: View {
     
     // Gameplay
     @State var isPaused : Bool = false
-    @State var isPlayer1Turn = true
-    @State var isPlayer2Turn = false
     
     let debug = false
     
-    public init(gameVM: GameVM, timer: TimerVM, orientation: Binding<UIDeviceOrientation?>, idiom: Binding<UIUserInterfaceIdiom?>, isPlayer1Turn: Bool, isPlayer2Turn: Bool) {
+    public init(gameVM: GameVM, timer: TimerVM, orientation: Binding<UIDeviceOrientation?>, idiom: Binding<UIUserInterfaceIdiom?>) {
         self.gameVM = gameVM
-        self.isPlayer1Turn = isPlayer1Turn
-        self.isPlayer2Turn = isPlayer2Turn
         self.timer = timer
         self._orientation = orientation
         self._idiom = idiom
@@ -59,11 +55,11 @@ struct GameView: View {
         VStack {
             switch(orientation, idiom) {
                 case (.portrait, .phone), (.portraitUpsideDown, .phone), (.portrait, .pad), (.portraitUpsideDown, .pad):
-                GamePortraitView(gameVM: gameVM, board: gameVM.board, rules: gameVM.rules, isPaused: $isPaused, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
+                GamePortraitView(gameVM: gameVM, isPaused: $isPaused)
                 case (.landscapeLeft, .phone), (.landscapeRight, .phone):
-                GameLandscapeView(gameVM: gameVM, board: gameVM.board, rules: gameVM.rules, isPaused: $isPaused, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
+                GameLandscapeView(gameVM: gameVM, isPaused: $isPaused)
                 default:
-                GameLandscapeView(gameVM: gameVM, board: gameVM.board, rules: gameVM.rules, isPaused: $isPaused, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
+                GameLandscapeView(gameVM: gameVM, isPaused: $isPaused)
             }
         }
         .onAppear() {
@@ -96,6 +92,6 @@ private struct GameViewPreview : View {
     @State var isPlayer1Turn: Bool = true
     @State var isPlayer2Turn: Bool = false
     var body: some View {
-        GameView(gameVM: gameVM, timer: timerVM, orientation: $orientation, idiom: $idiom, isPlayer1Turn: isPlayer1Turn, isPlayer2Turn: isPlayer2Turn)
+        GameView(gameVM: gameVM, timer: timerVM, orientation: $orientation, idiom: $idiom)
     }
 }

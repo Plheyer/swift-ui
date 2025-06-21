@@ -14,11 +14,11 @@
 		</data>
 		<key>Modules/Connect4Persistance.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		xTXgwo60uudBWpHW5YGpAe7tD2M=
+		ErHnc5gOsjwkrl7BqdY6H9KcsQ8=
 		</data>
 		<key>Modules/Connect4Persistance.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		kjR7uHeSCP+qx/xQIosjY0rF6aM=
+		xzF3OI/J/VEiP1+uUocdQhzvcB8=
 		</data>
 		<key>Modules/Connect4Persistance.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,19 +26,19 @@
 		</data>
 		<key>Modules/Connect4Persistance.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		kjR7uHeSCP+qx/xQIosjY0rF6aM=
+		xzF3OI/J/VEiP1+uUocdQhzvcB8=
 		</data>
 		<key>Modules/Connect4Persistance.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		AKRX+Uv2XtwIUUSULDjkPU+4PgQ=
+		C+IkSKija0P7fDMho/ccg4jU868=
 		</data>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		xTXgwo60uudBWpHW5YGpAe7tD2M=
+		ErHnc5gOsjwkrl7BqdY6H9KcsQ8=
 		</data>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		7NpzTRnc4kUXjYuoXAwcBjeeWiw=
+		xr8Yu5nWVh+7qkA3UMIWpBkrOuc=
 		</data>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		7NpzTRnc4kUXjYuoXAwcBjeeWiw=
+		xr8Yu5nWVh+7qkA3UMIWpBkrOuc=
 		</data>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		TGtOi4e/LL7BISqB7kNOnsAkvWs=
+		tlMl6cnDnv0NOs5TQlgZaqBiPcA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,14 +70,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CHDm2GZXAx8PBRgUpW5DgGKwMwCxdUH7iLy+xeE83o8=
+			Ga7dPOA656kv0RfpdjeOkzIrSWz5hHc/tVwAodXTuTE=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R7rmB2VxTHpOJSmh8oRxlmLlT8NY+ItqNHigciLJAFs=
+			2sxKXfwd1uvK7t++thbgYICIJ6WfZNXAMWHlMEkR99c=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -91,28 +91,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			R7rmB2VxTHpOJSmh8oRxlmLlT8NY+ItqNHigciLJAFs=
+			2sxKXfwd1uvK7t++thbgYICIJ6WfZNXAMWHlMEkR99c=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+tP3jVgDJmIX+ye8RQt89s7ZxZvqvkW/rOtV8aeGB8s=
+			baDNJtdNqcKB5aMGCPYg4ifnNuQXGttExyxWpRm/NmQ=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CHDm2GZXAx8PBRgUpW5DgGKwMwCxdUH7iLy+xeE83o8=
+			Ga7dPOA656kv0RfpdjeOkzIrSWz5hHc/tVwAodXTuTE=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5gMo+wYR6u3lOlj1fb87tC41ZMM0IDlTaWJKzbQcfhY=
+			qfIJlXwHifIzwSwIJQ3FmFB8cyX+CjmHN0EO/x6C9uY=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -126,14 +126,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5gMo+wYR6u3lOlj1fb87tC41ZMM0IDlTaWJKzbQcfhY=
+			qfIJlXwHifIzwSwIJQ3FmFB8cyX+CjmHN0EO/x6C9uY=
 			</data>
 		</dict>
 		<key>Modules/Connect4Persistance.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4XP4ckLcQCkYz+unXbZQ0fbk1YWHVeG0LlUoYF2Y75Q=
+			RoL8PdlkAu06+SzFH1ey29uD+anmvqG5G7QN1NH/9A8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

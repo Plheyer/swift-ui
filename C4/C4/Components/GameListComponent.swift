@@ -63,7 +63,7 @@ private struct GameListComponentPreview : View {
         GameListComponent(gameListTitle: "Preview", games: gameResultsVM)
             .task {
                 do {
-                    let results: [GameResult] = try await Persistance.loadGameResults(withName: "GameResults") ?? []
+                    let results: [GameResult] = try await Persistance.loadGameResults(withName: "GameResults.co4") ?? []
                     gameResultsVM = GameResultsVM(gameResults: results.map {
                             GameResultVM(date: $0.date, players: $0.players, rules: $0.rules, winner: $0.winner)
                     })

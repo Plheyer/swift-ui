@@ -3328,7 +3328,7 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "(Connect4Core.Board) -> ()",
+                "printedName": "(Connect4Core.Board, Connect4Core.Cell?) -> ()",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -3337,16 +3337,37 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Board",
-                    "printedName": "Connect4Core.Board",
-                    "usr": "s:12Connect4Core5BoardV"
+                    "name": "Tuple",
+                    "printedName": "(Connect4Core.Board, Connect4Core.Cell?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Board",
+                        "printedName": "Connect4Core.Board",
+                        "usr": "s:12Connect4Core5BoardV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Connect4Core.Cell?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Cell",
+                            "printedName": "Connect4Core.Cell",
+                            "usr": "s:12Connect4Core4CellV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
                   }
                 ]
               }
             ],
             "declKind": "Func",
-            "usr": "s:12Connect4Core4GameC23addBoardChangedListeneryyyAA0E0VcF",
-            "mangledName": "$s12Connect4Core4GameC23addBoardChangedListeneryyyAA0E0VcF",
+            "usr": "s:12Connect4Core4GameC23addBoardChangedListeneryyyAA0E0V_AA4CellVSgtcF",
+            "mangledName": "$s12Connect4Core4GameC23addBoardChangedListeneryyyAA0E0V_AA4CellVSgtcF",
             "moduleName": "Connect4Core",
             "declAttributes": [
               "Final",
@@ -7388,28 +7409,28 @@
     {
       "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Game.swift",
       "kind": "Array",
-      "offset": 2238,
+      "offset": 2245,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Game.swift",
       "kind": "Array",
-      "offset": 2562,
+      "offset": 2599,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Game.swift",
       "kind": "BooleanLiteral",
-      "offset": 3711,
+      "offset": 3748,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/marcchevaldonne\/Documents\/temp\/depots2024\/code\/Connect4_SwiftPackages\/Connect4Core\/Connect4Core\/Game.swift",
       "kind": "BooleanLiteral",
-      "offset": 3753,
+      "offset": 3790,
       "length": 5,
       "value": "false"
     }

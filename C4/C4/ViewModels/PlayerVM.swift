@@ -11,6 +11,7 @@ extension PlayerModel {
         public var type: String
         public var image: Image
         public var imagePath: String
+        public var imageEdited = false
     }
     
     var data: Data {
@@ -25,7 +26,9 @@ extension PlayerModel {
         self.image = data.image
         self.imagePath = data.imagePath
         await savePlayer()
-        await savePlayerImage()
+        if data.imageEdited {
+            await savePlayerImage()
+        }
     }
     
     public var toC4Model : Player? {
@@ -46,11 +49,9 @@ extension PlayerModel {
     // Public to allow image updates
     public mutating func savePlayerImage() async {
         do {
-            // Allows to store lighter images
-            let maxSize = CGSize(width: 82, height: 82)
-            
             if let uiImage = try? self.image.asUIImage() {
-                let resizedImage = Image(uiImage: ImageHelper.resizeImage(image: uiImage, targetSize: maxSize) ?? uiImage)
+                let targetSize = CGSize(width: 82, height: 82) // 8192 = max image, /100
+                let resizedImage = Image(uiImage: ImageHelper.resizeImage(image: uiImage, targetSize: targetSize) ?? uiImage)
                 
                 self.imagePath = try await Persistance.saveImage(resizedImage, withName: self.name, withFolderName: "images") ?? ""
             }
@@ -120,11 +121,9 @@ public class PlayerVM : Identifiable, ObservableObject, Hashable {
     // Public to allow image updates
     public func savePlayerImage() async {
         do {
-            // Allows to store lighter images
-            let maxSize = CGSize(width: 82, height: 82)
-            
             if let uiImage = try? self.model.image.asUIImage() {
-                let resizedImage = Image(uiImage: ImageHelper.resizeImage(image: uiImage, targetSize: maxSize) ?? uiImage)
+                let targetSize = CGSize(width: 82, height: 82) // 8192 = max image, /100
+                let resizedImage = Image(uiImage: ImageHelper.resizeImage(image: uiImage, targetSize: targetSize) ?? uiImage)
                 
                 self.model.imagePath = try await Persistance.saveImage(resizedImage, withName: self.model.name, withFolderName: "images") ?? ""
             }

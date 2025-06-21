@@ -459,6 +459,59 @@
           {
             "kind": "Constructor",
             "name": "init",
+            "printedName": "init(date:players:rules:winner:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GameResult",
+                "printedName": "Connect4Persistance.GameResult",
+                "usr": "s:19Connect4Persistance10GameResultV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Connect4Persistance.PlayerData]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PlayerData",
+                    "printedName": "Connect4Persistance.PlayerData",
+                    "usr": "s:19Connect4Persistance10PlayerDataV"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RulesData",
+                "printedName": "Connect4Persistance.RulesData",
+                "usr": "s:19Connect4Persistance9RulesDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Owner",
+                "printedName": "Connect4Core.Owner",
+                "usr": "s:12Connect4Core5OwnerO"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:19Connect4Persistance10GameResultV4date7players5rules6winnerAC10Foundation4DateV_SayAA10PlayerDataVGAA05RulesL0V0A4Core5OwnerOtcfc",
+            "mangledName": "$s19Connect4Persistance10GameResultV4date7players5rules6winnerAC10Foundation4DateV_SayAA10PlayerDataVGAA05RulesL0V0A4Core5OwnerOtcfc",
+            "moduleName": "Connect4Persistance",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
             "printedName": "init(from:)",
             "children": [
               {

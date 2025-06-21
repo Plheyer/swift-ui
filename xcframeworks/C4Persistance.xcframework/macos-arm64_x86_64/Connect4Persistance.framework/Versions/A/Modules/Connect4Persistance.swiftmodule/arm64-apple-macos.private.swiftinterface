@@ -30,6 +30,7 @@ public struct GameResult : Swift.Codable, Swift.Sendable {
   public let players: [Connect4Persistance.PlayerData]
   public let rules: Connect4Persistance.RulesData
   public let winner: Connect4Core.Owner
+  public init(date: Foundation.Date, players: [Connect4Persistance.PlayerData], rules: Connect4Persistance.RulesData, winner: Connect4Core.Owner)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }

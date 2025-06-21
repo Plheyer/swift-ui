@@ -22,14 +22,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vxI8FHLXJCleBGh9+herr34V5rGZkNqt7D2vp8wwdBw=
+			Hzas3sVinTU7+YCZnKtb+sqQ9Y8c85BKLAePT1+B2x8=
 			</data>
 		</dict>
 		<key>Modules/Connect4Core.swiftmodule/arm64-apple-macos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IW91kxHWXUejjN/57AQTYKsqKus9/W4w2FlBN3IJF70=
+			6/6hrIQwYhi5KhIzTuGF/rr/rf07m09kWdoEo+uJ1sE=
 			</data>
 		</dict>
 		<key>Modules/Connect4Core.swiftmodule/arm64-apple-macos.swiftdoc</key>
@@ -43,28 +43,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IW91kxHWXUejjN/57AQTYKsqKus9/W4w2FlBN3IJF70=
+			6/6hrIQwYhi5KhIzTuGF/rr/rf07m09kWdoEo+uJ1sE=
 			</data>
 		</dict>
 		<key>Modules/Connect4Core.swiftmodule/arm64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bv7MAfROxGDi4sebZZ29Fm+3kqPSV9b2jpvjmrSnv1w=
+			CDg8Al6nyc05J8UOz+TgxGfVOpwJnABp01YToidqrak=
 			</data>
 		</dict>
 		<key>Modules/Connect4Core.swiftmodule/x86_64-apple-macos.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vxI8FHLXJCleBGh9+herr34V5rGZkNqt7D2vp8wwdBw=
+			Hzas3sVinTU7+YCZnKtb+sqQ9Y8c85BKLAePT1+B2x8=
 			</data>
 		</dict>
 		<key>Modules/Connect4Core.swiftmodule/x86_64-apple-macos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xtgvGuyW9y+4nqyQM3/tWuLrCeOsS81R9BM7A0kEjyc=
+			wp7EGQ3DLu/5XStJDTSWiMugA3/zvrWBcAAlj+E+HWk=
 			</data>
 		</dict>
 		<key>Modules/Connect4Core.swiftmodule/x86_64-apple-macos.swiftdoc</key>
@@ -78,14 +78,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xtgvGuyW9y+4nqyQM3/tWuLrCeOsS81R9BM7A0kEjyc=
+			wp7EGQ3DLu/5XStJDTSWiMugA3/zvrWBcAAlj+E+HWk=
 			</data>
 		</dict>
 		<key>Modules/Connect4Core.swiftmodule/x86_64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CQNRMIS56zHLkDAlix7nzy+HWQ78XXy/ukbduJegWi4=
+			jbL60RZ7cSgaqvszlsx5OHCDzyfJRvzCh5PLmOhKfKo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

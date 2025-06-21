@@ -9,7 +9,7 @@ struct SavedGames: View {
     
     public func loadResults() async {
         do {
-            results = try await Persistance.loadGameResults(withName: "GameResults") ?? []
+            results = try await Persistance.loadGameResults(withName: "GameResults.co4") ?? []
             
             inProgressGames.gameResults = results.filter {
                 switch ($0.winner) {
@@ -78,7 +78,7 @@ private struct saveGameButton : View {
         Button(action: {
             Task {
                 let game = try Game(withBoard: BoardStub().getBoards()[0], withRules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, andPlayer1: HumanPlayer(withName: "p1", andId: .player1)!, andPlayer2: HumanPlayer(withName: "p2", andId: .player2)!)
-                _ = try await Persistance.saveGameResult(withName: "GameResults", andGame: game, andResult: result)
+                _ = try await Persistance.saveGameResult(withName: "GameResults.co4", andGame: game, andResult: result)
                 
             }
         }) {

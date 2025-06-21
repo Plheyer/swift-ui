@@ -107,7 +107,7 @@ final public class Game : @unchecked Swift.Sendable {
   final public func addGameOverListener(_ listener: @escaping (Connect4Core.Board, Connect4Core.Result, Connect4Core.Player?) -> Swift.Void)
   final public func addMoveChosenCallbacksListener(_ listener: @escaping (Connect4Core.Board, Connect4Core.Move, Connect4Core.Player) -> Swift.Void)
   final public func addInvalidMoveCallbacksListener(_ listener: @escaping (Connect4Core.Board, Connect4Core.Move, Connect4Core.Player, Swift.Bool) -> Swift.Void)
-  final public func addBoardChangedListener(_ listener: @escaping (Connect4Core.Board) -> Swift.Void)
+  final public func addBoardChangedListener(_ listener: @escaping (Connect4Core.Board, Connect4Core.Cell?) -> Swift.Void)
   final public func addGameChangedListener(_ listener: @escaping (Connect4Core.Game, Connect4Core.Result) async throws -> Swift.Void)
   public init(withBoard board: Connect4Core.Board, withRules rules: any Connect4Core.Rules, andPlayer1 player1: Connect4Core.Player, andPlayer2 player2: Connect4Core.Player) throws
   convenience public init(withRules rules: any Connect4Core.Rules, andPlayer1 player1: Connect4Core.Player, andPlayer2 player2: Connect4Core.Player) throws

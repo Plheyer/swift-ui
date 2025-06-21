@@ -27,9 +27,8 @@ public class CellNode : SKNode {
             if let imagePath = newValue {
                 let sprite : SKSpriteNode
                 if let image = UIImage(contentsOfFile: imagePath) {
-                    let maxSize = CGSize(width: 82, height: 82)
-                    let resizedImage = ImageHelper.resizeImage(image: image, targetSize: maxSize) ?? image
-                    let texture = SKTexture(image: resizedImage)
+                    //let resizedImage = ImageHelper.resizeImage(image: image, targetSize: 82) ?? image
+                    let texture = SKTexture(image: image)
                     
                     sprite = SKSpriteNode(texture: texture)
                 } else {

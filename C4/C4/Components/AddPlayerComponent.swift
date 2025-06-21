@@ -19,6 +19,8 @@ struct AddPlayerComponent: View {
     
     @State private var showWarningSameNamePopup: Bool = false
     
+    @State private var imageEdited = false
+    
     public let originalName: String
     @State private var avatarItem: PhotosPickerItem?
     var body: some View {
@@ -37,6 +39,9 @@ struct AddPlayerComponent: View {
                     }
                 }
                 .tint(Color(.primaryAccentBackground))
+                .onChange(of: avatarItem) {
+                    imageEdited = true
+                }
             }
             .onChange(of: avatarItem) {
                 Task {
@@ -66,13 +71,16 @@ struct AddPlayerComponent: View {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save") {
                     Task {
-                        if playersVM.players.first(where: { $0.model.name == playerVM.model.name })?.model.name != originalName {
+                        if let modelName = playersVM.players.first(where: { $0.model.name == playerVM.model.name }), modelName.model.name != originalName {
                             // Somebody has already the same name
                             showWarningSameNamePopup = true
                             return
                         }
                         var playerModel = PlayerModel(name: playerVM.model.name, owner: .noOne, image: playerVM.model.image, type: "\(HumanPlayer.self)")
-                        await playerModel.savePlayerImage()
+                        if imageEdited {
+                            await playerModel.savePlayerImage()
+                            playerVM.model.imageEdited = true
+                        }
                         if let playerC4Model = playerModel.toC4Model {
                             _ = try? await Persistance.addPlayer(withName: "players22", andPlayer: playerC4Model)
                         }

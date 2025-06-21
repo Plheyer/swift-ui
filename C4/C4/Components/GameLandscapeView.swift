@@ -10,13 +10,9 @@ import Connect4Rules
 import SwiftUI
 
 struct GameLandscapeView: View {
-    public let gameVM: GameVM
-    public let board: Board
-    public let rules: any Rules
+    @StateObject public var gameVM: GameVM
     
     @Binding var isPaused : Bool
-    @Binding var isPlayer1Turn : Bool
-    @Binding var isPlayer2Turn : Bool
     
     var body: some View {
         VStack {
@@ -24,7 +20,7 @@ struct GameLandscapeView: View {
                 Spacer()
                 
                 VStack {
-                    GamePlayerComponent(player: gameVM.player1, isPlayerTurn: $isPlayer1Turn, color: Color(red: 255, green: 0, blue: 0, opacity: 0.3))
+                    GamePlayerComponent(player: gameVM.player1, isPlayerTurn: gameVM.isPlayer1Turn, color: Color(red: 255, green: 0, blue: 0, opacity: 0.3))
                     VStack {
                         Button("", systemImage: isPaused ? "play.circle" : "pause.circle") {
                             isPaused.toggle()
@@ -33,9 +29,9 @@ struct GameLandscapeView: View {
                         .font(.largeTitle)
                         .padding(.top, 10)
                         
-                        Text("\(String(localized: "Rules")) : \(rules.name)")
+                        Text("\(String(localized: "Rules")) : \(gameVM.rules.name)")
                     }
-                    GamePlayerComponent(player: gameVM.player2, isPlayerTurn: $isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.3))
+                    GamePlayerComponent(player: gameVM.player2, isPlayerTurn: gameVM.isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.3))
                 }
                 
                 Spacer()
@@ -65,7 +61,7 @@ private struct GameLandscapeViewPreview: View {
 
     var body: some View {
         VStack {
-            GameLandscapeView(gameVM: game, board: BoardStub().getBoards()[0], rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, isPaused: $isPaused, isPlayer1Turn: $isPlayer1Turn, isPlayer2Turn: $isPlayer2Turn)
+            GameLandscapeView(gameVM: game, isPaused: $isPaused)
             Button(action: {
                 isPlayer1Turn.toggle()
                 isPlayer2Turn.toggle()

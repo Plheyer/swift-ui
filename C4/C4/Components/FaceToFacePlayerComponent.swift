@@ -4,19 +4,19 @@ import Charts
 
 struct FaceToFacePlayerComponent: View {
     var pickerCallback : () async -> ()
-    @Binding public var selectedPlayer : String
+    @Binding public var selectedPlayerName : String
     @ObservedObject public var playersVM : PlayersVM
     var body: some View {
         VStack {
             Image("HomeImage")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            Picker("Player", selection: $selectedPlayer) {
+            Picker("Player", selection: $selectedPlayerName) {
                 ForEach(playersVM.players.map { $0.model.name }, id: \.self) { name in
                     Text(name)
                 }
             }
-            .onChange(of: selectedPlayer) {
+            .onChange(of: selectedPlayerName) {
                 Task {
                     await self.pickerCallback()
                 }
