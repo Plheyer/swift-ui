@@ -10,9 +10,9 @@ public class GameVM : ObservableObject {
     public var rules: any Rules
     public var board: Board
     private var game: Game?
-    @Published public var isOver: Bool = false
-    @Published public var isPlayer1Turn: Bool = true
-    @Published public var isPlayer2Turn: Bool = false
+    public var isOver: Bool = false
+    @MainActor @Published public var isPlayer1Turn: Bool = true
+    @MainActor @Published public var isPlayer2Turn: Bool = false
     
     // Possess a GameScene. When init, will also create the game scene at the same time to create the GameScene as a member of GameVM, and also provide the reference (because a class is a reference type) of the GameVM (itself) when init the GameScene. This will allow them to communicate easily.
     // Example: GameVM receives a callback from Game, it must update the GameScene, it must communicate with the GameScene, and have it.
@@ -34,8 +34,8 @@ public class GameVM : ObservableObject {
                 game.addInvalidMoveCallbacksListener(invalidMove)
                 game.addBoardChangedListener(boardChanged)
                 game.addPlayerNotifiedListener({ _, player in
-                    Task {
-                        try! await Task.sleep(nanoseconds: 1_000_000)
+                    if player.type != "Human" {
+                        sleep(1)
                     }
                 })
                 game.addGameChangedListener(gameChanged)

@@ -11,7 +11,7 @@ import SwiftUI
 
 struct GameView: View {
     @ObservedObject public var timer: TimerVM
-    @ObservedObject public var gameVM: GameVM
+    public var gameVM: GameVM
     
     // Orientation
     @Binding var orientation: UIDeviceOrientation?
@@ -33,7 +33,7 @@ struct GameView: View {
     var body: some View {
         VStack {
             if isAR {
-                GameARViewRepresentable()
+                GameARViewRepresentable(gameVM: gameVM)
                     .ignoresSafeArea()
             } else {
                 switch(orientation, idiom) {
@@ -46,13 +46,6 @@ struct GameView: View {
                 }
             }
         }
-//        .onAppear() {
-//            DispatchQueue.main.async {
-//                Task {
-//                    await gameVM.startGame()
-//                }
-//            }
-//        }
         .task {
             await gameVM.startGame()
         }

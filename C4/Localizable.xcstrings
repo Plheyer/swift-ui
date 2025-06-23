@@ -156,6 +156,23 @@
         }
       }
     },
+    "Connect4Rules" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Classic"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Classique"
+          }
+        }
+      }
+    },
     "Date" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -278,14 +295,25 @@
         }
       }
     },
-    "Key" : {
-      "extractionState" : "manual"
-    },
     "LaunchGameErrorDescription" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réessayez plus tard."
+          }
+        }
+      }
     },
     "LaunchGameErrorTitle" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de lancer la partie"
+          }
+        }
+      }
     },
     "LaunchGameTitle" : {
       "extractionState" : "manual",
@@ -587,6 +615,23 @@
         }
       }
     },
+    "PopOutRules" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pop out"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pousse-pousse"
+          }
+        }
+      }
+    },
     "Random" : {
       "localizations" : {
         "fr" : {
@@ -727,7 +772,14 @@
       }
     },
     "State" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "État"
+          }
+        }
+      }
     },
     "This will create a new player." : {
       "extractionState" : "stale",
@@ -736,6 +788,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Un nouveau joueur sera créé."
+          }
+        }
+      }
+    },
+    "TicTacToeRules" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Morpion"
           }
         }
       }

@@ -34,9 +34,6 @@
 		EC6A4E1F2DDBBD1700D7E398 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E1E2DDBBD1700D7E398 /* NavigationView.swift */; };
 		EC6A4E242DDCFF6B00D7E398 /* ChoosePlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E232DDCFF6B00D7E398 /* ChoosePlayerComponent.swift */; };
 		EC6A4E272DDD040900D7E398 /* ChooseRulesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E262DDD040900D7E398 /* ChooseRulesComponent.swift */; };
-		EC6A4E382DDDA5DD00D7E398 /* C4Persistance.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2A2DDD0D0700D7E398 /* C4Persistance.xcframework */; };
-		EC6A4E392DDDA5E000D7E398 /* C4Players.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */; };
-		EC6A4E3A2DDDA5E200D7E398 /* C4Rules.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2C2DDD0D0700D7E398 /* C4Rules.xcframework */; };
 		EC6A4E3C2DDDA66900D7E398 /* SavedGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E3B2DDDA66900D7E398 /* SavedGames.swift */; };
 		EC6A4E3E2DDDA72600D7E398 /* GameListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E3D2DDDA72600D7E398 /* GameListComponent.swift */; };
 		EC73FD682DDDE44600B28CE2 /* FaceToFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD672DDDE44600B28CE2 /* FaceToFace.swift */; };
@@ -51,7 +48,14 @@
 		EC73FD7F2DDFAB8600B28CE2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD7E2DDFAB8600B28CE2 /* GameView.swift */; };
 		EC73FD812DDFB8E100B28CE2 /* GridBoardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD802DDFB8E100B28CE2 /* GridBoardComponent.swift */; };
 		EC73FD832DE0B23E00B28CE2 /* GamePlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD822DE0B23E00B28CE2 /* GamePlayerComponent.swift */; };
-		EC99843C2E06E47F00A4DD44 /* C4Core.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC99843B2E06E47F00A4DD44 /* C4Core.xcframework */; };
+		ECA0EE792E09738C00027C3A /* C4Core.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC99843B2E06E47F00A4DD44 /* C4Core.xcframework */; };
+		ECA0EE7A2E09738C00027C3A /* C4Core.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC99843B2E06E47F00A4DD44 /* C4Core.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ECA0EE7C2E09738D00027C3A /* C4Persistance.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2A2DDD0D0700D7E398 /* C4Persistance.xcframework */; };
+		ECA0EE7D2E09738D00027C3A /* C4Persistance.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2A2DDD0D0700D7E398 /* C4Persistance.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ECA0EE7E2E09738F00027C3A /* C4Players.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */; };
+		ECA0EE7F2E09738F00027C3A /* C4Players.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ECA0EE802E09739000027C3A /* C4Rules.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2C2DDD0D0700D7E398 /* C4Rules.xcframework */; };
+		ECA0EE812E09739000027C3A /* C4Rules.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2C2DDD0D0700D7E398 /* C4Rules.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ECAA52EB2DE84B2100EBA2E0 /* NewGameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA52EA2DE84B2100EBA2E0 /* NewGameVM.swift */; };
 		ECAA52EF2DE852B500EBA2E0 /* TimerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA52EE2DE852B500EBA2E0 /* TimerVM.swift */; };
 		ECAE6A212DE7228400A3EA02 /* PlayersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAE6A202DE7228400A3EA02 /* PlayersVM.swift */; };
@@ -90,6 +94,23 @@
 			remoteInfo = C4;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ECA0EE7B2E09738C00027C3A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ECA0EE812E09739000027C3A /* C4Rules.xcframework in Embed Frameworks */,
+				ECA0EE7D2E09738D00027C3A /* C4Persistance.xcframework in Embed Frameworks */,
+				ECA0EE7F2E09738F00027C3A /* C4Players.xcframework in Embed Frameworks */,
+				ECA0EE7A2E09738C00027C3A /* C4Core.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EC2568812DFB20F4002ABA92 /* GameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVM.swift; sourceTree = "<group>"; };
@@ -168,11 +189,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECA0EE802E09739000027C3A /* C4Rules.xcframework in Frameworks */,
 				EC4564812E06ED24008AD100 /* ARKit.framework in Frameworks */,
-				EC99843C2E06E47F00A4DD44 /* C4Core.xcframework in Frameworks */,
-				EC6A4E3A2DDDA5E200D7E398 /* C4Rules.xcframework in Frameworks */,
-				EC6A4E392DDDA5E000D7E398 /* C4Players.xcframework in Frameworks */,
-				EC6A4E382DDDA5DD00D7E398 /* C4Persistance.xcframework in Frameworks */,
+				ECA0EE7E2E09738F00027C3A /* C4Players.xcframework in Frameworks */,
+				ECA0EE792E09738C00027C3A /* C4Core.xcframework in Frameworks */,
+				ECA0EE7C2E09738D00027C3A /* C4Persistance.xcframework in Frameworks */,
 				EC45647F2E06ED1E008AD100 /* RealityKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +438,7 @@
 				ECB94ED82DD46EE200D13E5A /* Sources */,
 				ECB94ED92DD46EE200D13E5A /* Frameworks */,
 				ECB94EDA2DD46EE200D13E5A /* Resources */,
+				ECA0EE7B2E09738C00027C3A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -748,9 +770,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = C4/C4.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"C4/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 67U885533Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera needed for AR app";
@@ -771,6 +797,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.uca.iut.C4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = tpiOS_2025_06_23_on;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -785,9 +813,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = C4/C4.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"C4/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 67U885533Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera needed for AR app";
@@ -808,6 +840,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.uca.iut.C4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = tpiOS_2025_06_23_on;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;

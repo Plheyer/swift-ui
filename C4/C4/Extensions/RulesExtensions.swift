@@ -23,6 +23,20 @@ public extension Connect4Core.Rules {
                 return "Unknown"
         }
     }
+    
+    static func getLocalizedType(from type: String) -> String {
+        switch (type) {
+        case "\(Connect4Rules.self)":
+            return String(localized: "Connect4Rules")
+        case "\(TicTacToeRules.self)":
+            return String(localized: "TicTacToeRules")
+        case "\(PopOutRules.self)":
+            return String(localized: "PopOutRules")
+        default:
+            return "Unknown"
+        }
+    }
+    
 }
 
 

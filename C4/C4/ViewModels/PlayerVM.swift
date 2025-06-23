@@ -113,11 +113,7 @@ public class PlayerVM : Identifiable, ObservableObject, Hashable {
     
     public func onSelected(isCancelled: Bool = true) async {
         if !isCancelled {
-            DispatchQueue.main.async {
-                Task {
-                    await self.original.update(from: self.model)
-                }
-            }
+            await self.original.update(from: self.model)
         }
         DispatchQueue.main.async {
             self.model = self.original.data

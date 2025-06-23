@@ -18,7 +18,8 @@ struct ChooseRulesComponent: View {
                 Text(String(localized: "Rules"))
                 Picker("Rules", selection: $rulesName) {
                     ForEach(rules, id: \.self) { rule in
-                        Text(rule)
+                        //Text(rule)
+                        Text(Connect4Rules.getLocalizedType(from: rule))
                     }
                 }
                 .tint(.primaryAccentBackground)
