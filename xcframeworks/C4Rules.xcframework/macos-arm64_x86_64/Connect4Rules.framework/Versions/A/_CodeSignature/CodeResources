@@ -11,6 +11,15 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/Connect4Core.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			wtjcS42xaMS6HDIglbTpXHzE5NA=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"c2d8dc4b8db168c4ba1c322095b4e95c7cc4e4d0" or cdhash H"7f6327bf58411267b4f074a08c7c60d711ba2372"</string>
+		</dict>
 		<key>Headers/Connect4Rules.h</key>
 		<dict>
 			<key>hash2</key>
@@ -22,7 +31,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bmBU/ieEnPyDYz/+9/wxMxTLegHofORTYAk0AVwSCz8=
+			fBlRGyp6QEck9YBEcOi32LdffgTqJg/m9JP4+exk0l0=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/arm64-apple-macos.private.swiftinterface</key>
@@ -50,14 +59,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			k70cqzgAIlG1qzP4Rd3Ka3+Bz/kq6/Dwry7/YVDnVUw=
+			cYorM2xfv6RXa1oAq+728rTfjn1zYJFVgdOVuvLu0jA=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/x86_64-apple-macos.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bmBU/ieEnPyDYz/+9/wxMxTLegHofORTYAk0AVwSCz8=
+			fBlRGyp6QEck9YBEcOi32LdffgTqJg/m9JP4+exk0l0=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/x86_64-apple-macos.private.swiftinterface</key>
@@ -85,7 +94,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5NVLhFsoEzfvNrZSszp6L9t1rzx4aNuwOypr899e0eE=
+			xJFP9Bg0OqqZmVvDSeWDiYpJciwuOCWkCFt5D81fSlc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -7,7 +7,7 @@ public struct PlayerStub {
     {
         return [
             PlayerModel(name: "Erwan", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "anonymous.png")),
-            PlayerModel(name: "Clément", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "larry.webp")),
+            PlayerModel(name: "Clément", owner: .player2, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "larry.webp")),
             PlayerModel(name: "Mathis", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "anonymous.png")),
             PlayerModel(name: "Renaud", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "larry.webp")),
             PlayerModel(name: "Emma", owner: .player1, image: Image("DefaultPlayerImage"), type: "HumanPlayer", imagePath: getImagePath(fileName: "anonymous.png")),

@@ -19,6 +19,7 @@ struct GameView: View {
     
     // Gameplay
     @State var isPaused : Bool = false
+    @State var isAR : Bool = true
     
     let debug = false
     
@@ -30,42 +31,30 @@ struct GameView: View {
     }
     
     var body: some View {
-        if debug { // To see if the parameters are passed correctly from the LaunchGame
-            Text("nb Rows \(gameVM.rules.nbRows)")
-            Text("nb Columns \(gameVM.rules.nbColumns)")
-            Text("tokens to align \(gameVM.rules.nbPiecesToAlign)")
-            Text("type rules \(gameVM.rules.name)")
-            Text("p1 name \(gameVM.player1.model.name)")
-            Text("p1 type \(gameVM.player1.model.type)")
-            Text("p2 name \(gameVM.player2.model.name)")
-            Text("p2 type \(gameVM.player2.model.type)")
-            Text("p1 image")
-            gameVM.player1.model.image
-                .resizable()
-                .frame(width: 100, height: 100)
-            Text("p2 image")
-            gameVM.player2.model.image
-                .resizable()
-                .frame(width: 100, height: 100)
-            Text("timer limited? \(timer.isLimitedTime)")
-            Text("timer minutes \(timer.minutesString)")
-            Text("timer seconds \(timer.secondsString)")
-        }
-        
         VStack {
-            switch(orientation, idiom) {
-                case (.portrait, .phone), (.portraitUpsideDown, .phone), (.portrait, .pad), (.portraitUpsideDown, .pad):
-                GamePortraitView(gameVM: gameVM, isPaused: $isPaused)
-                case (.landscapeLeft, .phone), (.landscapeRight, .phone):
-                GameLandscapeView(gameVM: gameVM, isPaused: $isPaused)
-                default:
-                GameLandscapeView(gameVM: gameVM, isPaused: $isPaused)
+            if isAR {
+                GameARViewRepresentable()
+                    .ignoresSafeArea()
+            } else {
+                switch(orientation, idiom) {
+                    case (.portrait, .phone), (.portraitUpsideDown, .phone), (.portrait, .pad), (.portraitUpsideDown, .pad):
+                    GamePortraitView(gameVM: gameVM, isPaused: $isPaused)
+                    case (.landscapeLeft, .phone), (.landscapeRight, .phone):
+                    GameLandscapeView(gameVM: gameVM, isPaused: $isPaused)
+                    default:
+                    GameLandscapeView(gameVM: gameVM, isPaused: $isPaused)
+                }
             }
         }
-        .onAppear() {
-            Task {
-                await gameVM.startGame()
-            }
+//        .onAppear() {
+//            DispatchQueue.main.async {
+//                Task {
+//                    await gameVM.startGame()
+//                }
+//            }
+//        }
+        .task {
+            await gameVM.startGame()
         }
     }
 }
@@ -84,7 +73,7 @@ struct GameView: View {
 }
 
 private struct GameViewPreview : View {
-    @StateObject public var gameVM = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0])
+    @StateObject public var gameVM = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[4])
     @StateObject public var timerVM = TimerVM()
     
     @State var orientation: UIDeviceOrientation?

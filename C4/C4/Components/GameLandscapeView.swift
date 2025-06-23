@@ -51,6 +51,7 @@ struct GameLandscapeView: View {
     GameLandscapeViewPreview()
 }
 
+@MainActor
 private struct GameLandscapeViewPreview: View {
     public var game = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0])
     

@@ -1,6 +1,7 @@
 import Foundation
 import SpriteKit
 
+@MainActor
 public class GameScene : SKScene {
     var boardNode : BoardNode
     var player1ImagePath: String = ""

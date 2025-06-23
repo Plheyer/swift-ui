@@ -2,6 +2,7 @@ import SwiftUI
 import Connect4Core
 import Connect4Rules
 
+@MainActor
 struct LaunchGame: View {
     // Orientation
     @Binding public var orientation: UIDeviceOrientation?

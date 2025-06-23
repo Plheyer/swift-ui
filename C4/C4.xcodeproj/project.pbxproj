@@ -19,6 +19,14 @@
 		EC328B1E2DD470A200CB402A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC328B1D2DD470A200CB402A /* Colors.xcassets */; };
 		EC328B202DD470D500CB402A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC328B1F2DD470D500CB402A /* Images.xcassets */; };
 		EC3E6C252DD4766E00D798E5 /* LaunchGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E6C242DD4766E00D798E5 /* LaunchGame.swift */; };
+		EC45647F2E06ED1E008AD100 /* RealityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC45647E2E06ED1E008AD100 /* RealityKit.framework */; };
+		EC4564812E06ED24008AD100 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4564802E06ED24008AD100 /* ARKit.framework */; platformFilter = ios; };
+		EC4564842E06ED53008AD100 /* GameARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4564832E06ED53008AD100 /* GameARView.swift */; };
+		EC4564862E06ED89008AD100 /* GameARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4564852E06ED89008AD100 /* GameARViewRepresentable.swift */; };
+		EC45648C2E06F6B6008AD100 /* Cell.usdc in Resources */ = {isa = PBXBuildFile; fileRef = EC4564872E06F6B6008AD100 /* Cell.usdc */; };
+		EC45648D2E06F6B6008AD100 /* LeftFoot.usdc in Resources */ = {isa = PBXBuildFile; fileRef = EC4564882E06F6B6008AD100 /* LeftFoot.usdc */; };
+		EC45648E2E06F6B6008AD100 /* RightFoot.usdc in Resources */ = {isa = PBXBuildFile; fileRef = EC4564892E06F6B6008AD100 /* RightFoot.usdc */; };
+		EC45648F2E06F6B6008AD100 /* Token.usdc in Resources */ = {isa = PBXBuildFile; fileRef = EC45648A2E06F6B6008AD100 /* Token.usdc */; };
 		EC4A12132DF60FF5009E83E7 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A12122DF60FF5009E83E7 /* PlayerModel.swift */; };
 		EC4A12152DF8BAAE009E83E7 /* ChoosePlayerSheetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A12142DF8BAAE009E83E7 /* ChoosePlayerSheetComponent.swift */; };
 		EC58CA532DE8C156008953B9 /* PersistanceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58CA522DE8C156008953B9 /* PersistanceExtensions.swift */; };
@@ -26,7 +34,6 @@
 		EC6A4E1F2DDBBD1700D7E398 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E1E2DDBBD1700D7E398 /* NavigationView.swift */; };
 		EC6A4E242DDCFF6B00D7E398 /* ChoosePlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E232DDCFF6B00D7E398 /* ChoosePlayerComponent.swift */; };
 		EC6A4E272DDD040900D7E398 /* ChooseRulesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A4E262DDD040900D7E398 /* ChooseRulesComponent.swift */; };
-		EC6A4E372DDDA5D900D7E398 /* C4.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E292DDD0D0700D7E398 /* C4.xcframework */; };
 		EC6A4E382DDDA5DD00D7E398 /* C4Persistance.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2A2DDD0D0700D7E398 /* C4Persistance.xcframework */; };
 		EC6A4E392DDDA5E000D7E398 /* C4Players.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */; };
 		EC6A4E3A2DDDA5E200D7E398 /* C4Rules.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2C2DDD0D0700D7E398 /* C4Rules.xcframework */; };
@@ -44,6 +51,7 @@
 		EC73FD7F2DDFAB8600B28CE2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD7E2DDFAB8600B28CE2 /* GameView.swift */; };
 		EC73FD812DDFB8E100B28CE2 /* GridBoardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD802DDFB8E100B28CE2 /* GridBoardComponent.swift */; };
 		EC73FD832DE0B23E00B28CE2 /* GamePlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73FD822DE0B23E00B28CE2 /* GamePlayerComponent.swift */; };
+		EC99843C2E06E47F00A4DD44 /* C4Core.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC99843B2E06E47F00A4DD44 /* C4Core.xcframework */; };
 		ECAA52EB2DE84B2100EBA2E0 /* NewGameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA52EA2DE84B2100EBA2E0 /* NewGameVM.swift */; };
 		ECAA52EF2DE852B500EBA2E0 /* TimerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA52EE2DE852B500EBA2E0 /* TimerVM.swift */; };
 		ECAE6A212DE7228400A3EA02 /* PlayersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAE6A202DE7228400A3EA02 /* PlayersVM.swift */; };
@@ -96,6 +104,14 @@
 		EC328B1D2DD470A200CB402A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EC328B1F2DD470D500CB402A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EC3E6C242DD4766E00D798E5 /* LaunchGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchGame.swift; sourceTree = "<group>"; };
+		EC45647E2E06ED1E008AD100 /* RealityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealityKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks/RealityKit.framework; sourceTree = DEVELOPER_DIR; };
+		EC4564802E06ED24008AD100 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks/ARKit.framework; sourceTree = DEVELOPER_DIR; };
+		EC4564832E06ED53008AD100 /* GameARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameARView.swift; sourceTree = "<group>"; };
+		EC4564852E06ED89008AD100 /* GameARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameARViewRepresentable.swift; sourceTree = "<group>"; };
+		EC4564872E06F6B6008AD100 /* Cell.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cell.usdc; sourceTree = "<group>"; };
+		EC4564882E06F6B6008AD100 /* LeftFoot.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeftFoot.usdc; sourceTree = "<group>"; };
+		EC4564892E06F6B6008AD100 /* RightFoot.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; path = RightFoot.usdc; sourceTree = "<group>"; };
+		EC45648A2E06F6B6008AD100 /* Token.usdc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Token.usdc; sourceTree = "<group>"; };
 		EC4A12122DF60FF5009E83E7 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		EC4A12142DF8BAAE009E83E7 /* ChoosePlayerSheetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlayerSheetComponent.swift; sourceTree = "<group>"; };
 		EC58CA522DE8C156008953B9 /* PersistanceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceExtensions.swift; sourceTree = "<group>"; };
@@ -103,7 +119,6 @@
 		EC6A4E1E2DDBBD1700D7E398 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		EC6A4E232DDCFF6B00D7E398 /* ChoosePlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlayerComponent.swift; sourceTree = "<group>"; };
 		EC6A4E262DDD040900D7E398 /* ChooseRulesComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRulesComponent.swift; sourceTree = "<group>"; };
-		EC6A4E292DDD0D0700D7E398 /* C4.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = C4.xcframework; sourceTree = "<group>"; };
 		EC6A4E2A2DDD0D0700D7E398 /* C4Persistance.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = C4Persistance.xcframework; sourceTree = "<group>"; };
 		EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = C4Players.xcframework; sourceTree = "<group>"; };
 		EC6A4E2C2DDD0D0700D7E398 /* C4Rules.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = C4Rules.xcframework; sourceTree = "<group>"; };
@@ -121,6 +136,7 @@
 		EC73FD7E2DDFAB8600B28CE2 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		EC73FD802DDFB8E100B28CE2 /* GridBoardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBoardComponent.swift; sourceTree = "<group>"; };
 		EC73FD822DE0B23E00B28CE2 /* GamePlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerComponent.swift; sourceTree = "<group>"; };
+		EC99843B2E06E47F00A4DD44 /* C4Core.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = C4Core.xcframework; sourceTree = "<group>"; };
 		ECAA52EA2DE84B2100EBA2E0 /* NewGameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameVM.swift; sourceTree = "<group>"; };
 		ECAA52EE2DE852B500EBA2E0 /* TimerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVM.swift; sourceTree = "<group>"; };
 		ECAE6A202DE7228400A3EA02 /* PlayersVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersVM.swift; sourceTree = "<group>"; };
@@ -152,10 +168,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC4564812E06ED24008AD100 /* ARKit.framework in Frameworks */,
+				EC99843C2E06E47F00A4DD44 /* C4Core.xcframework in Frameworks */,
 				EC6A4E3A2DDDA5E200D7E398 /* C4Rules.xcframework in Frameworks */,
 				EC6A4E392DDDA5E000D7E398 /* C4Players.xcframework in Frameworks */,
 				EC6A4E382DDDA5DD00D7E398 /* C4Persistance.xcframework in Frameworks */,
-				EC6A4E372DDDA5D900D7E398 /* C4.xcframework in Frameworks */,
+				EC45647F2E06ED1E008AD100 /* RealityKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +194,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC4564822E06ED3D008AD100 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				EC4564832E06ED53008AD100 /* GameARView.swift */,
+				EC4564852E06ED89008AD100 /* GameARViewRepresentable.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		EC45648B2E06F6B6008AD100 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC4564872E06F6B6008AD100 /* Cell.usdc */,
+				EC4564882E06F6B6008AD100 /* LeftFoot.usdc */,
+				EC4564892E06F6B6008AD100 /* RightFoot.usdc */,
+				EC45648A2E06F6B6008AD100 /* Token.usdc */,
+			);
+			name = Models;
+			path = ../Models;
+			sourceTree = "<group>";
+		};
 		EC4A12112DF60FE9009E83E7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +261,8 @@
 		EC6A4E282DDD0D0700D7E398 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EC4564802E06ED24008AD100 /* ARKit.framework */,
+				EC45647E2E06ED1E008AD100 /* RealityKit.framework */,
 				EC6A4E2D2DDD0D0700D7E398 /* xcframeworks */,
 			);
 			name = Frameworks;
@@ -230,7 +271,7 @@
 		EC6A4E2D2DDD0D0700D7E398 /* xcframeworks */ = {
 			isa = PBXGroup;
 			children = (
-				EC6A4E292DDD0D0700D7E398 /* C4.xcframework */,
+				EC99843B2E06E47F00A4DD44 /* C4Core.xcframework */,
 				EC6A4E2A2DDD0D0700D7E398 /* C4Persistance.xcframework */,
 				EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */,
 				EC6A4E2C2DDD0D0700D7E398 /* C4Rules.xcframework */,
@@ -278,6 +319,7 @@
 		ECB94ED32DD46EE200D13E5A = {
 			isa = PBXGroup;
 			children = (
+				EC45648B2E06F6B6008AD100 /* Models */,
 				EC328B1F2DD470D500CB402A /* Images.xcassets */,
 				EC328B1D2DD470A200CB402A /* Colors.xcassets */,
 				EC328B1B2DD4704B00CB402A /* Localizable.xcstrings */,
@@ -302,6 +344,7 @@
 		ECB94EDE2DD46EE200D13E5A /* C4 */ = {
 			isa = PBXGroup;
 			children = (
+				EC4564822E06ED3D008AD100 /* AR */,
 				EC4A12112DF60FE9009E83E7 /* Model */,
 				ECE6A91F2DF478800055066D /* Utils */,
 				ECE6A9162DF036F00055066D /* Scene */,
@@ -470,10 +513,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECB94EE82DD46EE300D13E5A /* Preview Assets.xcassets in Resources */,
+				EC45648E2E06F6B6008AD100 /* RightFoot.usdc in Resources */,
 				EC328B202DD470D500CB402A /* Images.xcassets in Resources */,
 				EC328B1E2DD470A200CB402A /* Colors.xcassets in Resources */,
 				ECB94EE42DD46EE300D13E5A /* Assets.xcassets in Resources */,
+				EC45648C2E06F6B6008AD100 /* Cell.usdc in Resources */,
 				EC328B1C2DD4704B00CB402A /* Localizable.xcstrings in Resources */,
+				EC45648D2E06F6B6008AD100 /* LeftFoot.usdc in Resources */,
+				EC45648F2E06F6B6008AD100 /* Token.usdc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +550,7 @@
 				EC73FD752DDF43B500B28CE2 /* FaceToFacePlayerComponent.swift in Sources */,
 				ECB94EE22DD46EE200D13E5A /* HomePage.swift in Sources */,
 				ECAA52EB2DE84B2100EBA2E0 /* NewGameVM.swift in Sources */,
+				EC4564842E06ED53008AD100 /* GameARView.swift in Sources */,
 				EC2F81D22DE0BB39000D4514 /* RulesExtensions.swift in Sources */,
 				EC6A4E272DDD040900D7E398 /* ChooseRulesComponent.swift in Sources */,
 				ECAE6A212DE7228400A3EA02 /* PlayersVM.swift in Sources */,
@@ -512,6 +560,7 @@
 				EC73FD832DE0B23E00B28CE2 /* GamePlayerComponent.swift in Sources */,
 				ECAA52EF2DE852B500EBA2E0 /* TimerVM.swift in Sources */,
 				EC2568842DFB7538002ABA92 /* GameErrors.swift in Sources */,
+				EC4564862E06ED89008AD100 /* GameARViewRepresentable.swift in Sources */,
 				EC73FD7D2DDF74F700B28CE2 /* SideMenu.swift in Sources */,
 				ECE6A91E2DF04CA90055066D /* PlayerNode.swift in Sources */,
 				EC73FD6D2DDE5BD300B28CE2 /* ResultExtensions.swift in Sources */,
@@ -704,6 +753,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"C4/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera needed for AR app";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -740,6 +790,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"C4/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera needed for AR app";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

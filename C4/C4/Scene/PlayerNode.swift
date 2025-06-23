@@ -145,17 +145,26 @@ public class PlayerNode : SKNode {
         let cell = gameScene.boardNode.cellMatrix[row][col]
         guard let convertedPosition = self.parent?.parent?.convert(cell.position, from: gameScene.boardNode) else { return }
         let moveActionX = SKAction.move(to: CGPoint(x: convertedPosition.x, y: self.position.y), duration: 0.2)
-        dragged.run(moveActionX) {
-            let moveActionY = SKAction.move(to: CGPoint(x: convertedPosition.x, y: convertedPosition.y), duration: 0.4)
-            
-            dragged.run(moveActionY) {
-                if let crop = self.crop, let copy = NodeHelper.deepCopyCropNode(crop) {
-                    cell.cropNode = copy
-                } else {
-                    cell.imagePath = self.imagePath
+        if gameScene.gameVM?.rules.shortName == "Classic" {
+            dragged.run(moveActionX) {
+                let moveActionY = SKAction.move(to: CGPoint(x: convertedPosition.x, y: convertedPosition.y), duration: 0.4)
+                
+                dragged.run(moveActionY) {
+                    if let crop = self.crop, let copy = NodeHelper.deepCopyCropNode(crop) {
+                        cell.cropNode = copy
+                    } else {
+                        cell.imagePath = self.imagePath
+                    }
+                    dragged.removeFromParent()
                 }
-                dragged.removeFromParent()
             }
+        } else {
+            if let crop = self.crop, let copy = NodeHelper.deepCopyCropNode(crop) {
+                cell.cropNode = copy
+            } else {
+                cell.imagePath = self.imagePath
+            }
+            dragged.removeFromParent()
         }
     }
     

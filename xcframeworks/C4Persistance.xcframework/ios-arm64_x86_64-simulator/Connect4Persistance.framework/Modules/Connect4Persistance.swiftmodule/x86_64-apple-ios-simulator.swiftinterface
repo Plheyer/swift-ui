@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target x86_64-apple-ios16.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name Connect4Persistance
+// swift-module-flags: -target x86_64-apple-ios16-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name Connect4Persistance
 import Connect4Core
 @_exported import Connect4Persistance
 import Connect4Players
@@ -46,6 +46,7 @@ extension Connect4Core.Owner : Swift.Codable {
 public struct Persistance {
   public static func saveGame(withName name: Swift.String, andGame game: Connect4Core.Game, withFolderName folderName: Swift.String? = nil) async throws -> Swift.Bool
   public static func loadGame(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> Connect4Core.Game?
+  public static func deleteGame(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws
   public static func saveGameResult(withName name: Swift.String, andGame game: Connect4Core.Game, andResult result: Connect4Core.Result, withFolderName folderName: Swift.String? = nil) async throws -> Swift.Bool
   public static func loadGameResults(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> [Connect4Persistance.GameResult]?
   public static func addPlayer(withName name: Swift.String, andPlayer player: Connect4Core.Player, withFolderName folderName: Swift.String? = nil) async throws -> Swift.Bool

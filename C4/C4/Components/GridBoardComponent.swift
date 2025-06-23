@@ -45,6 +45,7 @@ struct GridBoardComponent: View {
     GridBoardComponentPreview()
 }
 
+@MainActor
 private struct GridBoardComponentPreview : View {
     var gameVM: GameVM = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0])
     var body : some View {

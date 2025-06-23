@@ -71,18 +71,18 @@ struct AddPlayerComponent: View {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save") {
                     Task {
-                        if let modelName = playersVM.players.first(where: { $0.model.name == playerVM.model.name }), modelName.model.name != originalName {
                             // Somebody has already the same name
+                        if let modelName = playersVM.players.first(where: { $0.model.name == playerVM.model.name }), modelName.model.name != originalName {
                             showWarningSameNamePopup = true
                             return
                         }
-                        var playerModel = PlayerModel(name: playerVM.model.name, owner: .noOne, image: playerVM.model.image, type: "\(HumanPlayer.self)")
+                        var playerModel = PlayerModel(name: playerVM.model.name, owner: .player1, image: playerVM.model.image, type: "\(HumanPlayer.self)")
                         if imageEdited {
                             await playerModel.savePlayerImage()
                             playerVM.model.imageEdited = true
                         }
                         if let playerC4Model = playerModel.toC4Model {
-                            _ = try? await Persistance.addPlayer(withName: "players22", andPlayer: playerC4Model)
+                            _ = try? await Persistance.addPlayer(withName: "players.co4", andPlayer: playerC4Model)
                         }
                         playerVM.onEdited()
                     }

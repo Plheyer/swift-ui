@@ -5,6 +5,177 @@
       location = "group:xcframeworks"
       name = "xcframeworks">
       <Group
+         location = "group:C4Core.xcframework"
+         name = "C4Core.xcframework">
+         <Group
+            location = "group:macos-arm64_x86_64"
+            name = "macos-arm64_x86_64">
+            <Group
+               location = "group:Connect4Core.framework"
+               name = "Connect4Core.framework">
+               <FileRef
+                  location = "group:Connect4Core">
+               </FileRef>
+               <FileRef
+                  location = "group:Resources">
+               </FileRef>
+               <Group
+                  location = "group:Versions"
+                  name = "Versions">
+                  <Group
+                     location = "group:A"
+                     name = "A">
+                     <Group
+                        location = "group:_CodeSignature"
+                        name = "_CodeSignature">
+                        <FileRef
+                           location = "group:CodeResources">
+                        </FileRef>
+                     </Group>
+                     <FileRef
+                        location = "group:Connect4Core">
+                     </FileRef>
+                     <Group
+                        location = "group:Resources"
+                        name = "Resources">
+                        <FileRef
+                           location = "group:Info.plist">
+                        </FileRef>
+                     </Group>
+                     <Group
+                        location = "group:Modules"
+                        name = "Modules">
+                        <Group
+                           location = "group:Connect4Core.swiftmodule"
+                           name = "Connect4Core.swiftmodule">
+                           <FileRef
+                              location = "group:x86_64-apple-macos.private.swiftinterface">
+                           </FileRef>
+                           <FileRef
+                              location = "group:arm64-apple-macos.swiftinterface">
+                           </FileRef>
+                           <FileRef
+                              location = "group:arm64-apple-macos.swiftdoc">
+                           </FileRef>
+                           <FileRef
+                              location = "group:x86_64-apple-macos.swiftdoc">
+                           </FileRef>
+                           <FileRef
+                              location = "group:arm64-apple-macos.abi.json">
+                           </FileRef>
+                           <FileRef
+                              location = "group:x86_64-apple-macos.abi.json">
+                           </FileRef>
+                           <FileRef
+                              location = "group:x86_64-apple-macos.swiftinterface">
+                           </FileRef>
+                           <FileRef
+                              location = "group:arm64-apple-macos.private.swiftinterface">
+                           </FileRef>
+                        </Group>
+                     </Group>
+                  </Group>
+                  <FileRef
+                     location = "group:Current">
+                  </FileRef>
+               </Group>
+               <FileRef
+                  location = "group:Modules">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:ios-arm64_x86_64-simulator"
+            name = "ios-arm64_x86_64-simulator">
+            <Group
+               location = "group:Connect4Core.framework"
+               name = "Connect4Core.framework">
+               <Group
+                  location = "group:_CodeSignature"
+                  name = "_CodeSignature">
+                  <FileRef
+                     location = "group:CodeResources">
+                  </FileRef>
+               </Group>
+               <FileRef
+                  location = "group:Connect4Core">
+               </FileRef>
+               <Group
+                  location = "group:Modules"
+                  name = "Modules">
+                  <Group
+                     location = "group:Connect4Core.swiftmodule"
+                     name = "Connect4Core.swiftmodule">
+                     <FileRef
+                        location = "group:x86_64-apple-ios-simulator.swiftinterface">
+                     </FileRef>
+                     <FileRef
+                        location = "group:arm64-apple-ios-simulator.abi.json">
+                     </FileRef>
+                     <FileRef
+                        location = "group:arm64-apple-ios-simulator.private.swiftinterface">
+                     </FileRef>
+                     <FileRef
+                        location = "group:x86_64-apple-ios-simulator.swiftdoc">
+                     </FileRef>
+                     <FileRef
+                        location = "group:arm64-apple-ios-simulator.swiftinterface">
+                     </FileRef>
+                     <FileRef
+                        location = "group:x86_64-apple-ios-simulator.private.swiftinterface">
+                     </FileRef>
+                     <FileRef
+                        location = "group:arm64-apple-ios-simulator.swiftdoc">
+                     </FileRef>
+                     <FileRef
+                        location = "group:x86_64-apple-ios-simulator.abi.json">
+                     </FileRef>
+                  </Group>
+               </Group>
+               <FileRef
+                  location = "group:Info.plist">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:ios-arm64"
+            name = "ios-arm64">
+            <Group
+               location = "group:Connect4Core.framework"
+               name = "Connect4Core.framework">
+               <FileRef
+                  location = "group:Connect4Core">
+               </FileRef>
+               <Group
+                  location = "group:Modules"
+                  name = "Modules">
+                  <Group
+                     location = "group:Connect4Core.swiftmodule"
+                     name = "Connect4Core.swiftmodule">
+                     <FileRef
+                        location = "group:arm64-apple-ios.swiftinterface">
+                     </FileRef>
+                     <FileRef
+                        location = "group:arm64-apple-ios.swiftdoc">
+                     </FileRef>
+                     <FileRef
+                        location = "group:arm64-apple-ios.abi.json">
+                     </FileRef>
+                     <FileRef
+                        location = "group:arm64-apple-ios.private.swiftinterface">
+                     </FileRef>
+                  </Group>
+               </Group>
+               <FileRef
+                  location = "group:Info.plist">
+               </FileRef>
+            </Group>
+         </Group>
+         <FileRef
+            location = "group:Info.plist">
+         </FileRef>
+      </Group>
+      <Group
          location = "group:C4Rules.xcframework"
          name = "C4Rules.xcframework">
          <Group

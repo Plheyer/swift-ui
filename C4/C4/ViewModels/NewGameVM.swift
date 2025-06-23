@@ -3,6 +3,7 @@ import Connect4Core
 import Connect4Persistance
 import Connect4Rules
 
+@MainActor
 public class NewGameVM : ObservableObject {
     @Published public var player1 : PlayerVM
     @Published public var player2 : PlayerVM

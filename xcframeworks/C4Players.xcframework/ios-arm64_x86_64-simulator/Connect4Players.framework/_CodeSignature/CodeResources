@@ -4,6 +4,18 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Frameworks/Connect4Core.framework/Connect4Core</key>
+		<data>
+		hEkiLkngqRKbclI21/ZQ68pGaMU=
+		</data>
+		<key>Frameworks/Connect4Core.framework/Info.plist</key>
+		<data>
+		hBpbhkDe5HEttVhcg1xYLT+O9s8=
+		</data>
+		<key>Frameworks/Connect4Core.framework/_CodeSignature/CodeResources</key>
+		<data>
+		xOVHSYPnt2slJp3hGuWOiy3oxXQ=
+		</data>
 		<key>Headers/Connect4Players.h</key>
 		<data>
 		j3HjZi+PIAoqHbUNoOm5v1tIhss=
@@ -30,7 +42,7 @@
 		</data>
 		<key>Modules/Connect4Players.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		aokFIWc55c4IRm+0A4/9z3KzzYo=
+		1A2R9njaD91AKVF8KtSwJ4ZQhng=
 		</data>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -50,7 +62,7 @@
 		</data>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		uJnnmEO+fCUbo5FB9JgTrYI/KCQ=
+		TLR1bAqp1zcD+ZNFuCpMtqG7JnY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -59,6 +71,27 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/Connect4Core.framework/Connect4Core</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1OuCU1njKtoHDUjAVA3F4YEqnQsUn9HTcYaMrrtcCw0=
+			</data>
+		</dict>
+		<key>Frameworks/Connect4Core.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zRo0/3rlgW3goFurd0jAzNE7DrLemD/kmxxPiuPPy6I=
+			</data>
+		</dict>
+		<key>Frameworks/Connect4Core.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kDODrN+B4SUOu2k9yNYEreZN5Let1nqUR0FmCfBu8wo=
+			</data>
+		</dict>
 		<key>Headers/Connect4Players.h</key>
 		<dict>
 			<key>hash2</key>
@@ -98,7 +131,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jdmJPp+suaIFDy1tZNN12C1/nV5ogeTD1zN8Pd8KLMw=
+			ZcmSuZQqF9RlTcvSysVrVkY1t/yK30gwA1n4a1t4op8=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -133,7 +166,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uv2PXZloqUVTZsHGUICSyEAF1npPlZ5FFl8QM9aJoz0=
+			lmgIlbJfk78PlnoCIHCE9T85kXVTP1kFSSZQGcYUSL8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

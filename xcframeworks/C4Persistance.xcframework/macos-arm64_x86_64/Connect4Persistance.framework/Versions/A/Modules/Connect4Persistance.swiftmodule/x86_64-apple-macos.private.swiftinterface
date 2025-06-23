@@ -46,6 +46,7 @@ extension Connect4Core.Owner : Swift.Codable {
 public struct Persistance {
   public static func saveGame(withName name: Swift.String, andGame game: Connect4Core.Game, withFolderName folderName: Swift.String? = nil) async throws -> Swift.Bool
   public static func loadGame(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> Connect4Core.Game?
+  public static func deleteGame(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws
   public static func saveGameResult(withName name: Swift.String, andGame game: Connect4Core.Game, andResult result: Connect4Core.Result, withFolderName folderName: Swift.String? = nil) async throws -> Swift.Bool
   public static func loadGameResults(withName name: Swift.String, withFolderName folderName: Swift.String? = nil) async throws -> [Connect4Persistance.GameResult]?
   public static func addPlayer(withName name: Swift.String, andPlayer player: Connect4Core.Player, withFolderName folderName: Swift.String? = nil) async throws -> Swift.Bool

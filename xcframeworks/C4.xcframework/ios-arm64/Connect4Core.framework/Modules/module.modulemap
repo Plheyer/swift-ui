@@ -1,6 +1,0 @@
-framework module Connect4Core {
-  umbrella header "Connect4Core.h"
-  export *
-
-  module * { export * }
-}

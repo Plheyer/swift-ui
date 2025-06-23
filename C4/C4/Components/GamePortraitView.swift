@@ -34,6 +34,7 @@ struct GamePortraitView: View {
     GamePortraitViewPreview()
 }
 
+@MainActor
 private struct GamePortraitViewPreview: View {
     public var gameVM = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0])
     

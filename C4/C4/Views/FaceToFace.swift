@@ -93,8 +93,8 @@ private struct FaceToFacePreview : View {
                     Task {
                         let player1 = HumanPlayer(withName: selectedPlayer1.model.name, andId: .player1)!
                         let player2 = HumanPlayer(withName: selectedPlayer2.model.name, andId: .player2)!
-                        _ = try await Persistance.addPlayer(withName: "players22", andPlayer: player1)
-                        _ = try await Persistance.addPlayer(withName: "players22", andPlayer: player2)
+                        _ = try await Persistance.addPlayer(withName: "players.co4", andPlayer: player1)
+                        _ = try await Persistance.addPlayer(withName: "players.co4", andPlayer: player2)
                         
                         let game = try Game(withBoard: BoardStub().getBoards()[0], withRules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, andPlayer1: player1, andPlayer2: player2)
                         _ = try await Persistance.saveGameResult(withName: "GameResults.co4", andGame: game, andResult: Result.winner(winner: state, alignment: []))

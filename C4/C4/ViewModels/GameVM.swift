@@ -3,11 +3,12 @@ import Connect4Core
 import Connect4Persistance
 import SpriteKit
 
+@MainActor
 public class GameVM : ObservableObject {
-    @Published public var player1 : PlayerVM
-    @Published public var player2 : PlayerVM
-    @Published public var rules: any Rules
-    @Published public var board: Board
+    public var player1 : PlayerVM
+    public var player2 : PlayerVM
+    public var rules: any Rules
+    public var board: Board
     private var game: Game?
     @Published public var isOver: Bool = false
     @Published public var isPlayer1Turn: Bool = true

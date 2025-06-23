@@ -32,7 +32,7 @@ public class PlayersVM : ObservableObject {
     
     public func loadAllPlayers() async {
         do {
-            let playersLoaded = try await Persistance.getPlayers(withName: "players22")
+            let playersLoaded = try await Persistance.getPlayers(withName: "players.co4")
             if let playersLoaded {
                 DispatchQueue.main.async {
                     self.players.removeAll()

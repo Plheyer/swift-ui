@@ -82,15 +82,11 @@ struct ChoosePlayerComponent: View {
             }
         }
         .padding()
-        .sheet(isPresented: $newPlayerVM.isEditing) {
+        .sheet(isPresented: $newPlayerVM.isEditing, onDismiss: {
+            Task { await playersVM.loadAllPlayers() } }
+        ) {
             NavigationStack {
                 AddPlayerComponent(playerVM: newPlayerVM, playersVM: playersVM, originalName: originalName)
-                    .onDisappear {
-                        Task {
-                            // Update the available human player list
-                            await playersVM.loadAllPlayers()
-                        }
-                    }
             }
         }
     }

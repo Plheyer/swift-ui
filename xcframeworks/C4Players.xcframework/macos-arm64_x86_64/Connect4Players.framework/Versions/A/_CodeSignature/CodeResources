@@ -11,6 +11,15 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/Connect4Core.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			wtjcS42xaMS6HDIglbTpXHzE5NA=
+			</data>
+			<key>requirement</key>
+			<string>cdhash H"c2d8dc4b8db168c4ba1c322095b4e95c7cc4e4d0" or cdhash H"7f6327bf58411267b4f074a08c7c60d711ba2372"</string>
+		</dict>
 		<key>Headers/Connect4Players.h</key>
 		<dict>
 			<key>hash2</key>
@@ -50,7 +59,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oXqieaLuWVz4LflEos9b7PJUD8o7kzzumJiS/+ykqyE=
+			XR4FkKP1IF+kLVRIFhjqv1WRdeMDQOgC7Fv7sye1CCg=
 			</data>
 		</dict>
 		<key>Modules/Connect4Players.swiftmodule/x86_64-apple-macos.abi.json</key>
@@ -85,7 +94,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IMQlu6HgPwBSDFGTMpfi4Zc/gva6EvKDRI9kISYXMhM=
+			vnOjT6Qp4i+gpIRMf2rkVIdkX4H4RB2Cn0bdQWZMgPA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

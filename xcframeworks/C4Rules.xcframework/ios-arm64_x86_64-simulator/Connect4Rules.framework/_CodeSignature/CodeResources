@@ -4,6 +4,18 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Frameworks/Connect4Core.framework/Connect4Core</key>
+		<data>
+		hEkiLkngqRKbclI21/ZQ68pGaMU=
+		</data>
+		<key>Frameworks/Connect4Core.framework/Info.plist</key>
+		<data>
+		hBpbhkDe5HEttVhcg1xYLT+O9s8=
+		</data>
+		<key>Frameworks/Connect4Core.framework/_CodeSignature/CodeResources</key>
+		<data>
+		xOVHSYPnt2slJp3hGuWOiy3oxXQ=
+		</data>
 		<key>Headers/Connect4Rules.h</key>
 		<data>
 		xlBGxtZoo1G/dMFSqLka7kd+o5g=
@@ -14,7 +26,7 @@
 		</data>
 		<key>Modules/Connect4Rules.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		gy9jSXIpBjs7JNazhB01gjSr8TI=
+		xQ/Bl+yFirFRk9mZ4YL4nRr8bqw=
 		</data>
 		<key>Modules/Connect4Rules.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -30,11 +42,11 @@
 		</data>
 		<key>Modules/Connect4Rules.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		HwwYKZeH1uKUkfq8uD2JFMiz7Ys=
+		PW4MCfwQbIxb8ODgAgJIsEhgrUQ=
 		</data>
 		<key>Modules/Connect4Rules.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		gy9jSXIpBjs7JNazhB01gjSr8TI=
+		xQ/Bl+yFirFRk9mZ4YL4nRr8bqw=
 		</data>
 		<key>Modules/Connect4Rules.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -50,7 +62,7 @@
 		</data>
 		<key>Modules/Connect4Rules.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		EHBHQaKbzP4d1XrjcbgLECvkzVk=
+		oCr5QWY3/mfqgLKYDGx0s3dnKxE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -59,6 +71,27 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Frameworks/Connect4Core.framework/Connect4Core</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1OuCU1njKtoHDUjAVA3F4YEqnQsUn9HTcYaMrrtcCw0=
+			</data>
+		</dict>
+		<key>Frameworks/Connect4Core.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zRo0/3rlgW3goFurd0jAzNE7DrLemD/kmxxPiuPPy6I=
+			</data>
+		</dict>
+		<key>Frameworks/Connect4Core.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kDODrN+B4SUOu2k9yNYEreZN5Let1nqUR0FmCfBu8wo=
+			</data>
+		</dict>
 		<key>Headers/Connect4Rules.h</key>
 		<dict>
 			<key>hash2</key>
@@ -70,7 +103,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bmBU/ieEnPyDYz/+9/wxMxTLegHofORTYAk0AVwSCz8=
+			fBlRGyp6QEck9YBEcOi32LdffgTqJg/m9JP4+exk0l0=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -98,14 +131,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			u0feXK8RAz1TE89gtEstcOXFYh/856rdc5zhk0POq1c=
+			zArZabrRi97fxiWEjH2821YGWGkm6Nqu92e4kqKmiHI=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bmBU/ieEnPyDYz/+9/wxMxTLegHofORTYAk0AVwSCz8=
+			fBlRGyp6QEck9YBEcOi32LdffgTqJg/m9JP4+exk0l0=
 			</data>
 		</dict>
 		<key>Modules/Connect4Rules.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -133,7 +166,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dVtSg0NcEBZuX2HX0ETQJDybVabvO0/8uD7hj+Byipo=
+			cxS2ONBLO8oiSCOWSad4AUtv93L/I5czbOJ8g2WNCP0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -18,7 +18,7 @@ extension PlayerModel {
         Data(id: self.id, name: self.name, owner: self.owner, type: self.type, image: self.image, imagePath: self.imagePath)
     }
     
-    mutating func update(from data: Data) async {
+    mutating nonisolated func update(from data: Data) async {
         guard data.id == id else { return }
         self.name = data.name
         self.owner = data.owner
@@ -66,7 +66,7 @@ extension PlayerModel {
         if let player {
             do {
                 // Saving as a HumanPlayer because we can't create AI Players
-                _ = try await Persistance.addPlayer(withName: "players22", andPlayer: player)
+                _ = try await Persistance.addPlayer(withName: "players.co4", andPlayer: player)
             } catch {
                 print(error.localizedDescription)
             }
@@ -113,9 +113,15 @@ public class PlayerVM : Identifiable, ObservableObject, Hashable {
     
     public func onSelected(isCancelled: Bool = true) async {
         if !isCancelled {
-            await original.update(from: model)
+            DispatchQueue.main.async {
+                Task {
+                    await self.original.update(from: self.model)
+                }
+            }
         }
-        self.model = self.original.data
+        DispatchQueue.main.async {
+            self.model = self.original.data
+        }
     }
     
     // Public to allow image updates
