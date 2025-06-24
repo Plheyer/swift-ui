@@ -158,6 +158,39 @@ public class PlayerNode : SKNode {
                     dragged.removeFromParent()
                 }
             }
+        } else if gameScene.gameVM?.rules.shortName == "PopOut" {
+            if row == gameScene.boardNode.nbRows - 1, cell.cropNode != nil {
+                for popOutRow in 0..<gameScene.boardNode.nbRows - 1 {
+                    let cell1 = gameScene.boardNode.cellMatrix[popOutRow][col]
+                    let cell2 = gameScene.boardNode.cellMatrix[popOutRow + 1][col]
+                    
+                    if let cropNode = cell2.cropNode {
+                        cropNode.removeFromParent()
+                        cell1.cropNode = cropNode
+                    } else {
+                        cell1.imagePath = cell2.imagePath
+                    }
+                }
+                if let crop = self.crop, let copy = NodeHelper.deepCopyCropNode(crop) {
+                    gameScene.boardNode.cellMatrix[gameScene.boardNode.nbRows - 1][col].cropNode = copy
+                } else {
+                    gameScene.boardNode.cellMatrix[gameScene.boardNode.nbRows - 1][col].imagePath = self.imagePath
+                }
+                dragged.removeFromParent()
+            } else {
+                dragged.run(moveActionX) {
+                    let moveActionY = SKAction.move(to: CGPoint(x: convertedPosition.x, y: convertedPosition.y), duration: 0.4)
+                    
+                    dragged.run(moveActionY) {
+                        if let crop = self.crop, let copy = NodeHelper.deepCopyCropNode(crop) {
+                            cell.cropNode = copy
+                        } else {
+                            cell.imagePath = self.imagePath
+                        }
+                        dragged.removeFromParent()
+                    }
+                }
+            }
         } else {
             if let crop = self.crop, let copy = NodeHelper.deepCopyCropNode(crop) {
                 cell.cropNode = copy

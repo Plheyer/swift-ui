@@ -13,7 +13,8 @@ struct HomePage: View {
     
     var body: some View {
         switch(orientation, idiom) {
-        case (.portrait, .phone), (.portraitUpsideDown, .phone), (.portrait, .pad), (.portraitUpsideDown, .pad):
+        case (.portrait, .phone), (.portraitUpsideDown, .phone), (.portrait, .pad), (.portraitUpsideDown, .pad),
+            (.unknown, .phone), (.unknown, .pad):
                 HomePortraitComponent(orientation: $orientation, idiom: $idiom)
             case (.landscapeLeft, .phone), (.landscapeRight, .phone):
                 HomeLandscapeComponent(orientation: $orientation, idiom: $idiom)

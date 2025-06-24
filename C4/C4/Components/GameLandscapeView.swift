@@ -11,8 +11,7 @@ import SwiftUI
 
 struct GameLandscapeView: View {
     @StateObject public var gameVM: GameVM
-    
-    @Binding var isPaused : Bool
+    @State public var isRunning = true
     
     var body: some View {
         VStack {
@@ -20,10 +19,15 @@ struct GameLandscapeView: View {
                 Spacer()
                 
                 VStack {
-                    GamePlayerComponent(player: gameVM.player1, isPlayerTurn: gameVM.isPlayer1Turn, color: Color(red: 255, green: 0, blue: 0, opacity: 0.3))
+                    GamePlayerComponent(player: gameVM.player1, isPlayerTurn: gameVM.isPlayer1Turn, color: Color(red: 255, green: 0, blue: 0, opacity: 0.3), timerVM: gameVM.timerVM)
                     VStack {
-                        Button("", systemImage: isPaused ? "play.circle" : "pause.circle") {
-                            isPaused.toggle()
+                        Button("", systemImage: isRunning ? "pause.circle" : "play.circle") {
+                            isRunning.toggle()
+                            if gameVM.timerVM.isRunning {
+                                gameVM.timerVM.pause()
+                            } else {
+                                gameVM.timerVM.play()
+                            }
                         }
                         .foregroundColor(.primaryAccentBackground)
                         .font(.largeTitle)
@@ -31,7 +35,7 @@ struct GameLandscapeView: View {
                         
                         Text("\(String(localized: "Rules")) : \(gameVM.rules.name)")
                     }
-                    GamePlayerComponent(player: gameVM.player2, isPlayerTurn: gameVM.isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.3))
+                    GamePlayerComponent(player: gameVM.player2, isPlayerTurn: gameVM.isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.3), timerVM: gameVM.timerVM)
                 }
                 
                 Spacer()
@@ -53,16 +57,15 @@ struct GameLandscapeView: View {
 
 @MainActor
 private struct GameLandscapeViewPreview: View {
-    public var game = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0], isAR: false)
+    public var game = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0], isAR: false, timerVM: TimerVM(time: 0, gameVM: nil))
     
     @State private var index = 0
     @State var isPlayer1Turn = false
     @State var isPlayer2Turn = true
-    @State var isPaused = false
 
     var body: some View {
         VStack {
-            GameLandscapeView(gameVM: game, isPaused: $isPaused)
+            GameLandscapeView(gameVM: game)
             Button(action: {
                 isPlayer1Turn.toggle()
                 isPlayer2Turn.toggle()

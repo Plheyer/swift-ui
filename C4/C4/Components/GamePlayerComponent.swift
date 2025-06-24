@@ -11,8 +11,8 @@ import SwiftUI
 struct GamePlayerComponent: View {
     public var player : PlayerVM
     var isPlayerTurn : Bool
-    var timer = "00:00:00"
     var color : Color
+    @ObservedObject var timerVM: TimerVM
     var body: some View {
         VStack {
             HStack {
@@ -45,7 +45,7 @@ struct GamePlayerComponent: View {
                 Spacer()
             }
             HStack {
-                Text(timer)
+                Text(timerVM.formattedTime)
                 Spacer()
             }
             if isPlayerTurn {
@@ -72,9 +72,9 @@ private struct GamePlayerComponentPreview : View {
     var body : some View {
         VStack {
             HStack {
-                GamePlayerComponent(player: player1VM, isPlayerTurn: isPlayer1Turn, color: Color(red: 255, green: 0, blue: 0, opacity: 0.3))
+                GamePlayerComponent(player: player1VM, isPlayerTurn: isPlayer1Turn, color: Color(red: 255, green: 0, blue: 0, opacity: 0.3), timerVM: TimerVM(time: 0, gameVM: nil))
                 Spacer()
-                GamePlayerComponent(player: player2VM, isPlayerTurn: isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.3))
+                GamePlayerComponent(player: player2VM, isPlayerTurn: isPlayer2Turn, color: Color(red: 255, green: 255, blue: 0, opacity: 0.3), timerVM: TimerVM(time: 0, gameVM: nil))
             }
             Button(action: {
                 isPlayer1Turn.toggle()

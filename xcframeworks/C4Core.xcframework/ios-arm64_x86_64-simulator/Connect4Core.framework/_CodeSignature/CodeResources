@@ -10,7 +10,7 @@
 		</data>
 		<key>Modules/Connect4Core.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		qnKk7tyTqoHojl9tm7TGwYNsUnA=
+		3CQfZAhwyQwPKOiv40HEbRiHXfw=
 		</data>
 		<key>Modules/Connect4Core.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/Connect4Core.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		qnKk7tyTqoHojl9tm7TGwYNsUnA=
+		3CQfZAhwyQwPKOiv40HEbRiHXfw=
 		</data>
 		<key>Modules/Connect4Core.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -55,7 +55,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bRYQ3gtc9D90CmxLmvwy4IBnO8Q+GFlIACKibj9Pp0A=
+			Pzyf6bfpN5d6LzEiU6df6yLJoT7XcBgi9WZn42nxEkc=
 			</data>
 		</dict>
 		<key>Modules/Connect4Core.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -90,7 +90,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bRYQ3gtc9D90CmxLmvwy4IBnO8Q+GFlIACKibj9Pp0A=
+			Pzyf6bfpN5d6LzEiU6df6yLJoT7XcBgi9WZn42nxEkc=
 			</data>
 		</dict>
 		<key>Modules/Connect4Core.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>

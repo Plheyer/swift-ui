@@ -207,6 +207,23 @@
         }
       }
     },
+    "Draw" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draw!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Égalité !"
+          }
+        }
+      }
+    },
     "ErrorLoadingGameScene" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -296,24 +313,49 @@
       }
     },
     "IsAR" : {
-
-    },
-    "LaunchGameErrorDescription" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Augmented Reality"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Réessayez plus tard."
+            "value" : "Réalité augmentée"
+          }
+        }
+      }
+    },
+    "LaunchGameErrorDescription" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The input parameters are incorrect. Try again."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les paramètres entrés sont incorrects. Réessayez."
           }
         }
       }
     },
     "LaunchGameErrorTitle" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Incorrect parameters"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Impossible de lancer la partie"
+            "value" : "Paramètres incorrects"
           }
         }
       }
@@ -607,17 +649,6 @@
         }
       }
     },
-    "Players have not been set correctly" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Les joueurs n'ont pas été chargés correctement."
-          }
-        }
-      }
-    },
     "PopOutRules" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -784,17 +815,6 @@
         }
       }
     },
-    "This will create a new player." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Un nouveau joueur sera créé."
-          }
-        }
-      }
-    },
     "TicTacToeRules" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -802,6 +822,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Morpion"
+          }
+        }
+      }
+    },
+    "TimerEnd" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timer has ended!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le temps est écoulé !"
           }
         }
       }
@@ -819,17 +855,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jetons à aligner"
-          }
-        }
-      }
-    },
-    "Try again later." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Essayez plus tard."
           }
         }
       }
@@ -862,6 +887,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gagnant"
+          }
+        }
+      }
+    },
+    "Won" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " won!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : " a gagné !"
           }
         }
       }

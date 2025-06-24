@@ -8,7 +8,6 @@ struct ChoosePlayerComponent: View {
     @ObservedObject public var playerVM : PlayerVM
     @ObservedObject var playersVM: PlayersVM
     @StateObject var newPlayerVM: PlayerVM = PlayerVM(with: PlayerModel(name: "", owner: .noOne, image: Image("DefaultPlayerImage"), type: "\(HumanPlayer.self)"))
-    @State private var avatarItem: PhotosPickerItem?
     @State private var originalName: String = ""
     
     var playerText: String
@@ -27,6 +26,7 @@ struct ChoosePlayerComponent: View {
                     playerVM.model.name = playersVM.players.first { $0.model.type == "\(HumanPlayer.self)" }?.model.name ?? "" // Updating the name when passing to human player
                 } else {
                     playerVM.model.name = playerVM.model.type
+                    playerVM.model.image = Image("DefaultPlayerImage")
                 }
             }
             if (playerVM.model.type == "\(HumanPlayer.self)") {
@@ -83,7 +83,23 @@ struct ChoosePlayerComponent: View {
         }
         .padding()
         .sheet(isPresented: $newPlayerVM.isEditing, onDismiss: {
-            Task { await playersVM.loadAllPlayers() } }
+            Task {
+                await playersVM.loadAllPlayers()
+                if playerVM.model.type == "\(HumanPlayer.self)" {
+                    do {
+                        let loaded = try await Persistance.loadImage(withName: playerVM.model.name, withFolderName: "images")
+                        if let image = loaded.image {
+                            playerVM.model.image = image
+                            playerVM.model.imagePath = loaded.path
+                        } else {
+                            playerVM.model.image = Image("DefaultPlayerImage")
+                        }
+                    } catch {
+                        playerVM.model.image = Image("DefaultPlayerImage")
+                    }
+                }
+            }
+        }
         ) {
             NavigationStack {
                 AddPlayerComponent(playerVM: newPlayerVM, playersVM: playersVM, originalName: originalName)

@@ -11,9 +11,10 @@ public class GameVM : ObservableObject {
     public var board: Board
     private var game: Game?
     @Published public var isOver: Bool = false
-    public var isPlayer1Turn: Bool = true
-    public var isPlayer2Turn: Bool = false
+    @Published public var isPlayer1Turn: Bool = true
+    @Published public var isPlayer2Turn: Bool = false
     public var isAR: Bool
+    @Published public var timerVM: TimerVM
     
     // Possess a GameScene. When init, will also create the game scene at the same time to create the GameScene as a member of GameVM, and also provide the reference (because a class is a reference type) of the GameVM (itself) when init the GameScene. This will allow them to communicate easily.
     // Example: GameVM receives a callback from Game, it must update the GameScene, it must communicate with the GameScene, and have it.
@@ -21,13 +22,14 @@ public class GameVM : ObservableObject {
     @Published public var gameScene: GameScene?
     @Published public var arScene: GameARView?
     
-    public init(with player1: PlayerVM, andWith player2: PlayerVM, rules: Rules, board: Board, isAR: Bool) throws {
+    public init(with player1: PlayerVM, andWith player2: PlayerVM, rules: Rules, board: Board, isAR: Bool, timerVM: TimerVM) throws {
         self.player1 = player1
         self.player2 = player2
         
         self.rules = rules
         self.board = board
         self.isAR = isAR
+        self.timerVM = timerVM
         if let p1 = player1.original.toC4Model, let p2 = player2.original.toC4Model {
             do {
                 let game = try Game(withBoard: self.board, withRules: self.rules, andPlayer1: p1, andPlayer2: p2)
@@ -62,6 +64,7 @@ public class GameVM : ObservableObject {
         do {
             if let game = self.game {
                 try await game.start()
+                self.timerVM.start()
             } else {
                 print("Erreur, la partie est nulle.")
             }
@@ -113,6 +116,23 @@ public class GameVM : ObservableObject {
         print("Invalid move")
     }
     
+    public func endTimer() {
+        guard let boardNode = self.gameScene?.boardNode else { return }
+        let winner = SKLabelNode()
+        winner.text = "\(String(localized: "TimerEnd"))"
+        winner.fontName = "\(winner.fontName ?? "Arial")-Bold"
+        winner.fontColor = SKColor.green
+        winner.position = CGPoint(x: boardNode.width / 2, y: boardNode.height / 2)
+        
+        boardNode.addChild(winner)
+        gameScene?.playerNode1?.isHidden = true
+        gameScene?.playerNode2?.isHidden = true
+        DispatchQueue.main.async {
+            self.isPlayer1Turn = false
+            self.isPlayer2Turn = false
+        }
+    }
+    
     private func gameOver(board: Board, result: Result, player: Player?) {
         print("Game over.")
         DispatchQueue.main.async {
@@ -120,6 +140,25 @@ public class GameVM : ObservableObject {
         }
         
         switch (result) {
+        case .notFinished:
+            print("Game not finished")
+        case .even:
+            if let boardNode = self.gameScene?.boardNode {
+                let winner = SKLabelNode()
+                winner.text = "\(String(localized: "Draw"))"
+                winner.fontName = "\(winner.fontName ?? "Arial")-Bold"
+                winner.fontColor = SKColor.green
+                winner.position = CGPoint(x: boardNode.width / 2, y: boardNode.height / 2)
+                
+                boardNode.addChild(winner)
+                gameScene?.playerNode1?.isHidden = true
+                gameScene?.playerNode2?.isHidden = true
+                DispatchQueue.main.async {
+                    self.isPlayer1Turn = false
+                    self.isPlayer2Turn = false
+                    self.timerVM.pause()
+                }
+            }
         case .winner(winner: _, alignment: let alignment):
             if isAR {
                 arScene?.win(alignment: alignment)
@@ -153,8 +192,7 @@ public class GameVM : ObservableObject {
                 boardNode.addChild(border)
                 
                 let winner = SKLabelNode()
-                winner.text = "\(player?.name ?? "Unknown player") Win!"
-                winner.fontSize = 60
+                winner.text = "\(player?.name ?? "Unknown player")\(String(localized: "Won"))"
                 winner.fontName = "\(winner.fontName ?? "Arial")-Bold"
                 winner.fontColor = SKColor.green
                 winner.position = CGPoint(x: boardNode.width / 2, y: boardNode.height / 2)
@@ -165,6 +203,7 @@ public class GameVM : ObservableObject {
                 DispatchQueue.main.async {
                     self.isPlayer1Turn = false
                     self.isPlayer2Turn = false
+                    self.timerVM.pause()
                 }
             }
         default:

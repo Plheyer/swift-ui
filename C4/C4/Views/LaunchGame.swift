@@ -17,9 +17,6 @@ struct LaunchGame: View {
     @State public var showErrorAlert = false
     @State public var isFormValid = false
     
-    // Timer
-    @StateObject public var timerVM = TimerVM()
-    
     var body: some View {
         ScrollView {
             HStack {
@@ -27,7 +24,7 @@ struct LaunchGame: View {
                 ChoosePlayerComponent(playerVM: newGameVM.player2, playersVM: players, playerText: String(localized: "Player2"))
             }
             Divider()
-            ChooseRulesComponent(rulesName: $newGameVM.rulesName, nbRows: $newGameVM.nbRows, nbColumns: $newGameVM.nbColumns, nbTokensToAlign: $newGameVM.nbTokensToAlign, isAR: $newGameVM.isAR, timer: timerVM)
+            ChooseRulesComponent(newGameVM: newGameVM)
             
             VStack {
                 Button(String(localized: "Play")) {
@@ -49,7 +46,7 @@ struct LaunchGame: View {
                 .padding(.vertical, 8)
             }
             .navigationDestination(isPresented: $isFormValid) {
-                GameView(gameVM: newGameVM.gameVM, timer: timerVM, orientation: $orientation, idiom: $idiom)
+                GameView(gameVM: newGameVM.gameVM, orientation: $orientation, idiom: $idiom)
             }
             .background(Color(.primaryAccentBackground))
             .foregroundColor(.primaryBackground)

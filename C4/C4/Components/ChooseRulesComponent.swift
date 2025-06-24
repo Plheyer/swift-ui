@@ -4,12 +4,7 @@ import Connect4Rules
 
 struct ChooseRulesComponent: View {
     public var rules = ["\(Connect4Rules.self)", "\(TicTacToeRules.self)", "\(PopOutRules.self)"]
-    @Binding public var rulesName: String
-    @Binding public var nbRows: Int
-    @Binding public var nbColumns: Int
-    @Binding public var nbTokensToAlign: Int
-    @Binding public var isAR: Bool
-    @ObservedObject public var timer: TimerVM
+    @ObservedObject public var newGameVM: NewGameVM
     let range = -1...20
     
     var body: some View {
@@ -17,7 +12,7 @@ struct ChooseRulesComponent: View {
             HStack {
                 Image(systemName: "list.bullet.clipboard")
                 Text(String(localized: "Rules"))
-                Picker("Rules", selection: $rulesName) {
+                Picker("Rules", selection: $newGameVM.rulesName) {
                     ForEach(rules, id: \.self) { rule in
                         //Text(rule)
                         Text(Connect4Rules.getLocalizedType(from: rule))
@@ -36,24 +31,24 @@ struct ChooseRulesComponent: View {
                         Text(String(localized: "Rows"))
                             .lineLimit(nil)
                             .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                        Stepper(value: $nbRows, in: range, step: 1) {
-                            Text(nbRows.description)
+                        Stepper(value: $newGameVM.nbRows, in: range, step: 1) {
+                            Text(newGameVM.nbRows.description)
                         }
                     }
                     GridRow {
                         Text(String(localized: "Columns"))
                             .lineLimit(nil)
                             .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                        Stepper(value: $nbColumns, in: range, step: 1) {
-                            Text(nbColumns.description)
+                        Stepper(value: $newGameVM.nbColumns, in: range, step: 1) {
+                            Text(newGameVM.nbColumns.description)
                         }
                     }
                     GridRow {
                         Text(String(localized: "TokensToAlign"))
                         .lineLimit(nil)
                         .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                        Stepper(value: $nbTokensToAlign, in: range, step: 1) {
-                            Text(nbTokensToAlign.description)
+                        Stepper(value: $newGameVM.nbTokensToAlign, in: range, step: 1) {
+                            Text(newGameVM.nbTokensToAlign.description)
                         }
                     }
                 }
@@ -62,13 +57,13 @@ struct ChooseRulesComponent: View {
             HStack {
                 Spacer()
                 Image(systemName: "clock")
-                Toggle(String(localized: "LimitedTime"), isOn: $timer.isLimitedTime).toggleStyle(.switch).fixedSize()
+                Toggle(String(localized: "LimitedTime"), isOn: $newGameVM.isLimitedTime).toggleStyle(.switch).fixedSize()
                 .tint(.primaryAccentBackground)
-                if (timer.isLimitedTime) {
-                    TextField("", text: $timer.minutesString).textFieldStyle(.roundedBorder)
+                if (newGameVM.isLimitedTime) {
+                    TextField("", text: $newGameVM.minutesString).textFieldStyle(.roundedBorder)
                         .keyboardType(.decimalPad)
                     Text(String(localized: "min"))
-                    TextField("", text: $timer.secondsString).textFieldStyle(.roundedBorder)
+                    TextField("", text: $newGameVM.secondsString).textFieldStyle(.roundedBorder)
                         .keyboardType(.decimalPad)
                     Text(String(localized: "sec"))
                 }
@@ -76,7 +71,7 @@ struct ChooseRulesComponent: View {
             }
             HStack {
                 Spacer()
-                Toggle(String(localized: "IsAR"), isOn: $isAR).toggleStyle(.switch).fixedSize()
+                Toggle(String(localized: "IsAR"), isOn: $newGameVM.isAR).toggleStyle(.switch).fixedSize()
                 .tint(.primaryAccentBackground)
                 Spacer()
             }

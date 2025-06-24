@@ -15,28 +15,28 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			wtjcS42xaMS6HDIglbTpXHzE5NA=
+			M6qJqUpOBLTWmh+3KWNCmrU5bEI=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"c2d8dc4b8db168c4ba1c322095b4e95c7cc4e4d0" or cdhash H"7f6327bf58411267b4f074a08c7c60d711ba2372"</string>
+			<string>cdhash H"33aa89a94a4e04b4d69a1fb72963429ab5396c42" or cdhash H"49aee2e03c4d8ebfab29077335a6a2dac04caa7b"</string>
 		</dict>
 		<key>Frameworks/Connect4Players.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			ATrTjmjn31MEjWySjocsuk2thPs=
+			wIJ0bhuGXIVoPLf1ifhzROmI8XM=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"013ad38e68e7df53048d6c928e872cba4dad84fb" or cdhash H"4e7252ae09787453ecdf01ce0092c4bbb202650d"</string>
+			<string>cdhash H"c082746e1b865c85683cb7f589f87344e988f173" or cdhash H"5861d81e663e8f4c89bdef4d82daf18125db8dc3"</string>
 		</dict>
 		<key>Frameworks/Connect4Rules.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			YhNMhJ641RMaqx0Of0YA5y6yvSk=
+			ktgMp50rtXQgnxL9O9WfFlg0wKI=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"62134c849eb8d5131aab1d0e7f4600e72eb2bd29" or cdhash H"174bdcbfe1d07763bff99a90f90fc4138880c330"</string>
+			<string>cdhash H"92d80ca79d2bb574209f12fd3bd59f165834c0a2" or cdhash H"90c36662494d8e17f03b770088289cf195041adb"</string>
 		</dict>
 		<key>Headers/Connect4Persistance.h</key>
 		<dict>

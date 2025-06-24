@@ -14,6 +14,10 @@ struct C4App: App {
     var body: some Scene {
         WindowGroup {
             NavigationView(orientation: $orientation, idiom: $idiom)
+                .modifier(DeviceOrientationViewModifier(orientation: $orientation))
+                .onAppear {
+                    idiom = UIDevice.current.userInterfaceIdiom
+                }
         }
     }
 }

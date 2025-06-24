@@ -15,10 +15,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			wtjcS42xaMS6HDIglbTpXHzE5NA=
+			M6qJqUpOBLTWmh+3KWNCmrU5bEI=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"c2d8dc4b8db168c4ba1c322095b4e95c7cc4e4d0" or cdhash H"7f6327bf58411267b4f074a08c7c60d711ba2372"</string>
+			<string>cdhash H"33aa89a94a4e04b4d69a1fb72963429ab5396c42" or cdhash H"49aee2e03c4d8ebfab29077335a6a2dac04caa7b"</string>
 		</dict>
 		<key>Headers/Connect4Rules.h</key>
 		<dict>

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Frameworks/Connect4Core.framework/Connect4Core</key>
 		<data>
-		hEkiLkngqRKbclI21/ZQ68pGaMU=
+		8xsmbwQ53O3rGEMoJteMfbTppks=
 		</data>
 		<key>Frameworks/Connect4Core.framework/Info.plist</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Frameworks/Connect4Players.framework/Connect4Players</key>
 		<data>
-		c/Oy37teMJRPkNuX1qD7mg1xqOI=
+		2OddN2LwENFbO1eedilTE9zF98U=
 		</data>
 		<key>Frameworks/Connect4Players.framework/Frameworks/Connect4Core.framework/Connect4Core</key>
 		<data>
-		hEkiLkngqRKbclI21/ZQ68pGaMU=
+		8xsmbwQ53O3rGEMoJteMfbTppks=
 		</data>
 		<key>Frameworks/Connect4Players.framework/Frameworks/Connect4Core.framework/Info.plist</key>
 		<data>
@@ -38,15 +38,15 @@
 		</data>
 		<key>Frameworks/Connect4Players.framework/_CodeSignature/CodeResources</key>
 		<data>
-		KgzImCQiSz88UHG0PanTfMuLnbY=
+		fH8qMetMhY6Jb+pWQYm3LNU69fw=
 		</data>
 		<key>Frameworks/Connect4Rules.framework/Connect4Rules</key>
 		<data>
-		VFWDdQArOomChrekAvVEVl9uFf0=
+		DpacPXpz2U+kd5wfpNd0AiHg3OM=
 		</data>
 		<key>Frameworks/Connect4Rules.framework/Frameworks/Connect4Core.framework/Connect4Core</key>
 		<data>
-		hEkiLkngqRKbclI21/ZQ68pGaMU=
+		8xsmbwQ53O3rGEMoJteMfbTppks=
 		</data>
 		<key>Frameworks/Connect4Rules.framework/Frameworks/Connect4Core.framework/Info.plist</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Frameworks/Connect4Rules.framework/_CodeSignature/CodeResources</key>
 		<data>
-		LqgI6d4MG2wD+9oU8Wy0QaE3eA4=
+		2xz1hAAWttCv/TKGGeY2CLOKT+s=
 		</data>
 		<key>Headers/Connect4Persistance.h</key>
 		<data>
@@ -123,7 +123,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1OuCU1njKtoHDUjAVA3F4YEqnQsUn9HTcYaMrrtcCw0=
+			zanZotIqoh2a9ygQWGTudLYjPf9ZB7q+QnbBJ7H92sA=
 			</data>
 		</dict>
 		<key>Frameworks/Connect4Core.framework/Info.plist</key>
@@ -144,14 +144,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4nCasahLz+yd5H8WqrmV05x9fZJKIeBMSya9hK1RCZE=
+			A9dqSqyv7oKrnBlPpppLqUfjbI8lcb4MDvhAk6gL4vU=
 			</data>
 		</dict>
 		<key>Frameworks/Connect4Players.framework/Frameworks/Connect4Core.framework/Connect4Core</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1OuCU1njKtoHDUjAVA3F4YEqnQsUn9HTcYaMrrtcCw0=
+			zanZotIqoh2a9ygQWGTudLYjPf9ZB7q+QnbBJ7H92sA=
 			</data>
 		</dict>
 		<key>Frameworks/Connect4Players.framework/Frameworks/Connect4Core.framework/Info.plist</key>
@@ -179,21 +179,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SLmiFPfMKxc9fzaWQqdBFDIopR9t2drZQMKn2x34Wso=
+			yFu1ebdC3l8Mj8RYrpVFg6iTyGFVP7RiamTQoQ0byaQ=
 			</data>
 		</dict>
 		<key>Frameworks/Connect4Rules.framework/Connect4Rules</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			syaJVhzia3VBxf0LO5wDlpj7Y5pIAFE7TAvLSb+4Xvg=
+			RKlZmCbklEGBR0kUO8jYY4NUIRMZrc2cJa7uLXC0mJI=
 			</data>
 		</dict>
 		<key>Frameworks/Connect4Rules.framework/Frameworks/Connect4Core.framework/Connect4Core</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1OuCU1njKtoHDUjAVA3F4YEqnQsUn9HTcYaMrrtcCw0=
+			zanZotIqoh2a9ygQWGTudLYjPf9ZB7q+QnbBJ7H92sA=
 			</data>
 		</dict>
 		<key>Frameworks/Connect4Rules.framework/Frameworks/Connect4Core.framework/Info.plist</key>
@@ -221,7 +221,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			P7vvrTbyPoejuT7f98IfR28Lz+u8TAFSWTmhHMBO/fY=
+			anQCcEU9iA25Ia/tfRw0BSof6KW/lGpMswLYaz9Qa70=
 			</data>
 		</dict>
 		<key>Headers/Connect4Persistance.h</key>

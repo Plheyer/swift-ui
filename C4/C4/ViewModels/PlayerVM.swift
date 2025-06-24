@@ -25,9 +25,11 @@ extension PlayerModel {
         self.type = data.type
         self.image = data.image
         self.imagePath = data.imagePath
-        await savePlayer()
-        if data.imageEdited {
-            await savePlayerImage()
+        if data.type == "\(HumanPlayer.self)" {
+            await savePlayer()
+            if data.imageEdited {
+                await savePlayerImage()
+            }
         }
     }
     
