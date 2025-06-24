@@ -31,8 +31,11 @@
 Envie de découvrir le nouveau hit de l'été ? Après le coup de canon/La quête du code, place au concert d'Issam...
 
 > On y est, au concert d'Issam, :musical_note:
+
 > Tout le monde veut aller, au concert d'Issam, :notes:
+
 > La foule enflammée, au concert d'Issam, :musical_score:
+
 > Même les IA sont au concert d'Issam... :microphone:
 
 La musique est disponible sur demande par mail :)
