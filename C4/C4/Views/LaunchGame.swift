@@ -27,7 +27,7 @@ struct LaunchGame: View {
                 ChoosePlayerComponent(playerVM: newGameVM.player2, playersVM: players, playerText: String(localized: "Player2"))
             }
             Divider()
-            ChooseRulesComponent(rulesName: $newGameVM.rulesName, nbRows: $newGameVM.nbRows, nbColumns: $newGameVM.nbColumns, nbTokensToAlign: $newGameVM.nbTokensToAlign, timer: timerVM)
+            ChooseRulesComponent(rulesName: $newGameVM.rulesName, nbRows: $newGameVM.nbRows, nbColumns: $newGameVM.nbColumns, nbTokensToAlign: $newGameVM.nbTokensToAlign, isAR: $newGameVM.isAR, timer: timerVM)
             
             VStack {
                 Button(String(localized: "Play")) {

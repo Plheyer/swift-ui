@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct GameARViewRepresentable: UIViewRepresentable {
-    var gameVM: GameVM
+    var gameARView: GameARView
     func makeUIView(context: Context) -> GameARView {
-        GameARView(nbRows: 6, nbColumns: 7, gameVM: gameVM)
+        gameARView
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) { }

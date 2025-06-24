@@ -295,6 +295,9 @@
         }
       }
     },
+    "IsAR" : {
+
+    },
     "LaunchGameErrorDescription" : {
       "localizations" : {
         "fr" : {

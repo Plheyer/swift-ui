@@ -3,11 +3,15 @@ import ARKit
 import RealityKit
 import Connect4Core
 
-class GameARView: ARView {
+public class GameARView: ARView {
     public var gameVM: GameVM?
     var nbRows : Int
     var nbColumns : Int
     private var board: Entity?
+    private var game: Entity?
+    private var player1Token: ModelEntity?
+    private var player2Token: ModelEntity?
+    var cellMatrix: [[Entity?]] = []
     required init(frame frameRect: CGRect) {
         self.nbRows = 6
         self.nbColumns = 7
@@ -25,70 +29,102 @@ class GameARView: ARView {
         self.nbRows = nbRows
         self.nbColumns = nbColumns
         self.gameVM = gameVM
-        addBoardToAPlane()
+
+        createBoard()
     }
     
-    func addBoardToAPlane() {
-        let game = Entity()
-        let board = Entity()
-        let anchor = AnchorEntity(.plane(.horizontal, classification: .any, minimumBounds: SIMD2<Float>(0.1, 0.1)))
+    @discardableResult
+    func loadObject(named name: String, in anchor: Entity, at position: SIMD3<Float> = SIMD3(0.0, 0.0, 0.0), scale: SIMD3<Float> = SIMD3(1, 1, 1), gestures: Bool = false, entityName: String = "") -> ModelEntity? {
+        let entity = try? Entity.loadModel(named: name)
+        if let entity {
+            entity.scale = scale
+            entity.position = position
+            anchor.addChild(entity)
+        }
+        if gestures, let entity {
+            entity.generateCollisionShapes(recursive: true)
+            entity.name = entityName
+            self.installGestures([.all], for: entity as Entity & HasCollision).forEach { gestureRecognizer in
+                gestureRecognizer.addTarget(self, action: #selector(handleGesture(_:)))
+            }
+        }
+        return entity
+    }
+    
+    func createBoard() {
+        let matRed = SimpleMaterial(color: .red, isMetallic: true)
+        let matYellow = SimpleMaterial(color: .yellow, isMetallic: true)
+        let anchor = AnchorEntity(.plane(.horizontal, classification: .any, minimumBounds: SIMD2<Float>(0.005, 0.005)))
+        // fast debug
+        // let anchor = AnchorEntity(world: .zero)
         scene.addAnchor(anchor)
-        let cell = try? Entity.load(named: "Cell")
-        if let cell {
-            for x in 0 ..< nbColumns {
-                for y in 0 ..< nbRows {
-                    let cellCopy = cell.clone(recursive: true)
-                    cellCopy.position = SIMD3<Float>(
-                        0,
-                        Float(y*2),
-                        Float(x*2)
-                    )
-                    if y == 0, x == 1 {
-                        // Add left foot
-                        let leftFoot = try? Entity.load(named: "LeftFoot")
-                        if let leftFoot {
-                            cellCopy.addChild(leftFoot)
-                            leftFoot.position = SIMD3<Float>(leftFoot.position.x, leftFoot.position.y, leftFoot.position.z)
-                            leftFoot.orientation = simd_quatf(angle: 0.3, axis: .init(1, 0, 0))
-                        }
-                    }
-                    if y == 0, x == nbRows - 1 {
-                        // Add right foot
-                        let rightFoot = try? Entity.load(named: "RightFoot")
-                        if let rightFoot {
-                            cellCopy.addChild(rightFoot)
-                            rightFoot.position = SIMD3<Float>(rightFoot.position.x, rightFoot.position.y, rightFoot.position.z)
-                            rightFoot.orientation = simd_quatf(angle: 0.3, axis: .init(1, 0, 0))
-                        }
-                    }
-                    board.addChild(cellCopy)
+        let board = Entity()
+        for row in (0..<self.nbRows) {
+            cellMatrix.append([])
+            for col in (0..<self.nbColumns) {
+                cellMatrix[row].append(loadObject(named: "Cell", in: board, at: SIMD3(0, Float(row)*2, Float(col)*2)))
+            }
+        }
+        loadObject(named: "LeftFoot", in: board)
+        loadObject(named: "RightFoot", in: board, at: SIMD3(0.0, 0.0, Float(nbColumns * 2 - 2)))
+        
+        self.player1Token = loadObject(named: "Token", in: board, at: SIMD3(-1, 0, Float(nbColumns * 2 - 3)), gestures: true, entityName: "red")
+        self.player1Token?.apply(material: matRed)
+        self.player2Token = loadObject(named: "Token", in: board, at: SIMD3(-1, 0, 1), gestures: true, entityName: "yellow")
+        self.player2Token?.apply(material: matYellow)
+        self.player2Token?.removeFromParent()
+        
+        self.board = board
+        anchor.addChild(board)
+        anchor.transform.rotation = simd_quatf(angle: GLKMathDegreesToRadians(90), axis: SIMD3(0, 1, 0))
+        anchor.scale = SIMD3(0.02, 0.02, 0.02)
+    }
+    
+    public func placeToken(row: Int, col: Int, owner: Owner) {
+        DispatchQueue.main.async {
+            if owner == .player1, let redToken = try? Entity.loadModel(named: "Token") {
+                redToken.model?.materials.removeAll()
+                redToken.model?.materials.append(SimpleMaterial(color: .red, isMetallic: true))
+                redToken.generateCollisionShapes(recursive: true)
+                redToken.name = "red"
+                
+                // Parallel threads, here it's the main one but callbacks are on others
+                guard self.gameVM?.isOver == false else { return }
+                self.cellMatrix[row][col]?.addChild(redToken)
+                
+                if let player2Token = self.player2Token {
+                    self.board?.addChild(player2Token)
+                }
+                self.player1Token?.removeFromParent()
+            } else if let yellowToken = try? Entity.loadModel(named: "Token") {
+                yellowToken.model?.materials.removeAll()
+                yellowToken.model?.materials.append(SimpleMaterial(color: .yellow, isMetallic: true))
+                yellowToken.generateCollisionShapes(recursive: true)
+                yellowToken.name = "yellow"
+                
+                guard self.gameVM?.isOver == false else { return }
+                self.cellMatrix[row][col]?.addChild(yellowToken)
+                
+                if let player1Token = self.player1Token {
+                    self.board?.addChild(player1Token)
+                }
+                self.player2Token?.removeFromParent()
+                
+            }
+        }
+    }
+    
+    public func win(alignment: [Cell]) {
+        DispatchQueue.main.async {
+            self.player1Token?.removeFromParent()
+            self.player2Token?.removeFromParent()
+            for cell in alignment {
+                if let token = self.cellMatrix[cell.row][cell.col]?.children.first as? ModelEntity {
+                    token.model?.materials.removeAll()
+                    token.model?.materials.append(SimpleMaterial(color: .green, isMetallic: true))
                 }
             }
-            game.addChild(board)
         }
-        if let redToken = try? Entity.loadModel(named: "Token") {
-            redToken.model?.materials.removeAll()
-            redToken.model?.materials.append(SimpleMaterial(color: .red, isMetallic: true))
-            redToken.generateCollisionShapes(recursive: true)
-            redToken.name = "red"
-            game.addChild(redToken)
-            self.installGestures([.all], for: redToken as Entity & HasCollision).forEach { gestureRecognizer in
-                gestureRecognizer.addTarget(self, action: #selector(handleGesture(_:)))
-            }
-            redToken.position = SIMD3(-1, 1, -1)
-        }
-        if let yellowToken = try? Entity.loadModel(named: "Token") {
-            yellowToken.generateCollisionShapes(recursive: true)
-            yellowToken.name = "yellow"
-            game.addChild(yellowToken)
-            self.installGestures([.all], for: yellowToken as Entity & HasCollision).forEach { gestureRecognizer in
-                gestureRecognizer.addTarget(self, action: #selector(handleGesture(_:)))
-            }
-            yellowToken.position = SIMD3(1, 1, -1)
-        }
-        game.scale = SIMD3(0.1, 0.1, 0.1)
-        self.board = board
-        anchor.addChild(game)
     }
     
     var initialTransform: Transform = Transform()
@@ -102,14 +138,15 @@ class GameARView: ARView {
                 // X = behind and ahead
                 // Y = "height"
                 // Z = "width"
-                let row = Int(floor(position.y / 2))
-                let col = Int(floor(position.z / 2))
+                let row = Int(round(position.y / 2))
+                let col = Int(round(position.z / 2))
                 let owner: Owner = entity.name == "red" ? .player1 : .player2
                 entity.move(to: initialTransform, relativeTo: entity.parent, duration: 1)
                 
-                print(row, col, owner)
                 Task {
-                    await gameVM?.playMove(move: Move(of: owner, toRow: row, toColumn: col))
+                    if row >= 0, row < self.nbRows, col >= 0, col < self.nbColumns {
+                        await gameVM?.playMove(move: Move(of: owner, toRow: row, toColumn: col))
+                    }
                 }
             default:
                 break

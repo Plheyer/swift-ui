@@ -19,7 +19,6 @@ struct GameView: View {
     
     // Gameplay
     @State var isPaused : Bool = false
-    @State var isAR : Bool = true
     
     let debug = false
     
@@ -32,9 +31,11 @@ struct GameView: View {
     
     var body: some View {
         VStack {
-            if isAR {
-                GameARViewRepresentable(gameVM: gameVM)
-                    .ignoresSafeArea()
+            if gameVM.isAR {
+                if let scene = gameVM.arScene {
+                    GameARViewRepresentable(gameARView: scene)
+                        .ignoresSafeArea()
+                }
             } else {
                 switch(orientation, idiom) {
                     case (.portrait, .phone), (.portraitUpsideDown, .phone), (.portrait, .pad), (.portraitUpsideDown, .pad):
@@ -66,7 +67,7 @@ struct GameView: View {
 }
 
 private struct GameViewPreview : View {
-    @StateObject public var gameVM = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[4])
+    @StateObject public var gameVM = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[4], isAR: false)
     @StateObject public var timerVM = TimerVM()
     
     @State var orientation: UIDeviceOrientation?

@@ -8,6 +8,7 @@ struct ChooseRulesComponent: View {
     @Binding public var nbRows: Int
     @Binding public var nbColumns: Int
     @Binding public var nbTokensToAlign: Int
+    @Binding public var isAR: Bool
     @ObservedObject public var timer: TimerVM
     let range = -1...20
     
@@ -59,6 +60,7 @@ struct ChooseRulesComponent: View {
                 Spacer()
             }
             HStack {
+                Spacer()
                 Image(systemName: "clock")
                 Toggle(String(localized: "LimitedTime"), isOn: $timer.isLimitedTime).toggleStyle(.switch).fixedSize()
                 .tint(.primaryAccentBackground)
@@ -70,6 +72,12 @@ struct ChooseRulesComponent: View {
                         .keyboardType(.decimalPad)
                     Text(String(localized: "sec"))
                 }
+                Spacer()
+            }
+            HStack {
+                Spacer()
+                Toggle(String(localized: "IsAR"), isOn: $isAR).toggleStyle(.switch).fixedSize()
+                .tint(.primaryAccentBackground)
                 Spacer()
             }
         }.padding(2)

@@ -56,6 +56,7 @@
 		ECA0EE7F2E09738F00027C3A /* C4Players.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2B2DDD0D0700D7E398 /* C4Players.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ECA0EE802E09739000027C3A /* C4Rules.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2C2DDD0D0700D7E398 /* C4Rules.xcframework */; };
 		ECA0EE812E09739000027C3A /* C4Rules.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A4E2C2DDD0D0700D7E398 /* C4Rules.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ECA0EE842E0AAC6800027C3A /* ChangeMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA0EE832E0AAC6800027C3A /* ChangeMaterial.swift */; };
 		ECAA52EB2DE84B2100EBA2E0 /* NewGameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA52EA2DE84B2100EBA2E0 /* NewGameVM.swift */; };
 		ECAA52EF2DE852B500EBA2E0 /* TimerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAA52EE2DE852B500EBA2E0 /* TimerVM.swift */; };
 		ECAE6A212DE7228400A3EA02 /* PlayersVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAE6A202DE7228400A3EA02 /* PlayersVM.swift */; };
@@ -158,6 +159,7 @@
 		EC73FD802DDFB8E100B28CE2 /* GridBoardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridBoardComponent.swift; sourceTree = "<group>"; };
 		EC73FD822DE0B23E00B28CE2 /* GamePlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerComponent.swift; sourceTree = "<group>"; };
 		EC99843B2E06E47F00A4DD44 /* C4Core.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = C4Core.xcframework; sourceTree = "<group>"; };
+		ECA0EE832E0AAC6800027C3A /* ChangeMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMaterial.swift; sourceTree = "<group>"; };
 		ECAA52EA2DE84B2100EBA2E0 /* NewGameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameVM.swift; sourceTree = "<group>"; };
 		ECAA52EE2DE852B500EBA2E0 /* TimerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVM.swift; sourceTree = "<group>"; };
 		ECAE6A202DE7228400A3EA02 /* PlayersVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersVM.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				ECEFC0FB2DE1D30B00237068 /* DateFormatterExtensions.swift */,
 				EC58CA522DE8C156008953B9 /* PersistanceExtensions.swift */,
 				EC58CA542DE8C35A008953B9 /* ViewExtensions.swift */,
+				ECA0EE832E0AAC6800027C3A /* ChangeMaterial.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				EC2F81D62DE10B12000D4514 /* HomePortraitComponent.swift in Sources */,
 				EC73FD752DDF43B500B28CE2 /* FaceToFacePlayerComponent.swift in Sources */,
 				ECB94EE22DD46EE200D13E5A /* HomePage.swift in Sources */,
+				ECA0EE842E0AAC6800027C3A /* ChangeMaterial.swift in Sources */,
 				ECAA52EB2DE84B2100EBA2E0 /* NewGameVM.swift in Sources */,
 				EC4564842E06ED53008AD100 /* GameARView.swift in Sources */,
 				EC2F81D22DE0BB39000D4514 /* RulesExtensions.swift in Sources */,

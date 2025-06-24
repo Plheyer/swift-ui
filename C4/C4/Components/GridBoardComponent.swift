@@ -47,7 +47,7 @@ struct GridBoardComponent: View {
 
 @MainActor
 private struct GridBoardComponentPreview : View {
-    var gameVM: GameVM = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0])
+    var gameVM: GameVM = try! GameVM(with: PlayerVM(with: PlayerStub().getPlayersModel()[0]), andWith: PlayerVM(with: PlayerStub().getPlayersModel()[1]), rules: Connect4Rules(nbRows: 6, nbColumns: 7, nbPiecesToAlign: 4)!, board: BoardStub().getBoards()[0], isAR: false)
     var body : some View {
         GridBoardComponent(gameVM: gameVM)
     }
